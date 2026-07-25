@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-07-25｜GS-Agent；MoE VLAs](./2026-07-25/README.md)
 - [2026-07-24｜DEED；SeededGrasp](./2026-07-24/README.md)
 - [2026-07-23｜RoboInter1.5；Masked Visual Actions](./2026-07-23/README.md)
 - [2026-07-22｜FM-VLA；POT-VLA](./2026-07-22/README.md)
