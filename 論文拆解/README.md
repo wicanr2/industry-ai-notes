@@ -4,9 +4,9 @@
 
 ## 最新日期
 
+- [2026-07-26](./2026/2026-07-26/README.md)
 - [2026-07-25](./2026/2026-07-25/README.md)
 - [2026-07-24](./2026/2026-07-24/README.md)
-- [2026-07-23](./2026/2026-07-23/README.md)
 
 ## 年度索引
 
@@ -14,6 +14,7 @@
 
 ## 2026
 
+- [2026-07-26｜FORGE-plus；Sequential EQA Memory](./2026/2026-07-26/README.md)
 - [2026-07-25｜GS-Agent；MoE VLAs](./2026/2026-07-25/README.md)
 - [2026-07-24｜DEED；SeededGrasp](./2026/2026-07-24/README.md)
 - [2026-07-23｜RoboInter1.5；Masked Visual Actions](./2026/2026-07-23/README.md)
