@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-07-28｜Pigey；MissionBench](./2026-07-28/README.md)
 - [2026-07-27｜AXIS；Bias-Aware Compositional Robot Manipulation](./2026-07-27/README.md)
 - [2026-07-26｜FORGE-plus；Sequential EQA Memory](./2026-07-26/README.md)
 - [2026-07-25｜GS-Agent；MoE VLAs](./2026-07-25/README.md)
