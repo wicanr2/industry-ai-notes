@@ -89,7 +89,7 @@ Open Design 試圖把它改成：
    例如募資簡報、產品發布、年度策略、董事會簡報。Open Design 的模板庫比較能把敘事、數字、圖像與版面合成一個 coherent visual language。
 
 3. **把研究筆記轉成可演示內容**  
-   對這個 `sensemaking-library` 很有啟發：Markdown 筆記可以先沉澱邏輯，再用 Open Design / HTML deck 模板轉成演講或簡報。
+   對這個 `industry-news` 很有啟發：Markdown 筆記可以先沉澱邏輯，再用 Open Design / HTML deck 模板轉成演講或簡報。
 
 ## 對 Word 計劃書 / 企劃書的幫助
 
@@ -192,7 +192,7 @@ PPT 與 Word 計劃書的本質，不是文件格式，而是「降低決策者�
 ### 工作流 C：研究筆記變簡報
 
 ```text
-sensemaking-library Markdown
+industry-news Markdown
 → Open Design HTML deck
 → PDF / PPTX
 → 對外分享或內部 briefing
@@ -236,7 +236,7 @@ sensemaking-library Markdown
 
 ## 後續可以實測的問題
 
-1. 用同一份 `sensemaking-library` 筆記，生成 HTML deck、PDF、PPTX，檢查三者版面保真度。
+1. 用同一份 `industry-news` 筆記，生成 HTML deck、PDF、PPTX，檢查三者版面保真度。
 2. 建立一個「台灣企業計劃書」Skill：問題、背景、目標、資源、時程、風險、KPI、預算。
 3. 建立一個「投資 / 董事會簡報」Design System：固定頁腳、資料來源、風險揭露、估值表格。
 4. 測試 Word 工作流：HTML / Markdown → docx 是否能保留階層、表格、圖表與頁碼。
