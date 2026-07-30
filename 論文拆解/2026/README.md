@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-07-30｜INTACT；DC-WAM](./2026-07-30/README.md)
 - [2026-07-29｜IDR；CoTinyVLA](./2026-07-29/README.md)
 - [2026-07-28｜Pigey；MissionBench](./2026-07-28/README.md)
 - [2026-07-27｜AXIS；Bias-Aware Compositional Robot Manipulation](./2026-07-27/README.md)
