@@ -12,7 +12,7 @@
 |---|---|---|
 | 新聞拆解 | 每日新聞選文；拆文章結構、產業訊號與可重用判斷模型 | [最新 2026-08-02](./新聞拆解/2026/2026-08-02/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 非每日新聞的長文、官方文件、技術文件、專題文章 | [最新 2026-07-09](./文章拆解/2026/2026-07-09/README.md)｜[文章拆解索引](./文章拆解/README.md)｜[2026 年索引](./文章拆解/2026/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記，預設標示閱讀邊界 | [最新 2026-07-30](./論文拆解/2026/2026-07-30/README.md)｜[論文拆解索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記，預設標示閱讀邊界 | [最新 2026-08-02](./論文拆解/2026/2026-08-02/README.md)｜[論文拆解索引](./論文拆解/README.md) |
 | 其他筆記 | 工具專欄、專案觀察、公司資料重建、repo 稽核等非典型研究 | [最新 2026-07-09](./其他/2026/2026-07-09/README.md)｜[其他筆記索引](./其他/README.md)｜[2026 年索引](./其他/2026/README.md) |
 | 專題討論 | 跨多篇材料累積的主題專欄與知識地圖 | [專題討論索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md)｜[LLM Prompt Interface](./專題討論/LLM-Prompt-Interface/README.md)｜[Algorithmic Trading](./專題討論/Algorithmic-Trading/README.md) |
 | 思考模型 | 從多篇筆記抽象出來的判斷框架與檢查清單 | [思考模型索引](./思考模型/README.md) |
@@ -44,6 +44,7 @@
 
 ### 論文 / 專題
 
+- [2026-08-02 論文](./論文拆解/2026/2026-08-02/README.md)：[World Action Planner](./論文拆解/2026/2026-08-02/01-world-action-planner.md)、[Behavior-Aligned Representations](./論文拆解/2026/2026-08-02/02-behavior-aligned-cross-embodiment.md)
 - [2026-07-30 論文](./論文拆解/2026/2026-07-30/README.md)：[INTACT](./論文拆解/2026/2026-07-30/01-intact-search-free-world-model-control.md)、[DC-WAM](./論文拆解/2026/2026-07-30/02-dc-wam-dynamic-centric-supervision.md)
 - [Industry Watch 專欄](./專題討論/Industry-Watch/README.md)：[BlackBerry、Nokia、Ondas：三種產業轉型與營收引擎](./專題討論/Industry-Watch/01-blackberry-nokia-ondas-revenue-engines.md)
 - [2026-07-29 論文](./論文拆解/2026/2026-07-29/README.md)：[IDR](./論文拆解/2026/2026-07-29/01-idr-test-time-vla-modality-adaptation.md)、[CoTinyVLA](./論文拆解/2026/2026-07-29/02-cotinyvla-structured-supervision.md)

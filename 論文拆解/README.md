@@ -4,10 +4,10 @@
 
 ## 最新日期
 
+- [2026-08-02](./2026/2026-08-02/README.md)
 - [2026-07-30](./2026/2026-07-30/README.md)
 - [2026-07-29](./2026/2026-07-29/README.md)
 - [2026-07-28](./2026/2026-07-28/README.md)
-- [2026-07-27](./2026/2026-07-27/README.md)
 
 ## 年度索引
 
@@ -15,6 +15,7 @@
 
 ## 2026
 
+- [2026-08-02｜World Action Planner；Behavior-Aligned Representations](./2026/2026-08-02/README.md)
 - [2026-07-30｜INTACT；DC-WAM](./2026/2026-07-30/README.md)
 - [2026-07-29｜IDR；CoTinyVLA](./2026/2026-07-29/README.md)
 - [2026-07-28｜Pigey；MissionBench](./2026/2026-07-28/README.md)
