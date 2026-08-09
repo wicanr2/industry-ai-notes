@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-09｜In-Context VLA；Physical Prompt Injection](./2026-08-09/README.md)
 - [2026-08-04｜WCM；HAM-VLN](./2026-08-04/README.md)
 - [2026-08-02｜World Action Planner；Behavior-Aligned Representations](./2026-08-02/README.md)
 - [2026-07-30｜INTACT；DC-WAM](./2026-07-30/README.md)
