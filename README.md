@@ -12,7 +12,7 @@
 |---|---|---|
 | 新聞拆解 | 每日新聞選文；拆文章結構、產業訊號與可重用判斷模型 | [最新 2026-08-10](./新聞拆解/2026/2026-08-10/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 非每日新聞的長文、官方文件、技術文件、專題文章 | [最新 2026-07-09](./文章拆解/2026/2026-07-09/README.md)｜[文章拆解索引](./文章拆解/README.md)｜[2026 年索引](./文章拆解/2026/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記，預設標示閱讀邊界 | [最新 2026-08-09](./論文拆解/2026/2026-08-09/README.md)｜[論文拆解索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記，預設標示閱讀邊界 | [最新 2026-08-10](./論文拆解/2026/2026-08-10/README.md)｜[論文拆解索引](./論文拆解/README.md) |
 | 其他筆記 | 工具專欄、專案觀察、公司資料重建、repo 稽核等非典型研究 | [最新 2026-07-09](./其他/2026/2026-07-09/README.md)｜[其他筆記索引](./其他/README.md)｜[2026 年索引](./其他/2026/README.md) |
 | 專題討論 | 跨多篇材料累積的主題專欄與知識地圖 | [專題討論索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md)｜[LLM Prompt Interface](./專題討論/LLM-Prompt-Interface/README.md)｜[Algorithmic Trading](./專題討論/Algorithmic-Trading/README.md) |
 | 思考模型 | 從多篇筆記抽象出來的判斷框架與檢查清單 | [思考模型索引](./思考模型/README.md) |
@@ -40,6 +40,7 @@
 
 ### 論文 / 專題
 
+- [2026-08-10 論文](./論文拆解/2026/2026-08-10/README.md)：[XEWorld](./論文拆解/2026/2026-08-10/01-xeworld-cross-embodiment-world-models.md)、[GAUGE](./論文拆解/2026/2026-08-10/02-gauge-physical-fidelity-benchmark.md)
 - [2026-08-09 論文](./論文拆解/2026/2026-08-09/README.md)：[In-Context VLA](./論文拆解/2026/2026-08-09/01-in-context-vla.md)、[Physical Prompt Injection](./論文拆解/2026/2026-08-09/02-physical-prompt-injection-robots.md)
 - [2026-08-04 論文](./論文拆解/2026/2026-08-04/README.md)：[WCM](./論文拆解/2026/2026-08-04/01-wcm-world-critic-model.md)、[HAM-VLN](./論文拆解/2026/2026-08-04/02-ham-vln-hierarchical-agentic-memory.md)
 - [2026-08-02 論文](./論文拆解/2026/2026-08-02/README.md)：[World Action Planner](./論文拆解/2026/2026-08-02/01-world-action-planner.md)、[Behavior-Aligned Representations](./論文拆解/2026/2026-08-02/02-behavior-aligned-cross-embodiment.md)

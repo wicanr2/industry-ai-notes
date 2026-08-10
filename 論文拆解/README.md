@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-08-10](./2026/2026-08-10/README.md)
 - [2026-08-09](./2026/2026-08-09/README.md)
 - [2026-08-04](./2026/2026-08-04/README.md)
 - [2026-08-02](./2026/2026-08-02/README.md)
@@ -17,6 +18,7 @@
 
 ## 2026
 
+- [2026-08-10｜XEWorld；GAUGE](./2026/2026-08-10/README.md)
 - [2026-08-09｜In-Context VLA；Physical Prompt Injection](./2026/2026-08-09/README.md)
 - [2026-08-04｜WCM；HAM-VLN](./2026/2026-08-04/README.md)
 - [2026-08-02｜World Action Planner；Behavior-Aligned Representations](./2026/2026-08-02/README.md)
