@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-08-11](./2026/2026-08-11/README.md)
 - [2026-08-10](./2026/2026-08-10/README.md)
 - [2026-08-09](./2026/2026-08-09/README.md)
 - [2026-08-04](./2026/2026-08-04/README.md)
@@ -18,6 +19,7 @@
 
 ## 2026
 
+- [2026-08-11｜Planning Token Depth；AtlasVLA](./2026/2026-08-11/README.md)
 - [2026-08-10｜XEWorld；GAUGE](./2026/2026-08-10/README.md)
 - [2026-08-09｜In-Context VLA；Physical Prompt Injection](./2026/2026-08-09/README.md)
 - [2026-08-04｜WCM；HAM-VLN](./2026/2026-08-04/README.md)
