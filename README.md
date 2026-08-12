@@ -12,7 +12,7 @@
 |---|---|---|
 | 新聞拆解 | 每日新聞選文；文章結構、產業訊號與判斷模型 | [最新 2026-08-12](./新聞拆解/2026/2026-08-12/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 長文、官方文件、技術文件、專題文章 | [最新](./文章拆解/2026/2026-07-09/README.md)｜[總索引](./文章拆解/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-11](./論文拆解/2026/2026-08-11/README.md)｜[總索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-12](./論文拆解/2026/2026-08-12/README.md)｜[總索引](./論文拆解/README.md) |
 | 其他筆記 | 工具、專案、公司資料與 repo 稽核 | [最新](./其他/2026/2026-07-09/README.md)｜[總索引](./其他/README.md) |
 | 專題討論 | 跨材料累積的專欄與知識地圖 | [專題索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md)｜[LLM Prompt Interface](./專題討論/LLM-Prompt-Interface/README.md)｜[Algorithmic Trading](./專題討論/Algorithmic-Trading/README.md) |
 | 思考模型 | 跨筆記抽象的框架與檢查清單 | [模型索引](./思考模型/README.md) |
@@ -34,6 +34,7 @@
 
 ### 論文 / 專題
 
+- [2026-08-12 論文](./論文拆解/2026/2026-08-12/README.md)：[VANE](./論文拆解/2026/2026-08-12/01-vane-reliable-test-time-training.md)、[JEPA-WAM](./論文拆解/2026/2026-08-12/02-jepa-wam-joint-embedding-world-modeling.md)
 - [2026-08-11 論文](./論文拆解/2026/2026-08-11/README.md)：[Planning Token Depth](./論文拆解/2026/2026-08-11/01-planning-token-depth-pruning.md)、[AtlasVLA](./論文拆解/2026/2026-08-11/02-atlasvla-world-ego-memory.md)
 - [2026-08-10 論文](./論文拆解/2026/2026-08-10/README.md)：[XEWorld](./論文拆解/2026/2026-08-10/01-xeworld-cross-embodiment-world-models.md)、[GAUGE](./論文拆解/2026/2026-08-10/02-gauge-physical-fidelity-benchmark.md)
 - [2026-08-09 論文](./論文拆解/2026/2026-08-09/README.md)：[In-Context VLA](./論文拆解/2026/2026-08-09/01-in-context-vla.md)、[Physical Prompt Injection](./論文拆解/2026/2026-08-09/02-physical-prompt-injection-robots.md)

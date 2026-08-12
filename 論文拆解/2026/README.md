@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-12｜VANE；JEPA-WAM](./2026-08-12/README.md)
 - [2026-08-11｜Planning Token Depth；AtlasVLA](./2026-08-11/README.md)
 - [2026-08-10｜XEWorld；GAUGE](./2026-08-10/README.md)
 - [2026-08-09｜In-Context VLA；Physical Prompt Injection](./2026-08-09/README.md)
