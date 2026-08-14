@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-14｜G0.5；SHAPER](./2026-08-14/README.md)
 - [2026-08-13｜FACT；SALT](./2026-08-13/README.md)
 - [2026-08-12｜VANE；JEPA-WAM](./2026-08-12/README.md)
 - [2026-08-11｜Planning Token Depth；AtlasVLA](./2026-08-11/README.md)
