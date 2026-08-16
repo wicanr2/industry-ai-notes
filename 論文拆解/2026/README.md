@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-16｜FIRE-VLA；ContactGuard](./2026-08-16/README.md)
 - [2026-08-15｜VLA Task Progress；HumanoidVLN](./2026-08-15/README.md)
 - [2026-08-14｜G0.5；SHAPER](./2026-08-14/README.md)
 - [2026-08-13｜FACT；SALT](./2026-08-13/README.md)
