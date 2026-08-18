@@ -12,7 +12,7 @@
 |---|---|---|
 | 新聞拆解 | 每日新聞選文；文章結構、產業訊號與判斷模型 | [最新 2026-08-18](./新聞拆解/2026/2026-08-18/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 長文、官方文件、技術文件、專題文章 | [最新](./文章拆解/2026/2026-07-09/README.md)｜[總索引](./文章拆解/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-17](./論文拆解/2026/2026-08-17/README.md)｜[總索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-18](./論文拆解/2026/2026-08-18/README.md)｜[總索引](./論文拆解/README.md) |
 | 其他筆記 | 工具、專案、公司資料與 repo 稽核 | [最新](./其他/2026/2026-07-09/README.md)｜[總索引](./其他/README.md) |
 | 專題討論 | 跨材料累積的專欄與知識地圖 | [專題索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md)｜[LLM Prompt Interface](./專題討論/LLM-Prompt-Interface/README.md)｜[Algorithmic Trading](./專題討論/Algorithmic-Trading/README.md) |
 | 思考模型 | 跨筆記抽象的框架與檢查清單 | [模型索引](./思考模型/README.md) |
@@ -39,6 +39,7 @@
 
 ### 論文 / 專題
 
+- [2026-08-18 論文](./論文拆解/2026/2026-08-18/README.md)：[BICPO-VLA](./論文拆解/2026/2026-08-18/01-bicpo-vla-asynchronous-handoff.md)、[PRM-as-a-Judge 1.5](./論文拆解/2026/2026-08-18/02-prm-as-a-judge-robot-process-assessment.md)
 - [2026-08-16 論文](./論文拆解/2026/2026-08-16/README.md)：[FIRE-VLA](./論文拆解/2026/2026-08-16/01-fire-vla-failure-informed-self-evolution.md)、[ContactGuard](./論文拆解/2026/2026-08-16/02-contactguard-pre-contact-monitoring.md)
 - [2026-08-15 論文](./論文拆解/2026/2026-08-15/README.md)：[VLA Task Progress](./論文拆解/2026/2026-08-15/01-decoding-vla-task-progress.md)、[HumanoidVLN](./論文拆解/2026/2026-08-15/02-humanoidvln-physics-grounded-benchmark.md)
 - [2026-08-14 論文](./論文拆解/2026/2026-08-14/README.md)：[G0.5](./論文拆解/2026/2026-08-14/01-g05-autoregressive-robot-reasoning-action.md)、[SHAPER](./論文拆解/2026/2026-08-14/02-shaper-skill-harness-evolution.md)
