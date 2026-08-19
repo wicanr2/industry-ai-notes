@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-19｜BATON；HAF](./2026-08-19/README.md)
 - [2026-08-18｜BICPO-VLA；PRM-as-a-Judge 1.5](./2026-08-18/README.md)
 - [2026-08-17｜ReflexVLA；ART](./2026-08-17/README.md)
 - [2026-08-16｜FIRE-VLA；ContactGuard](./2026-08-16/README.md)
