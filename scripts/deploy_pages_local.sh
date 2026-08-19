@@ -75,7 +75,11 @@ gh api --method POST "repos/$REPO/pages/builds" >/dev/null 2>&1 || true
 build_status=""
 build_commit=""
 for _ in $(seq 1 60); do
-  build_info="$(gh api "repos/$REPO/pages/builds/latest" --jq '[.status, (.commit // "")] | @tsv')"
+  # Pages source 剛切換時，latest build endpoint 可能短暫回傳 404。
+  if ! build_info="$(gh api "repos/$REPO/pages/builds/latest" --jq '[.status, (.commit // "")] | @tsv' 2>/dev/null)"; then
+    sleep 5
+    continue
+  fi
   IFS=$'\t' read -r build_status build_commit <<<"$build_info"
 
   if [[ "$build_status" == "built" && ( -z "$build_commit" || "$build_commit" == "$pages_sha" ) ]]; then
