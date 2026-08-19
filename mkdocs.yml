@@ -1,0 +1,95 @@
+site_name: Industry AI Notes
+site_description: 新聞、文章、論文與專題的結構拆解筆記
+site_url: https://wicanr2.github.io/industry-ai-notes/
+repo_url: https://github.com/wicanr2/industry-ai-notes
+repo_name: wicanr2/industry-ai-notes
+edit_uri: edit/main/
+docs_dir: .site-docs
+site_dir: site
+not_in_nav: |
+  **/*.md
+
+nav:
+  - 首頁: index.md
+  - 每日新聞: 新聞拆解/2026/index.md
+  - 論文拆解: 論文拆解/index.md
+  - 文章拆解: 文章拆解/index.md
+  - 專題討論: 專題討論/index.md
+  - 思考模型: 思考模型/index.md
+  - 其他筆記: 其他/index.md
+  - 整理方向: 筆記整理方向.md
+
+theme:
+  name: material
+  language: zh-TW
+  custom_dir: overrides
+  font: false
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: industry-light
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切換至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: industry-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切換至淺色模式
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/notebook-edit-outline
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\\s\\-、，。！？；：「」『』（）［］【】]+'
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/wicanr2/industry-ai-notes
+      name: GitHub repository
+  generator: false
+copyright: Copyright &copy; 2026 CY Wang
