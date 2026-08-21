@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-21｜EAFG；DECOWAM](./2026-08-21/README.md)
 - [2026-08-20｜Hydra-0；ManiGuard](./2026-08-20/README.md)
 - [2026-08-19｜BATON；HAF](./2026-08-19/README.md)
 - [2026-08-18｜BICPO-VLA；PRM-as-a-Judge 1.5](./2026-08-18/README.md)
