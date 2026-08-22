@@ -1,0 +1,228 @@
+/* Industry AI Notes：安靜、長讀友善的文件介面 */
+
+:root {
+  --note-ink: #26312f;
+  --note-muted: #66716e;
+  --note-paper: #f7f5ef;
+  --note-paper-raised: #fffdf8;
+  --note-line: #dcd8cd;
+  --note-accent: #176b5b;
+  --note-accent-soft: #dcebe5;
+  --note-warm: #a85d34;
+}
+
+[data-md-color-scheme="industry-light"] {
+  --md-default-fg-color: var(--note-ink);
+  --md-default-fg-color--light: var(--note-muted);
+  --md-default-bg-color: var(--note-paper);
+  --md-primary-fg-color: #153f38;
+  --md-primary-bg-color: #fffdf8;
+  --md-accent-fg-color: var(--note-warm);
+  --md-typeset-a-color: var(--note-accent);
+  --md-code-bg-color: #eeece4;
+}
+
+[data-md-color-scheme="industry-dark"] {
+  --md-default-fg-color: #dce4df;
+  --md-default-fg-color--light: #a7b3ad;
+  --md-default-bg-color: #17201e;
+  --md-default-bg-color--light: #1e2926;
+  --md-primary-fg-color: #102d28;
+  --md-primary-bg-color: #f3f7f5;
+  --md-accent-fg-color: #dca171;
+  --md-typeset-a-color: #76c8b4;
+  --md-code-bg-color: #101715;
+  --note-line: #34423e;
+  --note-accent-soft: #243a34;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+.md-header {
+  box-shadow: 0 1px 0 rgb(0 0 0 / 12%);
+}
+
+.md-header__title {
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.md-announce {
+  background: var(--note-accent-soft);
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--note-line);
+}
+
+.site-purpose {
+  display: inline-block;
+  padding: 0.08rem 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.025em;
+}
+
+.md-main__inner {
+  margin-top: 1.1rem;
+}
+
+.md-sidebar--primary {
+  border-right: 1px solid var(--note-line);
+}
+
+.md-nav__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.md-nav__link {
+  line-height: 1.45;
+}
+
+.md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-content__inner {
+  padding-bottom: 4rem;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.9;
+}
+
+.md-typeset h1 {
+  margin-bottom: 1.3rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  font-weight: 760;
+}
+
+.md-typeset h2 {
+  margin-top: 2.7rem;
+  padding-bottom: 0.38rem;
+  border-bottom: 1px solid var(--note-line);
+  font-weight: 720;
+}
+
+.md-typeset h3 {
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+.md-typeset p,
+.md-typeset li {
+  max-width: 78ch;
+}
+
+.md-typeset blockquote {
+  margin-left: 0;
+  padding: 0.75rem 1rem;
+  border-left: 0.18rem solid var(--note-warm);
+  background: color-mix(in srgb, var(--note-accent-soft) 56%, transparent);
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--note-line);
+  border-radius: 0.35rem;
+  background: var(--md-default-bg-color);
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--note-accent-soft);
+}
+
+.md-typeset code {
+  border-radius: 0.22rem;
+}
+
+.md-typeset a:not(.headerlink) {
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.14em;
+}
+
+.md-typeset a:not(.headerlink):hover {
+  text-decoration: underline;
+}
+
+.md-typeset .headerlink {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.md-typeset :is(h1, h2, h3):hover .headerlink {
+  opacity: 0.5;
+}
+
+.md-search__form {
+  border-radius: 0.35rem;
+}
+
+.md-footer-meta {
+  border-top: 1px solid var(--note-line);
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 92rem;
+  }
+
+  .md-sidebar--primary {
+    width: 12.8rem;
+  }
+
+  .md-content {
+    max-width: 54rem;
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .site-purpose {
+    padding-inline: 0.8rem;
+    text-align: center;
+  }
+
+  .md-typeset {
+    font-size: 0.79rem;
+    line-height: 1.82;
+  }
+
+  .md-typeset h1 {
+    margin-top: 0.5rem;
+    font-size: 1.55rem;
+    overflow-wrap: anywhere;
+  }
+
+  .md-typeset p,
+  .md-typeset li,
+  .md-typeset blockquote {
+    overflow-wrap: anywhere;
+  }
+
+  .md-typeset table:not([class]) {
+    font-size: 0.72rem;
+  }
+}
+
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .md-announce {
+    display: none !important;
+  }
+
+  .md-content {
+    max-width: none;
+  }
+}

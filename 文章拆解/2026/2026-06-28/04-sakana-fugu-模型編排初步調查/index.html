@@ -1,0 +1,1185 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/2026/2026-06-28/04-sakana-fugu-%E6%A8%A1%E5%9E%8B%E7%B7%A8%E6%8E%92%E5%88%9D%E6%AD%A5%E8%AA%BF%E6%9F%A5/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Sakana Fugu 初步調查：當「模型」變成模型群的指揮官 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sakana-fugu" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sakana Fugu 初步調查：當「模型」變成模型群的指揮官
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼選這篇
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      先把事實釐清
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="先把事實釐清">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fugu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Fugu 是什麼
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 兩個公開型號
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-openai-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. OpenAI 相容 API 與工具支援
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-github-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHub repo 的性質
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 技術報告與研究脈絡
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章架構地圖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本問題：單一模型越強，為什麼還需要編排？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      稀缺資源：不是只有算力，還有可信協調
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-lock-in-model-lock-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      供應商鎖定：從 cloud lock-in 變成 model lock-in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark 該怎麼看
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      成本與定價觀察
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      可能的影響
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可能的影響">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-agent-framework-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Agent framework 的一部分價值會被 API 化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. AI 主權敘事會從「自研大模型」轉向「可替換模型池」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scaffold-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 「模型能力」會被重新定義成「模型 + scaffold + pool」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-openai-anthropic-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 對 OpenAI / Anthropic / Google 的挑戰不是直接替代，而是抽象化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      風險與不確定性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="風險與不確定性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 黑箱編排與可追溯性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 延遲與成本尾部風險
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 供應鏈韌性不等於完全不受管制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-github-repo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHub repo 不是完整開源實作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型：從「最佳單體」到「可治理集體」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型：抽象層的雙面性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      後續調查清單
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sakana-fugu">Sakana Fugu 初步調查：當「模型」變成模型群的指揮官<a class="headerlink" href="#sakana-fugu" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>原文標題：<a href="https://www.storm.mg/article/11144808">Fugu是什麼？日本Sakana AI最新AI系統一次看懂　8個QA解析模型編排如何挑戰OpenAI、Anthropic</a></li>
+<li>來源：風傳媒</li>
+<li>作者：溫芳瑜</li>
+<li>發布時間：2026-06-26 11:04</li>
+<li>筆記建立：2026-06-28</li>
+<li>類型：使用者指定初步調查；非每日自動選文。</li>
+<li>主要並讀來源：</li>
+<li><a href="https://sakana.ai/fugu-release/">Sakana AI 官方發布｜Sakana Fugu: One Model to Command Them All</a></li>
+<li><a href="https://sakana.ai/fugu/">Sakana Fugu 產品頁</a></li>
+<li><a href="https://console.sakana.ai/models">Sakana AI Console｜Models</a></li>
+<li><a href="https://console.sakana.ai/pricing">Sakana AI Console｜Pricing</a></li>
+<li><a href="https://github.com/SakanaAI/fugu">GitHub｜SakanaAI/fugu</a></li>
+<li><a href="https://arxiv.org/abs/2606.21228">arXiv｜Sakana Fugu Technical Report, 2606.21228</a></li>
+</ul>
+<h2 id="_2">為什麼選這篇<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>這篇風傳媒文章表面上是在做「Fugu 是什麼」的 QA 懶人包；但真正值得記錄的不是產品資訊，而是它捕捉到一個重要轉向：AI 競爭不只是在比誰訓練出最大、最強的單一模型，也開始比誰能把多個模型組成可管理、可替換、可擴張的系統。</p>
+<p>Sakana Fugu 的敘事重點不是「日本又做出一個 ChatGPT」，而是「把模型編排本身產品化」。如果這條路成立，企業採用 AI 的核心問題會從「選哪個模型」變成「如何治理一個模型群」。這會牽動成本、延遲、資安、法遵、供應商鎖定、出口管制與 AI 主權等議題。</p>
+<h2 id="_3">一句話拆解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Fugu 不是單純的下一個 LLM，而是把「挑模型、分工、驗證、整合」這套原本由工程團隊手寫的 agent workflow，包成一個 OpenAI 相容 API 的模型編排產品；它的價值主張是用模型群的集合智慧，替代對單一前沿模型供應商的依賴。</p>
+<h2 id="_4">先把事實釐清<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-fugu">1. Fugu 是什麼<a class="headerlink" href="#1-fugu" title="Permanent link">&para;</a></h3>
+<p>依 Sakana AI 官方說法，Sakana Fugu 是「multi-agent system delivered as one model」：外部看起來像呼叫一個模型，內部則由 Fugu 動態協調多個 agent / LLM 共同完成任務。</p>
+<p>它的基本流程可以理解成：</p>
+<ol>
+<li>使用者把任務送到單一 endpoint。</li>
+<li>Fugu 判斷任務是否能直接完成。</li>
+<li>若需要更複雜能力，就從 agent pool 中選擇合適模型或工具。</li>
+<li>它負責分派、溝通、驗證與整合。</li>
+<li>最後仍回傳一個單一答案。</li>
+</ol>
+<p>這和一般「模型路由器」不同。路由器通常是「這個請求該送到哪個模型」；Fugu 的主張則是「這個任務應該拆成哪些子工作、讓哪些模型參與、如何互相檢查、最後如何合成」。</p>
+<h3 id="2">2. 兩個公開型號<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>官方目前提供兩個主要模型：</p>
+<ul>
+<li><strong>Fugu</strong>：偏向效能與延遲平衡。官方模型頁說它會依任務路由到最佳模型，也能讓使用者排除特定 agents，以符合資料、隱私、法遵或組織要求。</li>
+<li><strong>Fugu Ultra</strong>：偏向高品質與困難任務。官方模型頁說它會協調更深的 expert agent pool，並視問題在一到三個 agents 間路由；成本較高，適合高風險、多步驟、品質優先的工作。</li>
+</ul>
+<h3 id="3-openai-api">3. OpenAI 相容 API 與工具支援<a class="headerlink" href="#3-openai-api" title="Permanent link">&para;</a></h3>
+<p>官方 Console 文件顯示 Fugu 支援 OpenAI-compatible 的：</p>
+<ul>
+<li>Chat Completions API</li>
+<li>Responses API</li>
+<li>Models API</li>
+</ul>
+<p>官方也建議 generation request 優先使用 Responses API，並支援 Responses API 的 built-in <code>web_search</code> tool。這代表 Fugu 的產品策略不是另起爐灶，而是刻意貼近既有 OpenAI 生態，降低開發者遷移成本。</p>
+<h3 id="4-github-repo">4. GitHub repo 的性質<a class="headerlink" href="#4-github-repo" title="Permanent link">&para;</a></h3>
+<p><code>SakanaAI/fugu</code> 不是開源完整模型權重或編排系統，而比較像一個使用者接入與安裝入口。README 說明：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://sakana.ai/fugu/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>codex-fugu
+</code></pre></div>
+<p>也就是說，公開 repo 的功能偏向把 Fugu 接到 Codex / 開發者環境；真正的模型與編排後端仍是 Sakana 的雲端服務。這點很重要，因為它提醒我們：Fugu 的「開放」主要是 API 相容與工具整合，不等於模型或 orchestration policy 已完全開源。</p>
+<p>查詢 GitHub metadata 時，<code>SakanaAI/fugu</code> 在 2026-06-28 顯示約 596 stars、73 forks，預設分支為 <code>main</code>，最新 main commit 為 <code>fd9884eab4e9275e3dd9b472302d80638bc10f15</code>（message: <code>Merge pull request #25 from floatingsun/gpu-mode</code>）。這可視為早期開發者關注度的低基數訊號，而不是成熟生態證明。</p>
+<h3 id="5">5. 技術報告與研究脈絡<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>arXiv 技術報告《Sakana Fugu Technical Report》（2606.21228）摘要把 Fugu 定義為一系列 orchestrator models：模型本身被訓練來理解 query，並動態設計 agentic scaffolds。</p>
+<p>技術報告提到的訓練 / 設計來源包括：</p>
+<ul>
+<li>large-scale fine-tuning</li>
+<li>evolutionary algorithms</li>
+<li>reinforcement learning approaches</li>
+<li>production-oriented infrastructure and design principles</li>
+</ul>
+<p>官方產品頁也把 Fugu 連到兩篇 ICLR 2026 研究：</p>
+<ul>
+<li><strong>TRINITY: An Evolved LLM Coordinator</strong>：用 evolved coordinator 在多個 LLM 之間分配 Thinker、Worker、Verifier 等角色。</li>
+<li><strong>Learning to Orchestrate Agents in Natural Language with the Conductor</strong>：用強化學習訓練 Conductor，以自然語言設計 agent 溝通拓撲與指令。</li>
+</ul>
+<p>這讓 Fugu 的主張比「手寫 agent workflow」更進一步：它不是只把某套固定流程包起來，而是宣稱讓 orchestration policy 本身可被訓練、可更新、可隨 agent pool 進化。</p>
+<h2 id="_5">文章架構地圖<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>區塊</th>
+<th>表面功能</th>
+<th>深層意圖</th>
+<th>為什麼這樣安排</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>標題</td>
+<td>用「8 個 QA」降低技術門檻</td>
+<td>把陌生產品包成可快速理解的消費型科技知識</td>
+<td>讀者未必懂 model orchestration，QA 能降低進入成本</td>
+</tr>
+<tr>
+<td>快速重點</td>
+<td>先給結論：Fugu 是管理 ChatGPT 們的 AI</td>
+<td>避免讀者把它誤認為單一聊天模型</td>
+<td>先建立「專案經理」比喻，後面所有段落都圍繞這個框架</td>
+</tr>
+<tr>
+<td>Q1-Q3</td>
+<td>解釋 Fugu 與 LLM / router / 第三方模型的差異</td>
+<td>把產品定位從「模型」推到「模型協調層」</td>
+<td>這是文章最重要的概念校準</td>
+</tr>
+<tr>
+<td>Q4、Q7</td>
+<td>討論供應鏈與出口管制風險</td>
+<td>把技術產品放進地緣政治與企業韌性敘事</td>
+<td>讓 Fugu 不只是工具，而是 AI 主權問題的答案之一</td>
+</tr>
+<tr>
+<td>Q5-Q6</td>
+<td>benchmark 與價格</td>
+<td>補足企業採用的理性判準：能力、成本、場景</td>
+<td>避免只停留在概念宣傳</td>
+</tr>
+<tr>
+<td>Q8</td>
+<td>日本 AI 產業焦慮</td>
+<td>把 Sakana 放進「日本如何避開美國巨頭正面戰」的產業敘事</td>
+<td>讓單一產品變成國家技術路線選擇</td>
+</tr>
+<tr>
+<td>結尾</td>
+<td>「AI 管理 AI」</td>
+<td>抽象出下一波 AI 競爭方向</td>
+<td>從產品介紹升格成趨勢判斷</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">第一性原理拆解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">基本問題：單一模型越強，為什麼還需要編排？<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>直覺上，若模型愈來愈強，似乎只要選最強模型就好。但複雜任務通常不是單一能力問題，而是多能力組合問題：</p>
+<ul>
+<li>讀懂需求</li>
+<li>拆解任務</li>
+<li>找資料</li>
+<li>寫程式</li>
+<li>跑測試</li>
+<li>檢查邏輯</li>
+<li>評估風險</li>
+<li>整合結果</li>
+<li>控制成本與延遲</li>
+</ul>
+<p>單一模型可以做全部，但不一定每一步都是最優。不同模型在 coding、數學、長上下文、視覺、資安、科學推理、語言風格上的強弱不同。若能在任務中動態組合，就可能用「群體互補」超過任一單體。</p>
+<p>Fugu 的第一性問題可以寫成：</p>
+<blockquote>
+<p>當模型能力變得分化，AI 系統的瓶頸就不只是模型能力，而是「如何選擇、協調與驗證模型能力」。</p>
+</blockquote>
+<h3 id="_8">稀缺資源：不是只有算力，還有可信協調<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Fugu 把幾種稀缺資源重新排列：</p>
+<ol>
+<li><strong>前沿模型存取權</strong>：最強模型可能受價格、配額、地區、出口管制限制。</li>
+<li><strong>任務級可靠性</strong>：單步回答漂亮不等於長任務能完成。</li>
+<li><strong>延遲預算</strong>：多 agent 會增加時間成本，不能無限制堆疊。</li>
+<li><strong>成本可預測性</strong>：編排會產生額外 orchestration tokens，企業需要知道怎麼計價。</li>
+<li><strong>治理能力</strong>：企業不一定能讓所有資料流向所有供應商。</li>
+</ol>
+<p>Sakana 的產品頁特別強調可排除特定 agents，這表示它知道企業真正買的不是「多找幾個模型聊天」，而是「在多模型世界中保留控制權」。</p>
+<h3 id="cloud-lock-in-model-lock-in">供應商鎖定：從 cloud lock-in 變成 model lock-in<a class="headerlink" href="#cloud-lock-in-model-lock-in" title="Permanent link">&para;</a></h3>
+<p>Fugu 官方發布文非常強調 single-vendor dependency 與 export controls。這背後的思維是：</p>
+<ul>
+<li>若應用層深度依賴單一模型 API，模型供應商改價、降額、封鎖地區、調整政策，都會直接變成應用風險。</li>
+<li>若企業內部 prompt、tool schema、evaluation、workflow 全都圍繞某個模型特性設計，遷移成本會越來越高。</li>
+<li>因此，編排層可能成為「模型抽象層」，類似雲端時代的 Kubernetes / service mesh / cloud abstraction。</li>
+</ul>
+<p>但這裡有一個反諷：Fugu 可能降低對 OpenAI / Anthropic / Google 的依賴，卻也可能製造對 Sakana 編排層的新依賴。真正的問題不是「有沒有 lock-in」，而是「lock-in 發生在哪一層、是否比較可治理」。</p>
+<h2 id="benchmark">Benchmark 該怎麼看<a class="headerlink" href="#benchmark" title="Permanent link">&para;</a></h2>
+<p>官方模型頁列出多項 benchmark，例如：</p>
+<ul>
+<li>SWE Bench Pro：Fugu Ultra 73.7、Fugu 59.0</li>
+<li>Terminal Bench 2.1：Fugu Ultra 82.1、Fugu 80.2</li>
+<li>LiveCodeBench：Fugu Ultra 93.2、Fugu 92.9</li>
+<li>LiveCodeBench Pro：Fugu Ultra 90.8、Fugu 87.8</li>
+<li>GPQA Diamond：Fugu Ultra 95.5、Fugu 95.5</li>
+<li>Humanity’s Last Exam：Fugu Ultra 50.0、Fugu 47.2</li>
+<li>Long Context Reasoning：Fugu Ultra 73.3、Fugu 74.7</li>
+<li>MRCRv2：Fugu Ultra 93.6、Fugu 86.6</li>
+</ul>
+<p>這些數字可作為初步參考，但不應過度解讀為「全面贏過所有 frontier models」。原因有三：</p>
+<ol>
+<li>風傳媒文章也提醒，官方比較主要來自 Sakana 自身公布與整理，尚需第三方長期驗證。</li>
+<li>技術報告說，Fugu 以外 baseline scores 來自各模型供應商公布值；不同模型、不同 scaffold、不同測試條件可能不完全可比。</li>
+<li>Fugu 的優勢可能最明顯在「多步驟 workflow」，但一般 benchmark 未必完整反映企業實際成本、延遲、失敗率與可追溯性。</li>
+</ol>
+<p>因此比較好的判讀方式是：</p>
+<blockquote>
+<p>Fugu 的 benchmark 不是證明「它一定是最強模型」，而是證明「learned orchestration 已經足以進入 frontier-level 能力討論」。</p>
+</blockquote>
+<h2 id="_9">成本與定價觀察<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>官方 Pricing 頁顯示：</p>
+<ul>
+<li>Fugu pay-as-you-go：</li>
+<li>1 agent：依 underlying model 的標準費率計算。</li>
+<li>multiple agents：官方說不會 stack model fees，而是依參與的最高 tier model 收單一 rate。</li>
+<li>Fugu Ultra <code>fugu-ultra-20260615</code> 固定價：</li>
+<li>標準 context：input $5 / 1M tokens、output $30 / 1M tokens、cached input $0.50 / 1M tokens。</li>
+<li>context 超過 272K：input $10、output $45、cached input $1。</li>
+<li>訂閱制：Standard $20/月、Pro $100/月、Max $200/月。</li>
+</ul>
+<p>最值得注意的是 usage fields。官方說 Fugu Ultra 會把使用者可見 token 與 orchestration token 分開回報，但 orchestration tokens 仍是真實用量，會計入最後價格。</p>
+<p>這表示使用 Fugu Ultra 時，不能只用「最終回答長度」估成本；真正成本取決於內部編排做了多少輪、用了多少 agent、生成了多少中間推理 / 指令 / 工具呼叫。企業導入時應該測的是「每完成一件工作」的總成本，而不是單純比較每百萬 token 價格。</p>
+<h2 id="_10">可能的影響<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1-agent-framework-api">1. Agent framework 的一部分價值會被 API 化<a class="headerlink" href="#1-agent-framework-api" title="Permanent link">&para;</a></h3>
+<p>現在很多團隊用 LangGraph、CrewAI、AutoGen、Claude Code、Codex、內部 workflow 來做多 agent。Fugu 的產品化方向是在說：你不一定要自己設計 workflow，直接呼叫一個會協調模型的模型。</p>
+<p>如果成功，它會吃掉一部分「手寫 agent orchestration」的市場。但短期內它更可能變成互補：</p>
+<ul>
+<li>Fugu 負責模型層的協調。</li>
+<li>企業內部 framework 負責權限、資料、工具、流程、審計與人類批准。</li>
+</ul>
+<h3 id="2-ai">2. AI 主權敘事會從「自研大模型」轉向「可替換模型池」<a class="headerlink" href="#2-ai" title="Permanent link">&para;</a></h3>
+<p>日本若要正面追 OpenAI / Anthropic / Google 的訓練規模，非常困難。Sakana 選擇的路線更像：不一定最大，但要能整合最大者。</p>
+<p>這對中型國家、企業、研究機構都有啟發：AI 主權未必只有「自己訓練一個最大模型」這條路，也可能是：</p>
+<ul>
+<li>有自己的 orchestration layer。</li>
+<li>有可替換 agent pool。</li>
+<li>有資料與供應商治理能力。</li>
+<li>能在外部模型變動時維持服務連續性。</li>
+</ul>
+<h3 id="3-scaffold-pool">3. 「模型能力」會被重新定義成「模型 + scaffold + pool」<a class="headerlink" href="#3-scaffold-pool" title="Permanent link">&para;</a></h3>
+<p>技術報告有一個重要觀念：能力不只是 model weights 的性質，也是 scaffold 的性質。這對 benchmark 文化很重要。</p>
+<p>未來比較 AI 系統時，可能不能只問：</p>
+<ul>
+<li>這是哪個 base model？</li>
+</ul>
+<p>還要問：</p>
+<ul>
+<li>它用什麼 scaffold？</li>
+<li>有哪些 tools？</li>
+<li>agent pool 裡有哪些模型？</li>
+<li>可以排除哪些供應商？</li>
+<li>中間過程是否可審計？</li>
+<li>失敗時是否能回退？</li>
+</ul>
+<h3 id="4-openai-anthropic-google">4. 對 OpenAI / Anthropic / Google 的挑戰不是直接替代，而是抽象化<a class="headerlink" href="#4-openai-anthropic-google" title="Permanent link">&para;</a></h3>
+<p>Fugu 不一定要比每個模型都強，才有商業價值。它只要讓企業覺得「我不想直接綁死單一模型供應商」，就能成為上層抽象。</p>
+<p>這和資料庫、雲端、晶片產業很像：抽象層一旦成熟，底層供應商仍然重要，但議價權會被上層治理層分走一部分。</p>
+<h2 id="_11">風險與不確定性<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 黑箱編排與可追溯性<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>Fugu 的價值在於幫使用者隱藏複雜度，但企業治理常常需要看見複雜度：哪個 agent 看過資料？哪個模型做了哪一步？中間答案如何被否決？若出錯，責任歸屬在哪？</p>
+<p>若這些審計能力不足，Fugu 可能很適合研究 / coding / exploratory work，但在金融、醫療、政府核心流程中會遇到阻力。</p>
+<h3 id="2_1">2. 延遲與成本尾部風險<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>多 agent 系統的平均表現可能很好，但尾端延遲與成本可能不穩。困難任務若觸發更多內部步驟，使用者可能遇到：</p>
+<ul>
+<li>回答時間不穩。</li>
+<li>orchestration token 成本超出預期。</li>
+<li>同樣 prompt 因 routing 差異產生不同成本與品質。</li>
+</ul>
+<p>這會要求平台提供更好的 budget control、max agent count、trace、cache 與 fallback 設定。</p>
+<h3 id="3">3. 供應鏈韌性不等於完全不受管制<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>官方強調「without the risk of export controls」，但更精準的理解應該是「降低單一供應商與特定模型中斷的風險」。如果 agent pool 仍大量依賴美國前沿模型，地緣政治風險只是被分散，不是消失。</p>
+<p>真正的 AI 主權要看：</p>
+<ul>
+<li>agent pool 的地理與公司來源是否多元。</li>
+<li>是否有 Sakana 自研或開源模型可補位。</li>
+<li>特定區域 / 法規下是否能指定不使用某些供應商。</li>
+<li>在最壞情境下品質降級是否可接受。</li>
+</ul>
+<h3 id="4-github-repo_1">4. GitHub repo 不是完整開源實作<a class="headerlink" href="#4-github-repo_1" title="Permanent link">&para;</a></h3>
+<p><code>SakanaAI/fugu</code> 的 README 偏向安裝、Codex 接入與使用文件。這對開發者友善，但它不是讓外部研究者完整重現 Fugu 編排能力的 repo。若要評估技術透明度，仍需以 arXiv 技術報告、API 文件與未來是否釋出更多 evaluation / traces 為準。</p>
+<h2 id="_12">可抽象成的思考模型<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">模型：從「最佳單體」到「可治理集體」<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>當一個領域進入多供應商、多專長、多限制狀態時，最重要的競爭點常會從「誰的單體最強」轉向「誰最會治理組合」。</p>
+<p>可套用到：</p>
+<ul>
+<li>AI 模型：單一 LLM → model pool / orchestrator。</li>
+<li>雲端：單一 cloud → multi-cloud orchestration。</li>
+<li>晶片：單一 accelerator → heterogeneous compute scheduling。</li>
+<li>供應鏈：單一 vendor → qualified supplier pool。</li>
+<li>組織：明星員工 → 能讓專家協作的管理系統。</li>
+</ul>
+<p>判斷一個 orchestration layer 是否有價值，可以問五個問題：</p>
+<ol>
+<li>它是否真的知道誰擅長什麼？</li>
+<li>它是否能在成本與品質間動態取捨？</li>
+<li>它是否能在供應商失效時降級但不中斷？</li>
+<li>它是否讓治理更容易，而不是更黑箱？</li>
+<li>它是否讓使用者保留退出與替換能力？</li>
+</ol>
+<h3 id="_14">模型：抽象層的雙面性<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>抽象層的承諾是降低底層複雜度；抽象層的風險是把複雜度與權力集中到自己身上。</p>
+<p>Fugu 的價值在於把多模型協作包成單一 API；Fugu 的風險也在於使用者可能不知道內部到底如何決策。這不是缺點本身，而是任何抽象層都會遇到的治理問題。</p>
+<h2 id="_15">我可以放進資料庫的筆記<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fugu 的核心不是「又一個 LLM」，而是「orchestrator model」：模型被訓練來呼叫、組合、驗證其他模型。</li>
+<li>Sakana 的路線避開與美國巨頭在單體模型規模上正面硬碰硬，轉向 model orchestration / collective intelligence。</li>
+<li>Fugu 對企業的真正賣點是：單一 API、OpenAI 相容、可替換 agent pool、供應商依賴下降、複雜任務品質提升。</li>
+<li>Fugu 的真正成本不是輸入 / 輸出 token 牌價，而是任務完成過程中的 orchestration token、延遲、內部 agent 數與失敗重試。</li>
+<li>「AI 主權」不一定等於自研最大模型；也可以是擁有可治理、可替換、可降級的模型編排層。</li>
+<li>但 Fugu 仍可能形成新的 lock-in：從 model provider lock-in 轉成 orchestration provider lock-in。</li>
+<li>GitHub <code>SakanaAI/fugu</code> 目前偏接入與安裝工具，不是完整開源 Fugu 後端；技術透明度主要仍依賴技術報告與官方 API 文件。</li>
+</ul>
+<h2 id="_16">後續調查清單<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<ol>
+<li>實測 Fugu / Fugu Ultra 在相同 coding task、研究 task、文件拆解 task 的品質、延遲與成本。</li>
+<li>檢查 API 是否提供足夠 trace：agent 選擇、token 分解、工具呼叫、供應商排除設定。</li>
+<li>比較 Fugu 與 Claude Code / Codex / OpenAI Agents SDK / LangGraph 的分工邊界。</li>
+<li>追蹤第三方 benchmark 與使用者實測，尤其是長任務、程式維護、資安分析、研究複現。</li>
+<li>觀察 Sakana 是否逐步加入自研模型 / 開源模型，降低對美國 frontier providers 的依賴。</li>
+</ol>
+<h2 id="_17">仍不確定的地方<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ul>
+<li>官方 benchmark 的可重現性、測試 scaffold 與 baseline 條件仍需第三方驗證。</li>
+<li>agent pool 內實際包含哪些模型、在不同地區 / plan / compliance 設定下是否不同，公開資訊仍有限。</li>
+<li>「不受出口管制風險影響」更像產品定位與韌性主張，不應理解成完全不受任何法規或供應鏈限制。</li>
+<li>GitHub repo 的 star / fork 只能代表早期開發者興趣，不代表生產採用成熟度。</li>
+<li>多 agent 對長任務是否穩定超越單一前沿模型，需要看真實任務中的成本、延遲、失敗率與維護負擔。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

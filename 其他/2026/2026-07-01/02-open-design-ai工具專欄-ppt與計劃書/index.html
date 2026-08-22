@@ -1,0 +1,962 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-07-01/02-open-design-ai%E5%B7%A5%E5%85%B7%E5%B0%88%E6%AC%84-ppt%E8%88%87%E8%A8%88%E5%8A%83%E6%9B%B8/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>工具專欄｜Open Design：把 Agent 變成簡報與計劃書的設計工作台 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-design-agent" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              工具專欄｜Open Design：把 Agent 變成簡報與計劃書的設計工作台
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      產品結構
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ppt" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 PPT 的幫助
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="對 PPT 的幫助">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deck" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 從「大綱」直接變成有設計感的 deck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ppt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 可做比普通 PPT 更像網頁 / 展示頁的簡報
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 對商務簡報最有用的場景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 Word 計劃書 / 企劃書的幫助
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="對 Word 計劃書 / 企劃書的幫助">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 直接幫助：把計劃書變成「可讀的視覺文件」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-html-pdf-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 間接幫助：先做 HTML / PDF，再回填 Word
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 對計劃書最有用的部分不是寫字，而是結構化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理：它真正解的是什麼問題？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ppt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      我會怎麼用在 PPT / 計劃書工作流
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="我會怎麼用在 PPT / 計劃書工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-deck" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流 A：企劃書先行，再轉 deck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bppt" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流 B：PPT 先行，用來逼出決策重點
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流 C：研究筆記變簡報
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      限制與風險
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      對你的用途的判斷
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      後續可以實測的問題
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="open-design-agent">工具專欄｜Open Design：把 Agent 變成簡報與計劃書的設計工作台<a class="headerlink" href="#open-design-agent" title="Permanent link">&para;</a></h1>
+<h2 id="_1">工具資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>工具名稱：Open Design</li>
+<li>官方網站：<a href="https://open-design.ai/zh/"><code>https://open-design.ai/zh/</code></a></li>
+<li>GitHub：<a href="https://github.com/nexu-io/open-design"><code>nexu-io/open-design</code></a></li>
+<li>產品定位：local-first、open-source 的 AI design workspace；官方自稱是 Figma / Claude Design 的 agent-native 替代。</li>
+<li>授權與部署：官方頁面與 GitHub metadata 顯示採 Apache-2.0；桌面端、本地 daemon、Skill runtime 以本機執行為核心，也支援 BYOK。</li>
+<li>本次閱讀範圍：官方中文首頁、Slides / PM / Templates / Skills / Pricing / Download / Hermes agent 頁面、GitHub repo metadata。未實機安裝測試，因此以下是產品概念與文件層級評估，不是實測報告。</li>
+<li>收錄性質：使用者指定「工具專欄」。</li>
+</ul>
+<h2 id="_2">一句話概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Open Design 不是單純「AI 幫你寫 PPT 文字」，而是把本地 coding agent、設計系統、模板、SKILL.md 工作流和 HTML / PDF / PPTX 匯出串成一個設計交付管線。</p>
+</blockquote>
+<p>如果把 Word 計劃書與 PPT 提案都看成「說服型文件」，Open Design 比較像是在處理最後一公里：把內容骨架轉成可被閱讀、展示、評審的視覺 artifact。</p>
+<h2 id="_3">產品結構<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>從官方文件看，Open Design 的核心不是單一模型，而是一個 workflow layer：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>使用者輸入：prompt / Markdown / CSV / JSON / repo / 截圖 / Figma 匯出
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>→ Agent：Claude Code、Codex、Cursor、Gemini CLI、OpenCode、Qwen、Hermes 等
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>→ Skill：SKILL.md 定義任務流程、輸出規格、模板規則
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>→ Design System：字體、色彩、版面、品牌規則
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>→ Artifact：HTML prototype / deck / image / video / PDF / PPTX
+</code></pre></div>
+<p>它的產品主張有幾個關鍵詞：</p>
+<ol>
+<li><strong>Local-first</strong>：桌面端、daemon、Skill runtime 在本機跑，artifact 落在專案目錄。</li>
+<li><strong>BYOK</strong>：用自己的模型供應商 key，官方頁面列出 OpenAI、Anthropic、Google、Mistral、xAI、Moonshot 等相容端點。</li>
+<li><strong>Agent-native</strong>：不把 AI 當聊天框，而是讓 coding agent 讀 Skill、寫檔、渲染、修正。</li>
+<li><strong>模板 / 設計系統化</strong>：官方模板頁標示有大量模板與設計系統，包含 deck、prototype、image、video、HyperFrames 等類型。</li>
+<li><strong>可匯出</strong>：Slides 頁面明確說 deck 可用瀏覽器全螢幕展示，也可匯出 PDF / PPTX；HTML Anything 則強調可把 Markdown、CSV、JSON 轉成可交付 HTML。</li>
+</ol>
+<h2 id="ppt">對 PPT 的幫助<a class="headerlink" href="#ppt" title="Permanent link">&para;</a></h2>
+<h3 id="1-deck">1. 從「大綱」直接變成有設計感的 deck<a class="headerlink" href="#1-deck" title="Permanent link">&para;</a></h3>
+<p>官方 Slides 頁面的核心描述是：</p>
+<blockquote>
+<p>貼上要點或粗略結構，agent 載入 deck skill，產出一連串排好版的幻燈片，而不是一篇長文。</p>
+</blockquote>
+<p>這對 PPT 的幫助很直接。傳統做法常卡在：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>先寫內容 → 再開 PowerPoint → 選模板 → 調字級 → 對齊 → 補圖表 → 統一風格
+</code></pre></div>
+<p>Open Design 試圖把它改成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>先給大綱 / 材料 / 語氣
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>→ 選 deck style / design system
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>→ agent 產生 HTML deck
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>→ 用對話修正
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>→ 匯出 PDF / PPTX
+</code></pre></div>
+<p>它的價值不只是節省時間，而是把「版面一致性」變成模板與 Skill 的責任。</p>
+<h3 id="2-ppt">2. 可做比普通 PPT 更像網頁 / 展示頁的簡報<a class="headerlink" href="#2-ppt" title="Permanent link">&para;</a></h3>
+<p>官方列出的 deck 類模板很多，例如：</p>
+<ul>
+<li>融資演示 pitch deck</li>
+<li>產品發布 deck</li>
+<li>投行路演材料</li>
+<li>技術分享</li>
+<li>學術論文風</li>
+<li>年度信 / 週報 / QBR 類型</li>
+<li>Bento 洞見、知識架構藍圖、瑞士國際主義、暗色技術風等</li>
+</ul>
+<p>這代表 Open Design 的簡報思路比較接近「HTML-based presentation」：用固定 16:9 畫布、CSS grid、SVG、動畫、資料卡片去組合，而不是 PowerPoint 內建物件的手工排列。</p>
+<p>優點是視覺彈性高；缺點是若客戶最後要求完全可編輯的 <code>.pptx</code>，匯出保真度就會變成關鍵風險。</p>
+<h3 id="3">3. 對商務簡報最有用的場景<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>我會把適用場景分成三類：</p>
+<ol>
+<li>
+<p><strong>提案初稿 / 方向對齊</strong><br />
+   例如產品提案、內部專案簡報、技術方案簡報。先快速做出可看的 deck，讓討論集中在主張與結構，而不是空白投影片。</p>
+</li>
+<li>
+<p><strong>高視覺要求的 storytelling deck</strong><br />
+   例如募資簡報、產品發布、年度策略、董事會簡報。Open Design 的模板庫比較能把敘事、數字、圖像與版面合成一個 coherent visual language。</p>
+</li>
+<li>
+<p><strong>把研究筆記轉成可演示內容</strong><br />
+   對這個 <code>industry-ai-notes</code> 很有啟發：Markdown 筆記可以先沉澱邏輯，再用 Open Design / HTML deck 模板轉成演講或簡報。</p>
+</li>
+</ol>
+<h2 id="word">對 Word 計劃書 / 企劃書的幫助<a class="headerlink" href="#word" title="Permanent link">&para;</a></h2>
+<p>Open Design 官方比較強調 HTML、prototype、slides，而不是 Word <code>.docx</code>。所以它對 Word 的幫助要拆開看。</p>
+<h3 id="1">1. 直接幫助：把計劃書變成「可讀的視覺文件」<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>官方 PM 頁面列出「產品規格文檔 / PRD」模板；Templates 頁也有：</p>
+<ul>
+<li>產品規格文檔</li>
+<li>會議紀要</li>
+<li>週報更新</li>
+<li>財務報告</li>
+<li>工程運維手冊</li>
+<li>數據可視化報告</li>
+<li>digital e-guide</li>
+<li>docs page</li>
+</ul>
+<p>這些不一定是 Word，但它們覆蓋了 Word 計劃書常見的內容結構：問題定義、成功指標、範圍、用戶故事、設計筆記、上線計畫、待解問題、KPI、財務摘要、行動項。</p>
+<p>換句話說，它可以幫你把「計劃書內容」整理成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>單頁 HTML spec
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>可視化報告頁
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>可點擊原型
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>簡報版 pitch deck
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>PDF 交付物
+</code></pre></div>
+<p>這對提案前期很有價值，因為很多計劃書真正難的是：內容看起來像散文，無法讓主管或客戶快速抓到結構。</p>
+<h3 id="2-html-pdf-word">2. 間接幫助：先做 HTML / PDF，再回填 Word<a class="headerlink" href="#2-html-pdf-word" title="Permanent link">&para;</a></h3>
+<p>如果最終交付必須是 Word，Open Design 目前看起來不是最直接的 <code>.docx</code> 編輯器。比較務實的工作流是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Open Design 產出結構化 HTML / PDF / deck
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>→ 人工或工具轉成 Word 章節
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>→ Word 裡處理正式格式、頁眉頁腳、公司範本、簽核欄位
+</code></pre></div>
+<p>也就是說，它適合做「計劃書的構思、視覺化、對齊」，不一定適合取代 Word 的正式交付流程。</p>
+<h3 id="3_1">3. 對計劃書最有用的部分不是寫字，而是結構化<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>計劃書通常要回答：</p>
+<ol>
+<li>為什麼要做？</li>
+<li>誰會受益？</li>
+<li>現在卡在哪？</li>
+<li>解法是什麼？</li>
+<li>里程碑與資源需求？</li>
+<li>風險與替代方案？</li>
+<li>成功指標？</li>
+</ol>
+<p>Open Design 的 Skill / template 模式，可以把這些問題變成固定骨架。這對反覆寫 proposal、PRD、內部專案計畫的人很有幫助：不是每次從空白頁開始，而是讓 agent 按模板補足應有欄位。</p>
+<h2 id="_4">第一性原理：它真正解的是什麼問題？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>PPT 與 Word 計劃書的本質，不是文件格式，而是「降低決策者理解成本」。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>文件價值 = 內容可信度 × 結構清晰度 × 視覺可讀性 × 可交付性
+</code></pre></div>
+<p>傳統 AI 寫作工具多半只處理第一段：幫你生成文字。Open Design 想補的是後三段：</p>
+<ul>
+<li>結構清晰度：Skill 把任務拆成固定輸出形式。</li>
+<li>視覺可讀性：Design system / template 負責版面、字體、層次。</li>
+<li>可交付性：HTML、PDF、PPTX、PNG 等 artifact 可被展示或分享。</li>
+</ul>
+<p>所以它的核心不是「比較會寫」，而是「比較會把文字變成可看的交付物」。</p>
+<h2 id="ppt_1">我會怎麼用在 PPT / 計劃書工作流<a class="headerlink" href="#ppt_1" title="Permanent link">&para;</a></h2>
+<h3 id="a-deck">工作流 A：企劃書先行，再轉 deck<a class="headerlink" href="#a-deck" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. 先用一般文字工具整理問題、目標、範圍、預算、時程、風險。
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. 丟給 Open Design，要求生成 PRD / proposal-style HTML spec。
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>3. 檢查是否漏掉成功指標、風險、資源需求。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>4. 再用 deck template 轉成 10-15 頁簡報。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>5. 匯出 PDF 給審閱；若對方要求可編輯，再匯出 PPTX 並人工修。
+</code></pre></div>
+<p>適合：內部新專案、產品功能提案、導入 AI / 自動化工具的方案。</p>
+<h3 id="bppt">工作流 B：PPT 先行，用來逼出決策重點<a class="headerlink" href="#bppt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1. 先寫 8-10 頁 deck 大綱。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>2. Open Design 產生投影片。
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>3. 看每一頁是否只有一個 decision point。
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>4. 把通過審查的 deck 反向展開成 Word 計劃書。
+</code></pre></div>
+<p>適合：董事會 / 客戶簡報、募資簡報、策略提案。</p>
+<h3 id="c">工作流 C：研究筆記變簡報<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>industry-ai-notes Markdown
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>→ Open Design HTML deck
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>→ PDF / PPTX
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>→ 對外分享或內部 briefing
+</code></pre></div>
+<p>這可能是對目前筆記庫最實用的路徑：筆記負責深度，Open Design 負責把深度變成可展示的表面。</p>
+<h2 id="_5">限制與風險<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>PPTX 保真度仍要實測</strong><br />
+   官方說可匯出 PPTX，且 Skill 目錄中有 PPTX HTML fidelity audit 類工具；這反而提醒我們，HTML deck 轉 PPTX 本來就可能有字體、裁切、斜體、間距、頁腳溢出等問題。</p>
+</li>
+<li>
+<p><strong>Word <code>.docx</code> 不是核心能力</strong><br />
+   目前公開頁面重心是 HTML / PDF / PPTX / prototype。若公司流程強制 Word 範本、簽核欄、頁碼、目錄、樣式表，Open Design 應定位為前期設計與轉譯工具，不是 Word 最終排版工具。</p>
+</li>
+<li>
+<p><strong>內容正確性仍靠人審</strong><br />
+   它可以把計劃書做漂亮，但不能自動保證市場數據、預算、法規、客戶需求正確。</p>
+</li>
+<li>
+<p><strong>需要本地 agent / CLI 基礎</strong><br />
+   官方 FAQ 說目前最少需要本地 daemon 加一個 agent；這對非技術使用者不是零摩擦。</p>
+</li>
+<li>
+<p><strong>模板美感不等於品牌合規</strong><br />
+   公司正式簡報常有品牌規範、法務揭露、保密標示、頁尾格式。Open Design 可以學 design system，但落地前仍要建立公司專用模板與審查清單。</p>
+</li>
+</ol>
+<h2 id="_6">對你的用途的判斷<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>如果目標是「更快生出能看的 PPT」，Open Design 很有用，尤其是：</p>
+<ul>
+<li>把筆記 / 報告變成簡報；</li>
+<li>產生多種視覺風格版本；</li>
+<li>做 pitch deck、產品提案、研究 briefing；</li>
+<li>先用 HTML / PDF 對齊，再決定要不要細修 PPTX。</li>
+</ul>
+<p>如果目標是「正式 Word 計劃書自動完稿」，它不是最直接的工具。更合理的定位是：</p>
+<blockquote>
+<p>用 Open Design 先把計劃書的邏輯、版面、圖表、簡報版跑出來；最後的 Word 正式版仍用既有文件工具或公司範本收尾。</p>
+</blockquote>
+<h2 id="_7">可放進資料庫的筆記<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Open Design 的價值不在於取代 PowerPoint 或 Word，而在於把 agent、Skill、design system 和 HTML / PDF / PPTX artifact 串成「文件交付前的設計工作台」。對 PPT，它能把大綱快速變成有一致視覺語言的 deck；對 Word 計劃書，它更適合做 PRD / proposal 的結構化、視覺化與簡報化，而不是直接取代 <code>.docx</code> 最終排版。第一性原理上，它解的是決策文件的理解成本：文字只是輸入，真正的產物是讓人快速看懂、願意討論、可以拿去展示的 artifact。</p>
+</blockquote>
+<h2 id="_8">後續可以實測的問題<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li>用同一份 <code>industry-ai-notes</code> 筆記，生成 HTML deck、PDF、PPTX，檢查三者版面保真度。</li>
+<li>建立一個「台灣企業計劃書」Skill：問題、背景、目標、資源、時程、風險、KPI、預算。</li>
+<li>建立一個「投資 / 董事會簡報」Design System：固定頁腳、資料來源、風險揭露、估值表格。</li>
+<li>測試 Word 工作流：HTML / Markdown → docx 是否能保留階層、表格、圖表與頁碼。</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
