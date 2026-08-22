@@ -17,7 +17,7 @@
 |---|---|---|
 | 新聞拆解 | 每日新聞選文；文章結構、產業訊號與判斷模型 | [最新 2026-08-22](./新聞拆解/2026/2026-08-22/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 長文、官方文件、技術文件、專題文章 | [最新](./文章拆解/2026/2026-07-09/README.md)｜[總索引](./文章拆解/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-21](./論文拆解/2026/2026-08-21/README.md)｜[總索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-08-22](./論文拆解/2026/2026-08-22/README.md)｜[總索引](./論文拆解/README.md) |
 | 其他筆記 | 工具、專案、公司資料與 repo 稽核 | [最新](./其他/2026/2026-07-09/README.md)｜[總索引](./其他/README.md) |
 | 專題討論 | 跨材料累積的專欄與知識地圖 | [專題索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md)｜[LLM Prompt Interface](./專題討論/LLM-Prompt-Interface/README.md)｜[Algorithmic Trading](./專題討論/Algorithmic-Trading/README.md) |
 | 思考模型 | 跨筆記抽象的框架與檢查清單 | [模型索引](./思考模型/README.md) |
@@ -48,6 +48,7 @@
 
 ### 論文 / 專題
 
+- [2026-08-22 論文](./論文拆解/2026/2026-08-22/README.md)：[OrthoSkillVLA](./論文拆解/2026/2026-08-22/01-orthoskillvla-continual-skill-subspace.md)、[Self-Demonstrated VLA Fine-Tuning](./論文拆解/2026/2026-08-22/02-self-demonstrated-vla-finetuning.md)
 - [2026-08-21 論文](./論文拆解/2026/2026-08-21/README.md)：[EAFG](./論文拆解/2026/2026-08-21/01-eafg-evidence-gated-tamp.md)、[DECOWAM](./論文拆解/2026/2026-08-21/02-decowam-whole-body-world-action.md)
 - [2026-08-20 論文](./論文拆解/2026/2026-08-20/README.md)：[Hydra-0](./論文拆解/2026/2026-08-20/01-hydra0-action-flow-world-model-control.md)、[ManiGuard](./論文拆解/2026/2026-08-20/02-maniguard-spec-grounded-robot-safety.md)
 - [2026-08-19 論文](./論文拆解/2026/2026-08-19/README.md)：[BATON](./論文拆解/2026/2026-08-19/01-baton-transition-aware-long-horizon.md)、[HAF](./論文拆解/2026/2026-08-19/02-haf-humanoid-vla-adaptation.md)
