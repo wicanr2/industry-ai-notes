@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-08-24｜Video2DoorTraversal；Surgical World-Action Modeling](./2026-08-24/README.md)
 - [2026-08-23｜EXIMO；What Matters for Latent Actions](./2026-08-23/README.md)
 - [2026-08-22｜OrthoSkillVLA；Self-Demonstrated VLA Fine-Tuning](./2026-08-22/README.md)
 - [2026-08-21｜EAFG；DECOWAM](./2026-08-21/README.md)
