@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-08-26](./2026/2026-08-26/README.md)
 - [2026-08-24](./2026/2026-08-24/README.md)
 - [2026-08-23](./2026/2026-08-23/README.md)
 - [2026-08-22](./2026/2026-08-22/README.md)
@@ -32,6 +33,7 @@
 
 ## 2026
 
+- [2026-08-26｜CounterAlign；Pointing-VLA](./2026/2026-08-26/README.md)
 - [2026-08-24｜Video2DoorTraversal；Surgical World-Action Modeling](./2026/2026-08-24/README.md)
 - [2026-08-23｜EXIMO；What Matters for Latent Actions](./2026/2026-08-23/README.md)
 - [2026-08-22｜OrthoSkillVLA；Self-Demonstrated VLA Fine-Tuning](./2026/2026-08-22/README.md)
