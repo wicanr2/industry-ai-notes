@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-08-28](./2026/2026-08-28/README.md)
 - [2026-08-27](./2026/2026-08-27/README.md)
 - [2026-08-26](./2026/2026-08-26/README.md)
 - [2026-08-24](./2026/2026-08-24/README.md)
@@ -34,6 +35,7 @@
 
 ## 2026
 
+- [2026-08-28｜R³；MA-VLA](./2026/2026-08-28/README.md)
 - [2026-08-27｜WorldEcho／WorldSync；ARLI](./2026/2026-08-27/README.md)
 - [2026-08-26｜CounterAlign；Pointing-VLA](./2026/2026-08-26/README.md)
 - [2026-08-24｜Video2DoorTraversal；Surgical World-Action Modeling](./2026/2026-08-24/README.md)
