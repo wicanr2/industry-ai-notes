@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-09-02｜VerNav；Adaptive Action Chunking](./2026-09-02/README.md)
 - [2026-08-31｜PanelShield；ContextPilot](./2026-08-31/README.md)
 - [2026-08-30｜STEP；TrapVLA](./2026-08-30/README.md)
 - [2026-08-29｜CLAP；FlashVLA](./2026-08-29/README.md)
