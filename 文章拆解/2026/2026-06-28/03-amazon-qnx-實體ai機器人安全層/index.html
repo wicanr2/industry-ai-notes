@@ -1,0 +1,999 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/2026/2026-06-28/03-amazon-qnx-%E5%AF%A6%E9%AB%94ai%E6%A9%9F%E5%99%A8%E4%BA%BA%E5%AE%89%E5%85%A8%E5%B1%A4/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Amazon 倉儲機器人與 QNX：從「會動的 AI」看實體 AI 的安全軟體層 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amazon-qnx-ai-ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Amazon 倉儲機器人與 QNX：從「會動的 AI」看實體 AI 的安全軟體層
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原始線索
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要來源索引
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主要來源索引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amazon-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon robotics 線
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnx-blackberry-physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      QNX / BlackBerry / Physical AI 線
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazon-qnx" class="md-nav__link">
+    <span class="md-ellipsis">
+      證據強度地圖：Amazon 和 QNX 到底有沒有連上？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-amazon-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 為什麼 Amazon 倉儲機器人不是單純的「AI 模型問題」？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qnx-ai-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. QNX 的位置：不是替代 AI，而是約束 AI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Amazon 為什麼是需求端的最佳案例？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      新聞敘事拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="新聞敘事拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fox-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fox Business 影片的寫法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnx-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      QNX 2026 新聞的寫法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型：AI 進入現實世界後，價值從模型轉向控制層
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型：AI 進入現實世界後，價值從模型轉向控制層">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      後續追蹤問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="amazon-qnx-ai-ai">Amazon 倉儲機器人與 QNX：從「會動的 AI」看實體 AI 的安全軟體層<a class="headerlink" href="#amazon-qnx-ai-ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原始線索<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>影片：<a href="https://www.youtube.com/watch?v=4xVeuLfCdj8">Fox Business｜Amazon’s $1 BILLION bet on robots is changing lives</a></li>
+<li>影片日期：2026-06-27</li>
+<li>影片主題：Fox Business 在 Amazon Westborough, MA facility 展示 Amazon Proteus robot，並把 Amazon 的機器人投資包裝成「改變工作與物流」的商業新聞。</li>
+<li>本筆記定位：使用者指定延伸查詢，收集與影片相關的 Amazon robotics / QNX / Physical AI 新聞與資料，並判斷兩者關聯強度。</li>
+</ul>
+<h2 id="_2">一句話拆解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Amazon 的新聞在講「AI 進入倉儲現場」；QNX 的新聞在講「AI 真正進入現場後，需要 deterministic、safety-certified 的軟體底座」；目前可找到 <strong>Amazon Industrial Robotics 招募直接列出 QNX 作為 RTOS 經驗範例</strong>，但尚未找到公開資料證明 Proteus 或 Amazon 倉儲機器人實際採用 QNX。</p>
+<h2 id="_3">主要來源索引<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="amazon-robotics">Amazon robotics 線<a class="headerlink" href="#amazon-robotics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.aboutamazon.com/news/operations/amazon-proteus-robot-europe-investment-employee-support">About Amazon｜Amazon unveils new Proteus robot in €10 billion European investment in its fulfillment centers</a>（2026-06-04）</li>
+<li>next-generation Proteus 可用自然語言指令接任務。</li>
+<li>Amazon 計畫投資超過 €10 billion 擴建與現代化歐洲 fulfillment network。</li>
+<li>
+<p>原版 Proteus 在美國 25 個 fulfillment centers 部署，可搬運接近 400 公斤的重型 carts。</p>
+</li>
+<li>
+<p><a href="https://www.aboutamazon.com/news/operations/amazon-europe-robotics-delivery-investment">About Amazon｜Amazon announces new robots, faster delivery, and 25,000 jobs in Europe</a>（2026-06-04）</p>
+</li>
+<li>Amazon 宣布超過 €10 billion 的歐洲 fulfillment center robotics 投資。</li>
+<li>歐洲 fulfillment center workforce 預計增加 25,000 人。</li>
+<li>
+<p>next-generation Proteus 可以用 conversational prompts 接收工作。</p>
+</li>
+<li>
+<p><a href="https://www.aboutamazon.com/news/operations/amazon-million-robots-ai-foundation-model">About Amazon｜Amazon launches a new AI foundation model to power its robotic fleet and deploys its 1 millionth robot</a>（2025-07-01）</p>
+</li>
+<li>Amazon 已部署第 100 萬台機器人。</li>
+<li>DeepFleet 是用來協調機器人 fleet movement 的 generative AI foundation model。</li>
+<li>Amazon 表示 DeepFleet 可提升 robot fleet travel time / efficiency 約 10%。</li>
+<li>
+<p>Proteus 被描述為 Amazon 第一個 fully autonomous mobile robot，可在開放區域安全繞過員工並搬運重型 carts。</p>
+</li>
+<li>
+<p><a href="https://www.aboutamazon.com/news/innovation-at-amazon/introducing-the-1-billion-amazon-industrial-innovation-fund">About Amazon｜Introducing the $1 billion Amazon Industrial Innovation Fund</a>（2022-04-21）</p>
+</li>
+<li>Amazon 建立 $1 billion venture investment program，投資 customer fulfillment、logistics、supply chain 的創新。</li>
+<li>投資範圍包含 robotics、AI、machine learning、autonomy、safety、logistics 等。</li>
+<li>
+<p>第一批投資包含 Agility Robotics、BionicHIVE、Mantis Robotics、Vimaan、Modjoul。</p>
+</li>
+<li>
+<p><a href="https://www.aboutamazon.com/news/operations/amazon-introduces-new-robotics-solutions">About Amazon｜Amazon announces 2 new ways it's using robots to assist employees and deliver for customers</a>（2023-10-18）</p>
+</li>
+<li>當時 Amazon 已有超過 750,000 robots 與員工協作。</li>
+<li>Sequoia 可讓 fulfillment center 收到的 inventory 被辨識與儲存的速度提升最多 75%。</li>
+<li>Sequoia 可讓訂單通過 fulfillment center 的處理時間減少最多 25%。</li>
+<li>
+<p>Amazon 開始測試 Agility Robotics 的 Digit，用於 tote recycling 等重複搬運工作。</p>
+</li>
+<li>
+<p><a href="https://www.amazon.jobs/en/jobs/3168533/software-development-engineer-ii-amazon-industrial-robotics">Amazon.jobs｜Software Development Engineer II, Amazon Industrial Robotics</a></p>
+</li>
+<li>這是目前找到的 <strong>Amazon 與 QNX 最直接的公開連結</strong>。</li>
+<li>職缺要求包含：embedded C applications that use an RTOS，例如 FreeRTOS、uC-OS、Zephyr、VxWorks、<strong>QNX</strong>，以及 embedded Linux environments。</li>
+<li>
+<p>注意：這只能證明 Amazon Industrial Robotics 招募時把 QNX 視為相關 RTOS 經驗；不能推出 Proteus 實際使用 QNX。</p>
+</li>
+<li>
+<p><a href="https://www.amazon.jobs/en/jobs/10393271/software-development-engineer-ii-amazon-robotics-proteus-amr-motion">Amazon.jobs｜Software Development Engineer II - Amazon Robotics, Proteus AMR, Motion</a></p>
+</li>
+<li>Proteus AMR motion 團隊工作內容包括 task planning、motion planning、control、navigation software。</li>
+<li>職缺文字提到 real-time robotics systems、embedded systems 或 real-time software development。</li>
+<li>這能證明 Proteus 軟體問題包含 real-time robotics / control，但沒有直接提到 QNX。</li>
+</ul>
+<h3 id="qnx-blackberry-physical-ai">QNX / BlackBerry / Physical AI 線<a class="headerlink" href="#qnx-blackberry-physical-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://qnx.software/en/press-release/2026/qnx-and-nvidia-deepen-collaboration-to-advance-safety-critical-edge-ai-across-robotics-medical-and-industrial-systems">QNX｜QNX and NVIDIA Deepen Collaboration to Advance Safety-Critical Edge AI Across Robotics, Medical, and Industrial Systems</a>（2026-04-20）</li>
+<li>QNX OS for Safety 8.0 整合 NVIDIA IGX Thor 與 Halos Safety Stack。</li>
+<li>QNX 稱此整合用於 robotics、medical technologies、industrial applications 等 regulated AI-enabled systems。</li>
+<li>
+<p>文章明確說明：在 NVIDIA accelerated compute 做 AI perception / planning / decision-making 的同時，QNX 提供 deterministic、microkernel-based RTOS 承載 real-time controls 與 safety concepts。</p>
+</li>
+<li>
+<p><a href="https://qnx.software/en/press-release/2026/new-qnx-research-finds-software-is-the-biggest-bottleneck-to-robotics-innovation-as-physical-ai-accelerates">QNX｜New QNX Research Finds Software is the Biggest Bottleneck to Robotics Innovation as Physical AI Accelerates</a>（2026-05-27）</p>
+</li>
+<li>調查 1,000 名 robotics developers。</li>
+<li>89% 表示 Physical AI 對未來計畫重要。</li>
+<li>95% 表示 deterministic、real-time behaviour 對其系統重要。</li>
+<li>91% 仍使用 general-purpose operating systems 跑 real-time 或 safety-critical workloads。</li>
+<li>
+<p>這篇是理解 QNX 市場敘事的核心：機器人從 demo 走向人類共處現場時，軟體瓶頸從「能不能跑模型」變成「能不能可靠、即時、可驗證地動」。</p>
+</li>
+<li>
+<p><a href="https://qnx.software/en/industries/robotics">QNX｜Robotics industry page</a></p>
+</li>
+<li>QNX 把自己定位為 robotics industry 的 embedded software foundation。</li>
+<li>應用場景包含 industrial automation、logistics、autonomous mobile robots。</li>
+<li>
+<p>QNX 強調 real-time performance、safety certifications、security、predictability、determinism。</p>
+</li>
+<li>
+<p><a href="https://qnx.software/en/software/products-and-solutions/qnx-os-and-os-for-safety">QNX｜QNX OS for Safety</a></p>
+</li>
+<li>QNX OS for Safety 8.0 是 certified RTOS for functional safety and cybersecurity。</li>
+<li>
+<p>QNX 強調 safe-by-design microkernel architecture、deterministic behavior、system integrity。</p>
+</li>
+<li>
+<p>BlackBerry Q1 FY2027 earnings release（PDF）：<a href="https://irp.cdn-website.com/586e2b1b/files/uploaded/Q1+FY27+Earnings+Release+FINAL.pdf">Q1 FY27 Earnings Release FINAL</a>（2026-06-25）</p>
+</li>
+<li>BlackBerry revenue 年增 26% 至約 $153 million。</li>
+<li>QNX revenue 年增 26% 至 $72.3 million。</li>
+<li>QNX segment adjusted gross margin 年增 5 個百分點至 86%。</li>
+<li>QNX segment adjusted EBITDA 年增 52% 至 $19.3 million。</li>
+<li>
+<p>BlackBerry 將 physical AI、software-defined vehicles、general embedded market 視為 QNX 的多年度成長機會。</p>
+</li>
+<li>
+<p>Reuters / CTV 轉載：<a href="https://www.ctvnews.ca/business/article/blackberry-lifts-annual-revenue-forecast-as-qnx-unit-powers-growth/">BlackBerry lifts annual revenue forecast as QNX unit powers growth</a>（2026-06-25）</p>
+</li>
+<li>BlackBerry 提高年度營收預測，理由是 QNX division 動能延續。</li>
+<li>文章稱 QNX provides secure real-time operating systems for mission-critical embedded systems，最主要在 automotive sector。</li>
+<li>
+<p>QNX backlog 接近 $1 billion in future royalties。</p>
+</li>
+<li>
+<p>Reuters / CTV 轉載：<a href="https://www.ctvnews.ca/business/article/amazon-unveils-new-ai-warehouse-robot-in-us12-billion-europe-push/">Amazon unveils new AI warehouse robot in US$12 billion Europe push</a>（2026-06-04）</p>
+</li>
+<li>Amazon 發表 upgraded AI-powered mobile robot，可回應 conversational prompts。</li>
+<li>這是 €10 billion / US$11.6 billion 歐洲 fulfillment network 投資的一部分。</li>
+<li>文章把 next-generation Proteus、STARK、Vulcan 放在同一條 warehouse robotics investment 線上。</li>
+</ul>
+<h2 id="amazon-qnx">證據強度地圖：Amazon 和 QNX 到底有沒有連上？<a class="headerlink" href="#amazon-qnx" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>層級</th>
+<th>判斷</th>
+<th>目前證據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接產品採用</td>
+<td>未找到</td>
+<td>尚未找到公開資料說 Proteus、DeepFleet、Sequoia、Vulcan 或 Amazon 倉儲機器人「使用 QNX」。</td>
+</tr>
+<tr>
+<td>直接招募線索</td>
+<td>有</td>
+<td>Amazon Industrial Robotics 職缺列出 RTOS 經驗範例：FreeRTOS、uC-OS、Zephyr、VxWorks、QNX。</td>
+</tr>
+<tr>
+<td>技術問題重疊</td>
+<td>強</td>
+<td>Proteus / Amazon Robotics 明確涉及 embedded software、real-time robotics systems、motion planning、control、safety、human-robot coexistence。</td>
+</tr>
+<tr>
+<td>產業敘事重疊</td>
+<td>很強</td>
+<td>QNX 2026 敘事主軸正是 Physical AI、robotics、AMR、deterministic RTOS、安全認證、AI perception 到 physical action 的可靠轉換。</td>
+</tr>
+<tr>
+<td>投資敘事重疊</td>
+<td>強</td>
+<td>Amazon 是場景與需求端；QNX 是安全軟體層與嵌入式平台端。兩者都受益於「AI 從螢幕走向現場」這條主線。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">第一性原理拆解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-amazon-ai">1. 為什麼 Amazon 倉儲機器人不是單純的「AI 模型問題」？<a class="headerlink" href="#1-amazon-ai" title="Permanent link">&para;</a></h3>
+<p>在聊天機器人裡，錯一個 token 通常只是體驗問題；在倉儲機器人裡，錯一個動作可能是碰撞、停線、傷害、貨損或產能下降。</p>
+<p>所以 Proteus 這類 AMR 的基本問題不是「能不能理解指令」而已，而是：</p>
+<ol>
+<li>能不能把高層指令拆成可執行任務。</li>
+<li>能不能在多人、多車、多貨架、多變動路徑的現場做 motion planning。</li>
+<li>能不能用 sensors / cameras / edge compute 感知環境。</li>
+<li>能不能在毫秒級時間內做 predictable response。</li>
+<li>能不能在異常時 fail safe，而不是只回傳錯誤訊息。</li>
+</ol>
+<p>換句話說，倉儲機器人的護城河不是「模型會不會講話」，而是 <strong>模型輸出的意圖如何被轉成安全、即時、可驗證的物理行動</strong>。</p>
+<h3 id="2-qnx-ai-ai">2. QNX 的位置：不是替代 AI，而是約束 AI<a class="headerlink" href="#2-qnx-ai-ai" title="Permanent link">&para;</a></h3>
+<p>QNX 的市場敘事很精準：AI 可以是 probabilistic，但機器人的底層動作不能完全 probabilistic。尤其當機器人開始跟人共用空間時，系統需要 deterministic behavior。</p>
+<p>可抽象成一個三層架構：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>高層 AI / 任務理解：我要做什麼？
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>中層 planning / coordination：我要走哪裡、先做什麼、避開誰？
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>底層 RTOS / control / safety：我每一個動作能否準時、可靠、可驗證地執行？
+</code></pre></div>
+<p>Amazon 的 DeepFleet 與 next-gen Proteus 強調上中層：fleet coordination、conversational prompts、route / timing / priority。QNX 強調底層：determinism、real-time control、safety certification、microkernel isolation。</p>
+<p>這兩條新聞放在一起看，真正的題目是：<strong>Physical AI 的價值鏈正在分層</strong>。</p>
+<h3 id="3-amazon">3. Amazon 為什麼是需求端的最佳案例？<a class="headerlink" href="#3-amazon" title="Permanent link">&para;</a></h3>
+<p>Amazon 有幾個一般 robotics startup 很難同時擁有的條件：</p>
+<ul>
+<li>巨量場景：全球 fulfillment / sortation / delivery network。</li>
+<li>巨量資料：DeepFleet 直接從 fulfillment centers 與 sortation centers 的 robot movement data 學習。</li>
+<li>明確 ROI：縮短 travel time、降低 cost-to-serve、提升配送速度。</li>
+<li>自有需求：不用等外部客戶教育市場，自己就是最大客戶。</li>
+<li>人機共處壓力：倉儲不是封閉 demo 場，必須跟員工共用空間。</li>
+</ul>
+<p>這也是為什麼 Amazon robotics 新聞值得和 QNX 一起讀：Amazon 呈現需求側的規模化壓力；QNX 呈現供給側的可靠性與安全認證壓力。</p>
+<h2 id="_5">新聞敘事拆解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="fox-business">Fox Business 影片的寫法<a class="headerlink" href="#fox-business" title="Permanent link">&para;</a></h3>
+<p>影片標題把重點放在 “$1 BILLION bet” 與 “changing lives”。這種商業新聞寫法通常會把複雜技術壓縮成三個訊號：</p>
+<ol>
+<li>資本投入夠大，所以不是玩具。</li>
+<li>現場機器人會動，所以可視化效果強。</li>
+<li>員工工作被改變，所以有社會與勞動敘事。</li>
+</ol>
+<p>但這種寫法容易漏掉真正核心：倉儲機器人的困難不是「讓機器動起來」，而是讓它在高密度、低容錯、人機混行的場域裡穩定運作。</p>
+<h3 id="qnx-2026">QNX 2026 新聞的寫法<a class="headerlink" href="#qnx-2026" title="Permanent link">&para;</a></h3>
+<p>QNX / BlackBerry 的敘事則是把自己從「車用嵌入式軟體」重新擺進 Physical AI：</p>
+<ol>
+<li>AI 越來越會做決策。</li>
+<li>這些決策會進入車、機器人、醫療、工業設備。</li>
+<li>一旦 AI 牽涉物理行動，就需要 real-time determinism 與 safety certification。</li>
+<li>QNX 因為 microkernel、RTOS、安全認證與 automotive 經驗，可以變成 physical AI stack 的底座。</li>
+</ol>
+<p>這是典型的「舊能力重新命名到新週期」：QNX 不是突然變成 AI 公司，而是把原本 mission-critical embedded software 的能力，重新掛到 AI / robotics 的成長敘事上。</p>
+<h2 id="ai">可抽象成的思考模型：AI 進入現實世界後，價值從模型轉向控制層<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<h3 id="_6">模型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>純軟體 AI：輸出錯誤 → 使用者修正 / 重試
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>實體 AI：輸出錯誤 → 可能造成碰撞 / 傷害 / 停線 / 法規責任
+</code></pre></div>
+<p>因此實體 AI 的價值鏈會從「誰的模型最聰明」逐步轉向：</p>
+<ul>
+<li>誰有最多真實場景資料？</li>
+<li>誰能把 AI decision 接到 real-time control？</li>
+<li>誰能證明安全？</li>
+<li>誰能規模化部署並維護？</li>
+<li>誰能通過車用、醫療、工業等安全認證？</li>
+</ul>
+<p>Amazon 的答案偏向場景、資料、部署、物流 ROI。QNX 的答案偏向 deterministic software foundation、安全認證、嵌入式可靠性。</p>
+<h2 id="_7">我可以放進資料庫的筆記<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>不要把 Amazon robotics 與 QNX 直接畫等號。</strong> 目前只找到 Amazon Industrial Robotics 職缺列 QNX 作為 RTOS 經驗範例，尚未找到 Proteus 採用 QNX 的公開證據。</li>
+<li><strong>Amazon 是 Physical AI 的 demand-side case study。</strong> 它把 conversational AI、fleet foundation model、AMR、robotic arms、touch sensing、物流 ROI 放進同一個倉儲系統。</li>
+<li><strong>QNX 是 Physical AI 的 safety-layer case study。</strong> 它的 2026 敘事不是「做 AI 模型」，而是「讓 AI 驅動的物理系統能 deterministic、real-time、safety-certified 地執行」。</li>
+<li><strong>真正值得追的不是單一機器人，而是 stack 分層。</strong> 高層模型、中層 planning、底層 RTOS / safety / control 會逐漸形成不同供應鏈與估值邏輯。</li>
+<li><strong>投資敘事風險：</strong> QNX 能否吃到 robotics 成長，不只取決於 Physical AI 是否成長，也取決於 robotics OEM 是否願意從 Linux / ROS / 自研 RTOS / 其他商用 RTOS 遷移到 safety-certified commercial stack。</li>
+</ul>
+<h2 id="_8">後續追蹤問題<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Amazon Proteus / Sequoia / Vulcan / STARK 是否有公開供應商、專利、工程演講或招聘內容揭露底層 RTOS / middleware？</li>
+<li>Amazon Robotics 的 real-time control stack 是完全自研、Linux + real-time patches、ROS2、商用 RTOS，還是混合架構？</li>
+<li>QNX + NVIDIA IGX Thor 的 robotics design wins 是否會公布具名客戶？</li>
+<li>QNX 的 General Embedded Market（GEM）營收是否能從 automotive 外溢到 robotics、medical、industrial automation？</li>
+<li>如果 robotics 開發者 91% 仍在用 general-purpose OS 跑 real-time / safety-critical workloads，真正阻礙遷移到 QNX 的是成本、開發者生態、ROS 相容性、認證流程，還是既有架構 inertia？</li>
+</ol>
+<h2 id="_9">仍不確定的地方<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>沒有公開證據顯示 Proteus 實際使用 QNX。</li>
+<li>Amazon.jobs 的 QNX 關鍵字是技能要求，不等於產品採用。</li>
+<li>QNX 官方對 robotics / Physical AI 的說法是自我定位與市場敘事，需要後續用具名客戶、營收分拆、design win、開發者採用率驗證。</li>
+<li>Reuters / CTV 的 BlackBerry QNX 財務報導可支持「QNX 正在成為成長敘事」，但不能直接支持「Amazon 是 QNX 客戶」。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

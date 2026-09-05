@@ -1,0 +1,938 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/2026-06-28/06-google%E9%99%90%E5%88%B6meta-gemini%E7%AE%97%E5%8A%9B/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Google 傳限制 Meta 使用 Gemini：AI 需求爆量後，模型供應變成配額政治 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-meta-geminiai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google 傳限制 Meta 使用 Gemini：AI 需求爆量後，模型供應變成配額政治
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      相關來源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼選這篇
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章架構地圖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模型服務不是軟體商品，而是即時產能商品
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Meta 被限制的意義：自建算力仍不等於完全自給
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Token 成本開始內部化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Google 的兩難：賣給競爭對手，還是保留給自己？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      影響性評估
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="影響性評估">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-alphabet" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 Google / Alphabet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 Meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      對企業 AI 客戶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 AI 供應鏈與台灣
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型：從模型競爭到配額競爭
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型：從模型競爭到配額競爭">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      判斷一家公司 AI 成熟度的新問題
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="google-meta-geminiai">Google 傳限制 Meta 使用 Gemini：AI 需求爆量後，模型供應變成配額政治<a class="headerlink" href="#google-meta-geminiai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>原文標題：<a href="https://udn.com/news/story/6811/9594018">AI需求爆量 Google傳已限制Meta使用Gemini模型</a></li>
+<li>分享連結：<a href="https://share.google/mLXOcjdcAlksPcgrw">https://share.google/mLXOcjdcAlksPcgrw</a></li>
+<li>來源：聯合新聞網／全球財經</li>
+<li>作者：編譯易起宇／綜合外電</li>
+<li>發布時間：2026-06-28 21:29:32 +08:00</li>
+<li>更新時間：2026-06-28 21:34:03 +08:00</li>
+<li>原始報導線索：聯合新聞網引述英國金融時報（FT）報導</li>
+<li>取用日期：2026-06-28</li>
+<li>類型：使用者指定額外收錄，不計入每日自動選文上限</li>
+</ul>
+<h2 id="_2">相關來源<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/resources/throughput-quota">Google Cloud Docs｜Throughput quota</a></li>
+<li>Google Cloud 文件把 Gemini Enterprise Agent Platform 的模型使用分成 pay-as-you-go 與 reserved capacity；critical production applications 可使用 Provisioned Throughput 取得 predictable throughput。</li>
+<li><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deploy/provisioned-throughput">Google Cloud Docs｜Provisioned Throughput</a></li>
+<li>Provisioned Throughput 是固定成本、固定期間的 throughput reservation；若超過購買額度，可 spillover 到 pay-as-you-go，或選擇只用 Provisioned Throughput，超額時回傳 <code>429</code>。</li>
+<li><a href="https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf">Alphabet Q1 2026 earnings release PDF</a></li>
+<li>Google Cloud Q1 2026 revenue 年增 63% 至 200 億美元，成長來自 enterprise AI Solutions、enterprise AI Infrastructure 與 core GCP services。</li>
+<li>Q1 2026 purchases of property and equipment 為 356.74 億美元。</li>
+<li><a href="https://www.nasdaq.com/press-release/meta-reports-first-quarter-2026-results-2026-04-29">Nasdaq／PRNewswire｜Meta Reports First Quarter 2026 Results</a></li>
+<li>Meta Q1 2026 capital expenditures including principal payments on finance leases 為 198.4 億美元。</li>
+<li>Meta 預期 2026 capital expenditures 區間為 1,250–1,450 億美元，高於先前的 1,150–1,350 億美元；理由包含更高 component pricing，以及支撐未來年度容量的 data center costs。</li>
+<li><a href="https://www.cnbc.com/2026/04/29/meta-q1-earnings-report-2026.html">CNBC｜Meta stock drops on quarterly results...</a></li>
+<li>CNBC 轉述 Meta 年度 capex guidance 上修至 1,250–1,450 億美元，並指出 AI infrastructure / data center buildout 的成本壓力。</li>
+</ul>
+<h2 id="_3">為什麼選這篇<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>這篇不是單純的「Google 與 Meta 競爭」八卦，而是一個很好的稀缺性訊號：當 Meta 這種本身也在砸巨額 AI capex 的公司，仍需要大量使用 Google 的 Gemini，而且還可能被 Google 設上限，代表 AI 供應鏈的瓶頸已經從晶片、資料中心、電力，進一步傳導到 <strong>模型服務配額</strong> 與 <strong>token 預算治理</strong>。</p>
+<p>也就是說，AI 不再只是「誰的模型最好」；它開始變成「誰有權拿到足夠穩定的模型吞吐量」。</p>
+<h2 id="_4">一句話拆解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Google 限制 Meta 使用 Gemini 的傳聞，表面上是競爭對手之間的商業安排，底層其實是 AI 基礎設施稀缺後出現的配額政治：算力不足時，模型供應商必須在自家產品、企業客戶、競爭對手與長期戰略之間分配 token。</p>
+<h2 id="_5">文章架構地圖<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>區塊</th>
+<th>表層訊息</th>
+<th>深層作用</th>
+<th>讀者被引導相信什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開頭</td>
+<td>Google 傳對 Meta 使用 Gemini 設上限</td>
+<td>先用兩大科技巨頭的反常關係製造張力</td>
+<td>連 Meta 這種大公司也會遇到 AI 供應限制</td>
+</tr>
+<tr>
+<td>FT 線索</td>
+<td>Google 3 月左右通知 Meta 設定 Gemini 使用量上限，影響內部 AI 計畫</td>
+<td>把事件從市場傳聞變成可追蹤的供應鏈訊號</td>
+<td>這不是一般 API rate limit，而是大型客戶級別的容量分配</td>
+</tr>
+<tr>
+<td>Meta 內部影響</td>
+<td>Meta 鼓勵員工提高 token 使用效率，部分內部 AI 計畫受干擾或延期</td>
+<td>把抽象算力短缺翻譯成組織行為：節流、延後、優先級排序</td>
+<td>token 已成為企業內部可管理的成本與稀缺資源</td>
+</tr>
+<tr>
+<td>使用場景</td>
+<td>Gemini 被用於安全流程、詐騙內容排除、有害內容下架、客服與廣告聊天機器人；也搭配 Claude 強化工作流與 coding</td>
+<td>顯示外部模型不只用於玩具功能，而是進入企業核心營運流程</td>
+<td>frontier model API 已成為大型平台的營運基礎設施</td>
+</tr>
+<tr>
+<td>結尾</td>
+<td>科技公司投資數百億美元於晶片、資料中心與電力，仍難確保運算資源</td>
+<td>把單一事件拉回整個 AI 基建瓶頸</td>
+<td>AI 需求成長速度仍快於基礎設施供給速度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">第一性原理拆解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 模型服務不是軟體商品，而是即時產能商品<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>傳統 SaaS 的邊際供應成本很低：多一個使用者，通常只是多一點伺服器與資料庫成本。大型生成式 AI 模型不同。每一次推理都會消耗昂貴的 accelerator time、HBM、電力、網路、冷卻與排程資源。</p>
+<p>所以 Gemini、Claude、GPT 這類服務更像即時產能市場：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>模型能力 = 演算法 + 權重 + 推理基礎設施 + 排程與配額
+</code></pre></div>
+<p>當需求低於供給，大家看到的是 API 商品；當需求高於供給，真正的產品變成「穩定拿到多少 throughput」。</p>
+<p>Google Cloud 文件裡的 Provisioned Throughput 很能說明這點：critical workloads 若需要 consistent performance，就要預先保留模型 throughput。這代表模型供應已經像雲端 VM、GPU instance、電力容量一樣，進入預留制與配額制。</p>
+<h3 id="2-meta">2. Meta 被限制的意義：自建算力仍不等於完全自給<a class="headerlink" href="#2-meta" title="Permanent link">&para;</a></h3>
+<p>Meta 2026 年度 capex guidance 已高達 1,250–1,450 億美元。Alphabet 2026 年 capex guidance 市場報導則約在 1,800–1,900 億美元；僅兩家公司合計，就可能達到 3,050–3,350 億美元等級。Q1 2026 Alphabet 的 property and equipment purchases 為 356.74 億美元，Meta Q1 capex 為 198.4 億美元，合計 555.14 億美元。</p>
+<p>這些數字說明：問題不是巨頭不投資，而是需求曲線更陡。</p>
+<p>Meta 即使大規模投資自家 AI infrastructure，仍可能在某些內部流程上使用 Gemini、Claude 等外部模型。原因可能包括：</p>
+<ul>
+<li>不同模型在 safety、coding、客服、廣告流程上各有優勢。</li>
+<li>內部模型產能要優先給核心產品、訓練與推理任務。</li>
+<li>外部模型可作為 ensemble、fallback、評測或 workflow automation 的一部分。</li>
+<li>自建資料中心交付有時間差，短期需求只能靠外部模型補位。</li>
+</ul>
+<p>因此「自建模型」和「完全不依賴外部模型」不是同一件事。大型平台會變成多模型、多雲、多供應商的組合治理問題。</p>
+<h3 id="3-token">3. Token 成本開始內部化<a class="headerlink" href="#3-token" title="Permanent link">&para;</a></h3>
+<p>新聞提到 Meta 鼓勵員工提高 token 使用效率。這個細節很重要，因為它代表 AI 使用從「鼓勵大家多試」進入「治理每個單位的消耗」。</p>
+<p>企業內部會開始出現新的管理問題：</p>
+<ul>
+<li>哪些任務值得用最高階模型？</li>
+<li>哪些任務可以降級到 cheaper / smaller model？</li>
+<li>哪些 prompt 太浪費 token？</li>
+<li>哪些自動化流程要限流？</li>
+<li>哪些部門可以取得更高 quota？</li>
+</ul>
+<p>過去公司控管的是雲端 bill、DB query、CI minutes；未來會控管 token budget、model class、latency SLO 與 reserved throughput。</p>
+<h3 id="4-google">4. Google 的兩難：賣給競爭對手，還是保留給自己？<a class="headerlink" href="#4-google" title="Permanent link">&para;</a></h3>
+<p>如果報導屬實，Google 面臨的不是單純容量不足，而是戰略分配問題。</p>
+<p>Google 可以把 Gemini capacity 賣給 Meta，得到收入；但 Meta 又是廣告、社群、AI assistant、developer workflow 上的競爭對手。當 capacity 稀缺時，Google 要問：</p>
+<ul>
+<li>這些 token 給自家 Search、Workspace、Cloud 客戶，還是給 Meta？</li>
+<li>大客戶收入是否值得犧牲自家產品體驗？</li>
+<li>若對競爭對手設限，是否傷害 Google Cloud 作為中立供應商的信任？</li>
+<li>若不設限，是否等於用自家算力幫競爭者加速？</li>
+</ul>
+<p>AI infrastructure 稀缺後，雲端供應商的「中立性」會受到更大考驗。傳統 cloud 可以同時服務 Netflix 與自家影音競爭產品；但 frontier model capacity 更稀缺、更策略化，供應商可能更難假裝自己只是管線。</p>
+<h2 id="_7">影響性評估<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="google-alphabet">對 Google / Alphabet<a class="headerlink" href="#google-alphabet" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>正面：</strong> Gemini demand 過剩代表產品與雲端 AI 服務有強需求，能支撐 Google Cloud 的 enterprise AI Infrastructure / Solutions 成長。</li>
+<li><strong>負面：</strong> 若大型客戶拿不到足夠 capacity，Google Cloud 的可靠供應形象會受壓；企業可能加速採用多供應商策略。</li>
+<li><strong>戰略問題：</strong> Google 需要決定 Gemini 是「開放賣給所有企業的雲服務」，還是「優先服務自家 AI 產品的戰略資產」。兩者在供給充足時可兼容，供給不足時會衝突。</li>
+</ul>
+<h3 id="meta">對 Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>營運影響：</strong> 若安全流程、客服、廣告協助、coding workflow 都使用外部模型，quota 被限制會造成內部計畫延遲與效率下降。</li>
+<li><strong>成本治理：</strong> token efficiency 變成員工行為要求，代表 AI 使用已進入財務與營運管理層。</li>
+<li><strong>戰略壓力：</strong> Meta 必須加快自家模型與基礎設施自給，但同時仍要維持多模型策略，避免被單一競爭對手掐住供應。</li>
+</ul>
+<h3 id="ai">對企業 AI 客戶<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>採購重點改變：</strong> 不能只問模型 benchmark，要問 capacity commitment、SLA、region、spillover、429 policy、reserved throughput、資料治理。</li>
+<li><strong>架構重點改變：</strong> production workflow 需要 model routing、fallback、降級策略、prompt compression、快取與批次化。</li>
+<li><strong>財務重點改變：</strong> token budget 會像 cloud budget 一樣被分配與審核。</li>
+</ul>
+<h3 id="ai_1">對 AI 供應鏈與台灣<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<p>這則新聞和近期「先進封裝成 AI 咽喉」「AI 資料中心擠壓記憶體」其實是同一條鏈：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>模型需求爆量
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>→ 推理需求爆量
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>→ GPU / TPU / HBM / 先進封裝 / 電力 / 資料中心吃緊
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>→ 模型服務商設 quota / reserved throughput
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>→ 企業內部開始治理 token 使用
+</code></pre></div>
+<p>對台灣供應鏈而言，這強化了 AI 基建需求的長週期，但也提醒需求不是無風險直線上升：當模型供應進入配額制，客戶會更重視單位 token 成本、推理效率與能源效率，這會影響 GPU、ASIC、HBM、先進封裝、伺服器、散熱與電力建設的投資節奏。</p>
+<h2 id="_8">可抽象成的思考模型：從模型競爭到配額競爭<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">模型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>第一階段：誰有最強模型？
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>第二階段：誰能便宜呼叫模型？
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>第三階段：誰能穩定取得足夠模型吞吐量？
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>第四階段：誰能把 token 當成組織資源來治理？
+</code></pre></div>
+<p>在第三、第四階段，AI 競爭的核心不只是 intelligence，而是 allocation。</p>
+<h3 id="ai_2">判斷一家公司 AI 成熟度的新問題<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>它有沒有 model routing，而不是所有任務都丟最高階模型？</li>
+<li>它有沒有 reserved capacity，而不是只靠 pay-as-you-go？</li>
+<li>它有沒有 token budget owner？</li>
+<li>它有沒有 fallback model / fallback vendor？</li>
+<li>它有沒有衡量每個 AI workflow 的 ROI，而不是只看 demo 效果？</li>
+<li>它有沒有把 latency、quota、429、spillover 納入產品設計？</li>
+</ol>
+<h2 id="_10">我可以放進資料庫的筆記<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AI 模型服務正在從 API 商品變成產能商品。</strong> 當需求超過供給，真正稀缺的不是模型名稱，而是可承諾的 throughput。</li>
+<li><strong>巨頭也會受制於外部模型供應。</strong> Meta 大量投資 AI capex，仍可能依賴 Gemini、Claude 等外部模型處理安全、客服、廣告、coding workflow。</li>
+<li><strong>token efficiency 是新的組織治理語言。</strong> 企業會開始像管 cloud spend 一樣管 token spend。</li>
+<li><strong>Google Cloud 的中立性會受考驗。</strong> 當 Gemini capacity 稀缺，Google 必須在自家產品、雲端客戶與競爭對手之間分配模型產能。</li>
+<li><strong>供應鏈影響不只在 GPU。</strong> 先進封裝、HBM、電力、資料中心、推理效率、模型路由與配額制度共同決定 AI 實際可用產能。</li>
+</ul>
+<h2 id="_11">仍不確定的地方<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>聯合新聞網引用 FT；我目前可讀到的是聯合新聞全文與相關公開文件，未完整讀取 FT 原文全文。</li>
+<li>Google 與 Meta 是否有正式回應、限制額度是多少、影響哪些 Meta 專案，公開資料仍不足。</li>
+<li>「限制 Meta 使用 Gemini」可能同時包含商業合約、容量調度、風險控管與競爭策略，不應簡化成單一原因。</li>
+<li>Meta 使用 Gemini 與 Claude 的內部比例、任務分配與替代性並未公開。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

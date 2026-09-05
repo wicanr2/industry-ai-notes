@@ -1,0 +1,1126 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-07-06/01-nvidia-halos-physical-ai-safety-platform/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>專欄｜NVIDIA Halos for Robotics：Physical AI 的安全平台不是一個套件，而是一整條責任鏈 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nvidia-halos-for-roboticsphysical-ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              專欄｜NVIDIA Halos for Robotics：Physical AI 的安全平台不是一個套件，而是一整條責任鏈
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼寫這篇
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章架構地圖
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文章架構地圖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-industrys-first-full-stack-safety-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 先用「industry’s first full-stack safety system」定義戰場
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-av-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 接著把 AV 安全資產轉成 robotics 正當性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-stack-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 再把 stack 分成硬體、OS、外部感知、檢驗實驗室
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-agility-digit" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 用 Agility / Digit 當第一個具體落地案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 最後用 ecosystem 把平台變成產業標準候選者
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halos" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解：Halos 解決的不是「機器人會不會動」，而是「誰能相信它可以動」
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解：Halos 解決的不是「機器人會不會動」，而是「誰能相信它可以動」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題 1：Physical AI 的風險不是純軟體風險
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inside-out-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題 2：傳統 inside-out safety 在某些場景會傷害效率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3ai-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題 3：AI safety 必須處理「輸入何時不可相信」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4certification-physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題 4：certification 是 Physical AI 的真正落地瓶頸
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Halos 平台的能力地圖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      要駕馭 Halos，需要理解哪些技能樹？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="要駕馭 Halos，需要理解哪些技能樹？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-functional-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Functional Safety / 工業安全標準
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-embedded-real-time-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Embedded / Real-Time / RTOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-robotics-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Robotics stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-vision-ai-multi-camera-perception" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Vision AI / Multi-camera perception
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-safety-agent-decision-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Safety agent / Decision logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-simulation-digital-twin-sil-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Simulation / Digital Twin / SIL / HIL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-cybersecurity-secure-sensor-data-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Cybersecurity / Secure sensor data path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-platform-ecosystem-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Platform / Ecosystem integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      對台灣供應鏈與自動化公司的觀察
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型：Physical AI 平台三問
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      後續追蹤清單
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nvidia-halos-for-roboticsphysical-ai">專欄｜NVIDIA Halos for Robotics：Physical AI 的安全平台不是一個套件，而是一整條責任鏈<a class="headerlink" href="#nvidia-halos-for-roboticsphysical-ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>原文：NVIDIA Newsroom — <a href="https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai">NVIDIA Announces Halos for Robotics, the Industry’s First Full-Stack Safety System for Physical AI</a></li>
+<li>發布日期：2026-06-22</li>
+<li>補充來源：NVIDIA Developer Blog — <a href="https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/">Inside NVIDIA Halos for Robotics: A Full-Stack Functional Safety System for Physical AI</a></li>
+<li>補充來源：NVIDIA — <a href="https://www.nvidia.com/en-us/ai-trust-center/halos/robotics/">Halos: Robotics Safety</a></li>
+<li>補充來源：GitHub — <a href="https://github.com/NVIDIA/halos-outside-in-safety">NVIDIA/halos-outside-in-safety</a></li>
+<li>擷取日期：2026-07-06</li>
+</ul>
+<h2 id="_2">為什麼寫這篇<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Halos 值得單獨做專欄，不是因為 NVIDIA 又推出一個 robotics SDK，而是它把 Physical AI 的問題重新定義成「可驗證的安全責任鏈」。</p>
+<p>過去討論機器人 AI，常會集中在：</p>
+<ul>
+<li>模型能不能看懂環境；</li>
+<li>VLA / policy 能不能控制動作；</li>
+<li>Isaac Sim 能不能做 sim-to-real；</li>
+<li>AMR / humanoid 能不能進工廠、倉庫、物流場域。</li>
+</ul>
+<p>但真正進入現場時，問題會變成另一個層次：<strong>誰證明它在異常狀態下仍然安全？誰界定 AI 輸出何時不可靠？誰把 sensor、compute、OS、middleware、decision logic、certification 串成可被第三方檢查的系統？</strong></p>
+<p>Halos 的訊號在這裡：Physical AI 若要從 demo 走向 deployment，安全不再只是 robot 上的一個 emergency stop，也不是模型外面包一層 guardrail，而是平台級、安全標準級、供應鏈級的整合能力。</p>
+<h2 id="_3">一句話拆解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>NVIDIA Halos for Robotics 是把 NVIDIA 在自駕車安全堆疊累積的硬體、OS、sensor bridge、functional safety blueprint 與檢驗流程，移植到 humanoid、AMR、工業機器人的 Physical AI 安全平台。</p>
+<h2 id="_4">文章架構地圖<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-industrys-first-full-stack-safety-system">1. 先用「industry’s first full-stack safety system」定義戰場<a class="headerlink" href="#1-industrys-first-full-stack-safety-system" title="Permanent link">&para;</a></h3>
+<p>新聞稿一開始不是從模型能力或 robot performance 開場，而是先宣稱 Halos 是 full-stack safety system。這個寫法的目的，是把比較軸從「誰的 robot 比較聰明」移到「誰能讓 robot 在人類環境中被允許運作」。</p>
+<p>這是一個很重要的敘事轉向：</p>
+<ul>
+<li>demo 階段比的是 capability；</li>
+<li>pilot 階段比的是 integration；</li>
+<li>production 階段比的是 certification、liability、operational safety。</li>
+</ul>
+<p>Halos 要搶的是第三層。</p>
+<h3 id="2-av-robotics">2. 接著把 AV 安全資產轉成 robotics 正當性<a class="headerlink" href="#2-av-robotics" title="Permanent link">&para;</a></h3>
+<p>NVIDIA Developer Blog 強調 Halos 延伸自 autonomous vehicle safety，並列出 18,000+ engineering years、21B+ safety transistors、7M+ safety-assessed code、22,000+ safety monitors、30+ certificates / reports 等數字。</p>
+<p>這些數字不只是宣傳規模，而是在說：robotics 不必從零建立安全平台，可以借用 AV 領域已經花大量成本建立的 process、tooling、assessment pattern。</p>
+<p>這裡真正的商業邏輯是：<strong>NVIDIA 想把「安全工程沉沒成本」變成 Physical AI 平台的進入門檻。</strong></p>
+<h3 id="3-stack-os">3. 再把 stack 分成硬體、OS、外部感知、檢驗實驗室<a class="headerlink" href="#3-stack-os" title="Permanent link">&para;</a></h3>
+<p>Halos 不是單點產品，而是一組層級：</p>
+<ul>
+<li><strong>NVIDIA IGX Thor</strong>：industrial-grade AI compute，加上 functional safety hardware，例如 Safety Island、diagnostic coverage、IST、FFI / DFI 支援。</li>
+<li><strong>Holoscan Sensor Bridge</strong>：把 camera / sensor / actuator 串到 IGX，提供低延遲、MACsec、watermarking、safety protocol 等 sensor edge 能力。</li>
+<li><strong>Halos Core / Halos OS</strong>：Linux 或 Linux + QNX configuration，處理 safety OS、hardware error dispatch、Edge Safety Link、FSI RTOS、Safety MCU firmware。</li>
+<li><strong>Outside-In Safety Blueprint</strong>：用外部固定 camera、AI perception、event integration、decision maker 影響 robot 行為。</li>
+<li><strong>AI Systems Inspection Lab</strong>：ANAB-accredited inspection body，讓 partner 先通過 NVIDIA inspection，再拿去給 TÜV、UL、SGS、exida、CertX 等做 final certification。</li>
+</ul>
+<p>這種分層讓 Halos 不是單純賣 GPU，而是把 compute、OS、sensor path、safety app、certification pathway 變成一個「被允許部署」的供應鏈。</p>
+<h3 id="4-agility-digit">4. 用 Agility / Digit 當第一個具體落地案例<a class="headerlink" href="#4-agility-digit" title="Permanent link">&para;</a></h3>
+<p>新聞稿選 Agility Digit 當案例很合理。Humanoid 的場景天然充滿風險：它要在人旁邊走動、搬運、轉身、避障，且常在倉庫、工廠、物流這類混合空間中運作。</p>
+<p>Agility 使用 IGX Thor 與 Halos Core 來支援 proprietary safe human detection system，並參與 Halos AI Systems Inspection Lab，這讓 Halos 的定位更清楚：</p>
+<ul>
+<li>不是取代 robot company 的安全系統；</li>
+<li>而是讓 robot company 的安全系統可以站在一個標準化、可檢驗的平台上。</li>
+</ul>
+<h3 id="5-ecosystem">5. 最後用 ecosystem 把平台變成產業標準候選者<a class="headerlink" href="#5-ecosystem" title="Permanent link">&para;</a></h3>
+<p>NVIDIA 列出 QNX、FreeRTOS、Acontis、Advantech、NexCobot、Infineon、NXP、ST、TI、FORT Robotics、KION、TÜV Rheinland 等 partner。這一段的重點不是每家公司多厲害，而是暗示 Halos 正在形成一個 safety ecosystem：</p>
+<ul>
+<li>RTOS / hypervisor / embedded OS；</li>
+<li>sensor / MCU / silicon；</li>
+<li>industrial application；</li>
+<li>certification body；</li>
+<li>ODM / edge system。</li>
+</ul>
+<p>如果這條線成立，Halos 可能會變成 Physical AI 量產部署時的「安全共同語言」。</p>
+<h2 id="halos">第一性原理拆解：Halos 解決的不是「機器人會不會動」，而是「誰能相信它可以動」<a class="headerlink" href="#halos" title="Permanent link">&para;</a></h2>
+<h3 id="1physical-ai">問題 1：Physical AI 的風險不是純軟體風險<a class="headerlink" href="#1physical-ai" title="Permanent link">&para;</a></h3>
+<p>一般 AI agent 出錯，最多是下錯指令、寫錯程式、調錯 API。Physical AI 出錯，可能撞人、壓貨、卡住產線、造成工安事故。</p>
+<p>所以 Physical AI 的核心約束是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>智能能力 × 實體作用力 × 人類共處空間 = 需要可驗證安全鏈
+</code></pre></div>
+<p>模型能力越強，風險不一定越低；因為它會讓 robot 更常進入非結構化場景。能力擴張會把安全問題從「固定區域內的機械防護」推向「動態環境中的情境判斷」。</p>
+<h3 id="2-inside-out-safety">問題 2：傳統 inside-out safety 在某些場景會傷害效率<a class="headerlink" href="#2-inside-out-safety" title="Permanent link">&para;</a></h3>
+<p>很多 robot 主要靠 onboard sensors 做 inside-out safety：LiDAR、camera、bumper、proximity sensing。這在開放空間有效，但在 trailer loading 這種狹窄場景會出問題：forklift 可能把 trailer wall、cargo 或遮擋當成障礙，導致速度很慢或頻繁停車。</p>
+<p>Halos Outside-In Safety Blueprint 的想法是：把安全感知從 robot 身上擴展到場域基礎設施。固定 camera 看到整個 loading dock，再由 AI perception / event integrator / decision maker 判斷何時可以暫時 mute onboard safety、何時恢復 full safety。</p>
+<p>這不是「用 AI 取代安全」，而是用外部視角補上 onboard sensors 看不到、或容易誤判的情境。</p>
+<h3 id="3ai-safety">問題 3：AI safety 必須處理「輸入何時不可相信」<a class="headerlink" href="#3ai-safety" title="Permanent link">&para;</a></h3>
+<p>Developer Blog 裡的 Safety AI Monitor（SAIM）很關鍵。它不是一般 object detection，而是監控 perception pipeline 是否可靠：</p>
+<ul>
+<li>camera blockage；</li>
+<li>connectivity drop；</li>
+<li>lighting change；</li>
+<li>out-of-distribution input；</li>
+<li>image anomaly。</li>
+</ul>
+<p>這代表 Halos 的安全邏輯不是假設 AI 永遠準，而是設計一個問題：<strong>當 AI perception 的輸入條件離開訓練或驗證範圍時，系統要如何退回 safe state？</strong></p>
+<p>這一點比單純宣稱「AI 讓安全更好」更重要。</p>
+<h3 id="4certification-physical-ai">問題 4：certification 是 Physical AI 的真正落地瓶頸<a class="headerlink" href="#4certification-physical-ai" title="Permanent link">&para;</a></h3>
+<p>Halos AI Systems Inspection Lab 的定位，是先檢查 partner 對 Halos stack、AI safety、cybersecurity requirements 的整合，再讓 partner 拿 inspection certificate 去找第三方 certification agency。</p>
+<p>這裡的商業價值不是「NVIDIA 自己發證書就結束」，而是降低 partner 從 platform integration 到 system certification 的不確定性。</p>
+<p>如果 robot company 每次都要從零向 TÜV / UL / SGS 解釋自己的 AI stack，那量產部署會很慢。Halos 想提供的是一個可重複的 certification pathway。</p>
+<h2 id="halos_1">Halos 平台的能力地圖<a class="headerlink" href="#halos_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>層級</th>
+<th>Halos 對應元素</th>
+<th>要解的問題</th>
+<th>需要會看的指標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI compute</td>
+<td>IGX Thor</td>
+<td>同時跑 perception、planning、safety monitor</td>
+<td>latency、throughput、thermal、redundancy、diagnostic coverage</td>
+</tr>
+<tr>
+<td>Sensor path</td>
+<td>Holoscan Sensor Bridge</td>
+<td>camera / sensor / actuator 的低延遲與可信傳輸</td>
+<td>timestamp、watermark、MACsec、drop rate、jitter</td>
+</tr>
+<tr>
+<td>Safety OS</td>
+<td>Halos Core / Halos OS</td>
+<td>hardware error、safety function、runtime isolation</td>
+<td>FSI、SMCU、FFI、DFI、SEP、Edge Safety Link</td>
+</tr>
+<tr>
+<td>RTOS / partition</td>
+<td>Linux + QNX / NV Hypervisor</td>
+<td>AI workload 與 safety-critical function 隔離</td>
+<td>VM boundary、real-time behavior、fault containment</td>
+</tr>
+<tr>
+<td>AI safety app</td>
+<td>Outside-In Safety Blueprint</td>
+<td>外部場域 camera 生成 safety decision</td>
+<td>OOD detection、event fusion、staleness、FSM state</td>
+</tr>
+<tr>
+<td>Simulation / validation</td>
+<td>Isaac Sim / SIL / HIL</td>
+<td>在可控環境中驗證 safety logic</td>
+<td>scenario coverage、failure injection、replayability</td>
+</tr>
+<tr>
+<td>Certification path</td>
+<td>AI Systems Inspection Lab</td>
+<td>把系統帶往第三方 certification</td>
+<td>IEC 61508、ISO 13849、ISO/IEC TR 5469、inspection report</td>
+</tr>
+<tr>
+<td>Ecosystem</td>
+<td>QNX、FreeRTOS、Acontis、ODM、sensor vendor、certification body</td>
+<td>讓 platform 可被產業採用</td>
+<td>partner maturity、供應鏈可得性、長期維護責任</td>
+</tr>
+</tbody>
+</table>
+<h2 id="halos_2">要駕馭 Halos，需要理解哪些技能樹？<a class="headerlink" href="#halos_2" title="Permanent link">&para;</a></h2>
+<p>下面不是「一個人全部精通」的清單，而是如果一家公司想真正掌握 Halos 類平台，團隊需要覆蓋的能力地圖。</p>
+<h3 id="1-functional-safety">1. Functional Safety / 工業安全標準<a class="headerlink" href="#1-functional-safety" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>IEC 61508：通用 functional safety；</li>
+<li>ISO 13849：機械安全與控制系統安全；</li>
+<li>ISO 26262：自駕車安全資產如何被移植；</li>
+<li>ISO/IEC TR 5469、ISO/IEC TS 22440：AI 與 functional safety 的新興交界；</li>
+<li>SIL / ASIL / PL 等級不是 marketing badge，而是 hazard analysis、diagnostic coverage、systematic capability、validation evidence 的結果。</li>
+</ul>
+<p>為什麼重要：Halos 的核心語言不是 deep learning，而是 safety case。若看不懂標準，就很難判斷它到底是平台能力、certification readiness，還是宣傳包裝。</p>
+<h3 id="2-embedded-real-time-rtos">2. Embedded / Real-Time / RTOS<a class="headerlink" href="#2-embedded-real-time-rtos" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>QNX、FreeRTOS、Linux RT behavior；</li>
+<li>hypervisor partitioning；</li>
+<li>safety island / safety MCU；</li>
+<li>real-time scheduling、watchdog、fail-safe / fail-operational；</li>
+<li>EtherCAT、FSOE、industrial I/O。</li>
+</ul>
+<p>為什麼重要：Physical AI 的安全決策不能只在 Python pipeline 裡跑。真正的 stop / slow / mute / unmute 要落到 deterministic runtime、safety channel 與 actuator interface。</p>
+<h3 id="3-robotics-stack">3. Robotics stack<a class="headerlink" href="#3-robotics-stack" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>ROS 2 node、topic、service、action；</li>
+<li>TF / localization / mapping / Nav2；</li>
+<li>MoveIt 2 / motion planning；</li>
+<li>AMR、forklift、humanoid 的運動限制；</li>
+<li>onboard safety 與 facility-level safety 如何分工。</li>
+</ul>
+<p>為什麼重要：Halos 不會替你理解 robot 本體。它提供 safety architecture，但 robot 的 kinematics、navigation、payload、braking distance、sensor occlusion 仍然要由 robotics team 建模。</p>
+<h3 id="4-vision-ai-multi-camera-perception">4. Vision AI / Multi-camera perception<a class="headerlink" href="#4-vision-ai-multi-camera-perception" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>camera calibration、multi-camera tracking；</li>
+<li>object detection / tracking / re-identification；</li>
+<li>region of interest、tripwire、trajectory event；</li>
+<li>latency、staleness、confidence threshold；</li>
+<li>OOD / anomaly detection。</li>
+</ul>
+<p>為什麼重要：Outside-In Safety 的第一步是把 camera stream 變成可信事件。若 perception 事件不可靠，後面的 Safety Decision Maker 只是把錯誤快速制度化。</p>
+<h3 id="5-safety-agent-decision-logic">5. Safety agent / Decision logic<a class="headerlink" href="#5-safety-agent-decision-logic" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>finite state machine；</li>
+<li>event fusion；</li>
+<li>stale event discard；</li>
+<li>fallback state；</li>
+<li>rule-based safety logic 與 AI perception 的邊界；</li>
+<li>black-box logging 與 traceability。</li>
+</ul>
+<p>為什麼重要：Halos 的「agent」不是一般 LLM agent，而是 safety agent。它不能只是會推理，還要可解釋、可測試、可重放、可被稽核。</p>
+<h3 id="6-simulation-digital-twin-sil-hil">6. Simulation / Digital Twin / SIL / HIL<a class="headerlink" href="#6-simulation-digital-twin-sil-hil" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>Isaac Sim / Omniverse；</li>
+<li>scenario design；</li>
+<li>synthetic camera stream；</li>
+<li>software-in-the-loop（SIL）；</li>
+<li>hardware-in-the-loop（HIL）；</li>
+<li>failure injection：camera blocked、lighting changed、worker enters ROI、network delay。</li>
+</ul>
+<p>為什麼重要：安全不是跑一次 demo 就算數，而是要系統性地覆蓋危險場景與異常條件。Halos 的價值很大一部分在於把 validation workflow 接到 safety architecture。</p>
+<h3 id="7-cybersecurity-secure-sensor-data-path">7. Cybersecurity / Secure sensor data path<a class="headerlink" href="#7-cybersecurity-secure-sensor-data-path" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>device authentication；</li>
+<li>MACsec；</li>
+<li>secure boot / attestation；</li>
+<li>sensor spoofing / replay attack；</li>
+<li>industrial network segmentation；</li>
+<li>safety 與 security 的耦合。</li>
+</ul>
+<p>為什麼重要：如果外部 camera 可以被 spoof，outside-in safety 反而會變成攻擊面。Physical AI 的 safety case 不能忽略 cybersecurity。</p>
+<h3 id="8-platform-ecosystem-integration">8. Platform / Ecosystem integration<a class="headerlink" href="#8-platform-ecosystem-integration" title="Permanent link">&para;</a></h3>
+<p>要懂：</p>
+<ul>
+<li>ODM / IPC / edge AI box integration；</li>
+<li>sensor vendor、MCU vendor、RTOS vendor 的責任邊界；</li>
+<li>deployment lifecycle；</li>
+<li>certification body 如何看 evidence package；</li>
+<li>field maintenance 與版本控管。</li>
+</ul>
+<p>為什麼重要：Halos 是平台，不是單一 library。真正導入時，會牽涉 robot vendor、工廠現場、系統整合商、certification agency、IT / OT security team。</p>
+<h2 id="_5">對台灣供應鏈與自動化公司的觀察<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Halos 對台灣比較有意思的地方，不一定是「誰直接做 humanoid」，而是以下幾層：</p>
+<ol>
+<li><strong>工業電腦 / edge AI box</strong>：Advantech、NexCobot 被列為 embedded systems partner，代表 safety-designed IGX-based systems 會是 Physical AI 部署的硬體入口。</li>
+<li><strong>工廠自動化系統整合</strong>：如果 outside-in safety 成為工廠 robot deployment 的常見模式，SI 需要懂 camera placement、event logic、ROS / PLC / WMS / WCS 串接。</li>
+<li><strong>感測器與 MCU 生態</strong>：Infineon、NXP、ST、TI 這類 partner 顯示 safety chain 會延伸到 sensor edge 與 safety MCU，台灣模組廠若要切入，需要理解 certification 與安全通訊，不只是供板子。</li>
+<li><strong>AMR / 倉儲物流場景</strong>：trailer loading、dock safety、forklift / AMR 共場，是比 humanoid 更早商業化的應用。台灣公司若要找切入點，應先看工廠內 AMR / forklift / conveyor / WMS 的安全互操作。</li>
+</ol>
+<h2 id="physical-ai">可抽象成的思考模型：Physical AI 平台三問<a class="headerlink" href="#physical-ai" title="Permanent link">&para;</a></h2>
+<p>看任何 Physical AI 平台時，可以問三個問題：</p>
+<ol>
+<li>
+<p><strong>它處理的是 capability，還是 deployability？</strong><br />
+   只展示 robot 能做什麼，是 capability；能說清楚如何被驗證、維護、認證、責任分配，才是 deployability。</p>
+</li>
+<li>
+<p><strong>它的安全邏輯停在哪一層？</strong><br />
+   如果只停在 model guardrail，離實體安全很遠；如果一路接到 sensor path、RTOS、safety MCU、actuator command、certification evidence，才有 production 意義。</p>
+</li>
+<li>
+<p><strong>它是否把異常狀態納入設計，而不是把正常 demo 當成系統？</strong><br />
+   真正的安全平台要回答 lighting 變差、camera 被遮、network delay、sensor timestamp stale、AI confidence 不穩、worker 突然進入 ROI 時怎麼辦。</p>
+</li>
+</ol>
+<h2 id="_6">我可以放進資料庫的筆記<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Halos 的核心不是「NVIDIA 推 robotics SDK」，而是把 Physical AI 的落地問題定義成 full-stack safety architecture：compute、sensor、OS、decision agent、inspection lab、certification body。</li>
+<li>Outside-In Safety 是重要概念：用場域固定 camera 與 AI perception 補足 onboard sensors，讓 robot 在特定條件下更有效率地運作，但必須同時設計 OOD / fallback / stale event handling。</li>
+<li>Safety agent 與 LLM agent 不同：前者要可驗證、可重放、可稽核、可退回 safe state；不能只用「會推理」來衡量。</li>
+<li>Halos 對 NVIDIA 的平台價值在於：把 AV safety 的沉沒成本與 certification pathway 移植到 robotics，形成 Physical AI 量產部署的共同底座。</li>
+<li>要駕馭 Halos，團隊技能要跨 functional safety、embedded RTOS、robotics、vision AI、simulation validation、cybersecurity、industrial integration；這不是單一 AI 工程師能獨立完成的堆疊。</li>
+</ul>
+<h2 id="_7">仍不確定的地方<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Halos Core 目前是 early access；很多實際部署細節、NDA 文件與完整 certification evidence 不公開，外部只能看架構與方向，不能驗證全部成熟度。</li>
+<li>Outside-In Safety Blueprint 的 GitHub README 明確說它是 prototyping / evaluation / integration development，不是未加 certified safety layer 就可直接用於 production safety-related systems。</li>
+<li>Agility / Digit 的實際整合深度、量產時間表、現場 performance 與 certification 結果仍需後續追蹤。</li>
+<li>Halos 是否會成為跨 vendor 標準，還是主要留在 NVIDIA IGX / Isaac / Omniverse 生態內，需要看 certification body、ODM、robot OEM、工廠 SI 的採用速度。</li>
+</ul>
+<h2 id="_8">後續追蹤清單<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>NVIDIA/halos-outside-in-safety</code> repo 是否從 early access 走向更完整的 release / docs / examples。</li>
+<li>Halos AI Systems Inspection Lab 是否公布更多實際 certificate / inspection report 案例。</li>
+<li>Agility Digit 是否公布 Halos-enabled safety system 的正式客戶部署。</li>
+<li>QNX、Acontis、FreeRTOS、Advantech、NexCobot 等 partner 是否推出可購買、可維護、可 certification 的產品線。</li>
+<li>IEC 61508、ISO 13849、ISO/IEC TS 22440 在 AI-enabled robotics 上的採納情況。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

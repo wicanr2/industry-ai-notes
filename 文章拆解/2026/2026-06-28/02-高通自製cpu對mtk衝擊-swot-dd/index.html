@@ -1,0 +1,1191 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/2026/2026-06-28/02-%E9%AB%98%E9%80%9A%E8%87%AA%E8%A3%BDcpu%E5%B0%8Dmtk%E8%A1%9D%E6%93%8A-swot-dd/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>高通自製 CPU 對 MTK 的衝擊：以 2026 最新資料做 SWOT 與 DD 第一性分析 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cpu-mtk-2026-swot-dd" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              高通自製 CPU 對 MTK 的衝擊：以 2026 最新資料做 SWOT 與 DD 第一性分析
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      相關新聞與資料
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-soc-oem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 手機 SoC 市場賣的不是「晶片」，而是 OEM 的產品風險控制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 自製 CPU 的本質是「把不可替代性往底層移」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2026-mtk" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 2026 最新市場資料：MTK 仍第一，但「第一」的品質變差
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 出貨份額與營收份額會分叉
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-oryon-asp-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Oryon 的殺傷力在「高 ASP 池」，不是全部 Android 市場
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swot-mtk-oryon" class="md-nav__link">
+    <span class="md-ellipsis">
+      SWOT 分析：MTK 面對高通 Oryon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SWOT 分析：MTK 面對高通 Oryon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strengths｜優勢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weaknesses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weaknesses｜弱點
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opportunities｜機會
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threats｜威脅
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dddue-diligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      DD｜Due Diligence 檢查框架
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DD｜Due Diligence 檢查框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. 市場份額 DD：不要只看出貨，要拆成四層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-ddoryon" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. 產品 DD：Oryon 是否真的形成可持續差距
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. 客戶 DD：誰在用天璣旗艦，誰只拿來議價
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. 財務 DD：旗艦收入是否改善整體毛利與營收份額
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-dd-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. 生態 DD：高通是否把 CPU 差異轉成軟體黏著
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理下的結論
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理下的結論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mtk-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. MTK 不會因高通自製 CPU 立刻失去基本盤，但基本盤品質正在被測試
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-asp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 真正風險是「上攻高階 ASP 被封頂」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 最值得追蹤的是營收份額，不是跑分新聞
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mtk-oryon" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. MTK 的最佳反擊不是複製 Oryon，而是重新定義旗艦價值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cpu-mtk-2026-swot-dd">高通自製 CPU 對 MTK 的衝擊：以 2026 最新資料做 SWOT 與 DD 第一性分析<a class="headerlink" href="#cpu-mtk-2026-swot-dd" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>類型：使用者指定獨立專題筆記。</li>
+<li>主題：高通 Oryon 自製 CPU / Snapdragon 8 Elite Gen 5 對 MTK（聯發科）在旗艦手機 SoC、出貨份額、營收份額與高階 ASP 的衝擊；補入 2026 最新公開市場資料。</li>
+<li>寫作日期：2026-06-28。</li>
+<li>性質：產業分析與思維筆記，不是投資建議。</li>
+</ul>
+<h2 id="_2">相關新聞與資料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.qualcomm.com/processors/oryon">Qualcomm Oryon CPU 官方頁</a>：高通把 Oryon 描述為自研、可跨 PC、手機、車用等平台調整的 CPU 架構，重點是效能、功耗與可依平台客製。</li>
+<li><a href="https://9to5google.com/2024/10/21/qualcomm-snapdragon-8-elite/">9to5Google：Snapdragon 8 Elite has Oryon CPU for notable performance and efficiency gains</a>：指出 Snapdragon 8 Elite 把 Oryon 帶進 Android 手機，採 2 個 Prime + 6 個 Performance cores，沒有 efficiency cores；高通宣稱 CPU 單核與多核效能比 Snapdragon 8 Gen 3 提升 45%，CPU 功耗效率提升 44%。</li>
+<li><a href="https://www.androidauthority.com/snapdragon-8-elite-deep-dive-3491526/">Android Authority：Snapdragon 8 Elite deep dive</a>：把 Snapdragon 8 Elite 稱為高通回到自製 CPU 的重大轉向；文章也提醒，自製微架構帶來差異化，但伴隨更高開發成本與熱/功耗驗證壓力。</li>
+<li><a href="https://www.mediatek.com/products/smartphones/mediatek-dimensity-9400">MediaTek Dimensity 9400 官方頁</a>：聯發科主打全大核 CPU、Arm Cortex-X925、AI、影像與遊戲能力，代表它仍採 Arm 公版/半客製核心路線來拚旗艦。</li>
+<li><a href="https://www.androidauthority.com/gaming-on-mediatek-dimensity-9400-3510050/">Android Authority：Dimensity 9400 遊戲實測</a>：實測認為 Dimensity 9400 與 Snapdragon 8 Elite 在實際遊戲中差距很小，甚至在熱與長時間穩定性上不必然輸。</li>
+<li><a href="https://www.soft4fun.net/tech/news/snapdragon-8-elite-vs-dimensity-9400.htm">硬是要學：Snapdragon 8 Elite 與天璣 9400 跑分比較</a>：中文科技媒體也把兩者放在同一個旗艦對位框架裡，顯示市場已把「高通 Oryon 自製 CPU vs 聯發科天璣全大核」當成下一輪旗艦手機 SoC 故事線。</li>
+<li><a href="https://www.counterpointresearch.com/en/insights/global-smartphone-apsoc-market-share-quarterly">Counterpoint：Global Smartphone AP-SoC Market Share: Quarterly，更新至 Q1 2026</a>：MediaTek 在 Q1 2026 仍居出貨第一，但份額由 Q1 2025 的 38% 降至 32%；Qualcomm 由 27% 降至 23%；Apple 由 15% 升至 19%；UNISOC 由 10% 升至 14%。Counterpoint 將 MediaTek / Qualcomm 的中低階壓力指向記憶體短缺與成本上升。</li>
+<li><a href="https://www.malaysianwireless.com/2026/03/apple-overtakes-qualcomm-q4-2025-soc-market/">MalaysianWireless 轉述 Counterpoint Q4 2025 SoC tracker</a>：Q4 2025 MediaTek 仍為出貨第一，約 30%；Apple 23% 超過 Qualcomm 22%；MediaTek premium-tier shipments 因 Dimensity 9500、vivo X300、OPPO Find X9 增加，但 mainstream / entry-level 下滑。</li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q4/Press%20Release.pdf">MediaTek 2025 Q4 / FY2025 Earnings Release</a>：2025 全年營收新台幣 5,959.66 億元、年增 12.3%；Q4 營收新台幣 1,501.88 億元，季增 5.7%、年增 8.8%，主要受 flagship SoC Dimensity 9500 強勁放量帶動；但 2025 全年毛利率 47.5%，年減 2.1 個百分點。</li>
+<li><a href="https://wccftech.com/mediatek-q2-2025-earnings-3-billion-flagship-chipset-revenue-and-more-details/">Wccftech 轉述 MediaTek Q2 2025 earnings / presentation</a>：MediaTek 旗艦晶片收入在 Q2 2025 達約 30 億美元，並預期年增約 40%；同文也提到 mobile revenue 約占 Q2 2025 營收 52%、Q2 2025 gross margin 約 49.1%。這是第三方轉述，可靠性低於官方財報，但可作為旗艦收入量級參考。</li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Monthly%20Reports/2026/Monthly%20Sales%20Revenue%20May,%202026.pdf">MediaTek 2026 年 5 月營收公告</a>：2026 年 5 月合併營收新台幣 474.34 億元，年增 4.99%；2026 年 1–5 月累計營收新台幣 2,433.21 億元，年減 1.59%。</li>
+<li><a href="https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf">Qualcomm FY2026 Q2 Earnings Release</a>：FY2026 Q2 QCT handset revenue 為 60.24 億美元，年減 13%；Qualcomm 同樣提到記憶體供給限制與相關價格對 handset OEM 需求的影響，並預期中國客戶 handset revenue 在 FY2026 Q3 觸底後恢復季增。</li>
+<li><a href="https://www.qualcomm.com/news/releases/2025/09/snapdragon-8-elite-gen-5--the-world-s-fastest-mobile-system-on-a">Qualcomm：Snapdragon 8 Elite Gen 5 發表</a>：3rd Gen Qualcomm Oryon CPU、3nm、on-device / agentic AI，官方宣稱 CPU 效能提升 20%、GPU 23%、NPU 37%，並列出 Samsung、OPPO、vivo、小米、Honor、OnePlus 等旗艦 OEM。</li>
+<li><a href="https://www.mediatek.com/products/smartphones/mediatek-dimensity-9500">MediaTek Dimensity 9500 官方頁</a>：Dimensity 9500 主打 N3P、Armv9.3、C1-Ultra / C1-Premium / C1-Pro CPU、NPU 990、agentic AI、raytracing、4K120 / 8K 影像能力，代表 MTK 2026 旗艦對抗已從 Dimensity 9400 推進到 9500 世代。</li>
+<li><a href="https://www.counterpointresearch.com/report/infographic-global-smartphone-ap-market-share-q4-2024">Counterpoint：Global Smartphone AP Market Share Q4 2024</a>：較舊但仍有用的公開營收份額參考：MediaTek Q4 2024 出貨份額 34%、營收份額 13%；高通出貨份額 21%、營收份額 34%，顯示高通高階 ASP 優勢。</li>
+</ul>
+<h2 id="_3">一句話拆解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>用 2026 最新公開資料重看，高通自製 CPU 對 MTK 的威脅不能簡化成「Snapdragon 立刻搶走出貨第一」。更準確地說：MTK 仍守住 AP/SoC 出貨第一，但 Q1 2026 份額年減 6 個百分點；同時 Apple、Samsung Exynos、UNISOC 都在不同價格帶分食結構性成長。高通 Oryon 的真正威脅，是把高階 Android SoC 的價值池重新綁到「自研微架構 + 高階品牌敘事 + 跨平台生態」上，讓 MTK 即使守住量，也可能被壓住營收份額與高 ASP 上限。</p>
+<h2 id="_4">第一性原理拆解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-soc-oem">1. 手機 SoC 市場賣的不是「晶片」，而是 OEM 的產品風險控制<a class="headerlink" href="#1-soc-oem" title="Permanent link">&para;</a></h3>
+<p>手機品牌買 SoC 時，表面上買 CPU、GPU、NPU、ISP、modem；底層其實買的是：</p>
+<ol>
+<li><strong>上市確定性</strong>：能不能準時量產、驅動穩定、Android 版本與相機模組順利整合。</li>
+<li><strong>旗艦敘事</strong>：能不能讓售價更高的 Pro / Ultra / Fold 系列講出差異。</li>
+<li><strong>長期支援成本</strong>：韌體、modem、影像調校、遊戲最佳化、AI SDK、供應鏈共同除錯。</li>
+<li><strong>失敗風險轉嫁</strong>：如果熱、續航、訊號、相機或遊戲表現出問題，品牌能不能找到可信任的上游一起解。</li>
+</ol>
+<p>所以 SoC 競爭不是單純跑分。跑分只是銷售故事的入口；真正決定高階設計案的是「整機風險 / 旗艦溢價 / 合作成本」的總和。</p>
+<h3 id="2-cpu">2. 自製 CPU 的本質是「把不可替代性往底層移」<a class="headerlink" href="#2-cpu" title="Permanent link">&para;</a></h3>
+<p>MTK 使用 Arm 最新核心時，可以靠整合能力、成本、節奏與功耗調校追上高通。這條路的好處是研發槓桿高，壞處是核心 IP 的差異化有限。</p>
+<p>高通 Oryon 的意義在於：高通把差異化從 SoC 整合層往 CPU 微架構層下移。這讓高通可以對 OEM 說：</p>
+<blockquote>
+<p>這不只是另一顆使用 Arm 公版核心的旗艦 SoC；這是高通自己定義 CPU 微架構，並把它擴展到手機、PC、車用與座艙的技術家族。</p>
+</blockquote>
+<p>如果市場相信這個敘事，高通就能把高階 Android SoC 的溢價理由重新包裝成「自研底層能力」。MTK 的問題不是不能打，而是它必須用別的證據證明：不自製 CPU 仍能提供同等或更好的整機價值。</p>
+<h3 id="3-2026-mtk">3. 2026 最新市場資料：MTK 仍第一，但「第一」的品質變差<a class="headerlink" href="#3-2026-mtk" title="Permanent link">&para;</a></h3>
+<p>Counterpoint 最新公開季資料更新到 Q1 2026。若只看出貨份額，MTK 仍是全球智慧手機 AP/SoC 第一；但和一年前比，壓力已很明顯：</p>
+<table>
+<thead>
+<tr>
+<th>廠商</th>
+<th style="text-align: right;">Q1 2025 出貨份額</th>
+<th style="text-align: right;">Q1 2026 出貨份額</th>
+<th style="text-align: right;">年變化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MediaTek</td>
+<td style="text-align: right;">38%</td>
+<td style="text-align: right;">32%</td>
+<td style="text-align: right;">-6 個百分點，約 -15.8%</td>
+</tr>
+<tr>
+<td>Qualcomm</td>
+<td style="text-align: right;">27%</td>
+<td style="text-align: right;">23%</td>
+<td style="text-align: right;">-4 個百分點，約 -14.8%</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">+4 個百分點</td>
+</tr>
+<tr>
+<td>UNISOC</td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">+4 個百分點</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">7%</td>
+<td style="text-align: right;">+2 個百分點</td>
+</tr>
+<tr>
+<td>HiSilicon</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">持平</td>
+</tr>
+</tbody>
+</table>
+<p>這組數字讓原本的「高通 vs MTK」問題變得更複雜。2026 的市場衝擊不是只有高通 Oryon 一條線，而是三條線同時發生：</p>
+<ol>
+<li><strong>中低階手機被記憶體成本擠壓</strong>：Counterpoint 指出 mainstream / entry-level 受記憶體短缺影響；這直接打到 MTK 的量大基本盤，也打到 Qualcomm Snapdragon 400 / 600。</li>
+<li><strong>高階與垂直整合者變強</strong>：Apple Q1 2026 份額升到 19%，Samsung Exynos 升到 7%，代表高階與品牌自研晶片正在吃掉更多結構性注意力。</li>
+<li><strong>低價位有 UNISOC 往上補位</strong>：UNISOC 升到 14%，顯示最底部市場不是全部流向 MTK，而是有更低成本競爭者承接。</li>
+</ol>
+<p>所以，2026 版的第一性判斷要修正成：<strong>MTK 面對的不是單一高通威脅，而是上下夾擊。上方是 Qualcomm / Apple / Samsung 用高階或垂直整合拿價值池；下方是記憶體成本與 UNISOC 壓縮中低階量。</strong></p>
+<h3 id="4">4. 出貨份額與營收份額會分叉<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>較舊但仍可作為「價值密度」基準的 Counterpoint 2024 公開資料顯示，MTK 在出貨份額上明顯強：2024 Q1 MediaTek 約 41%、高通約 27%；Q4 2024 MediaTek 約 31%–34%、高通約 21%–25%，不同公開頁面口徑略有差異。但營收份額反過來：Q1 高通 36%、MediaTek 17%；Q4 高通 34%、MediaTek 13%。</p>
+<p>這代表高通出貨少，但平均價值密度更高。用粗略的「營收份額 / 出貨份額」估相對 ASP：</p>
+<table>
+<thead>
+<tr>
+<th>期間</th>
+<th style="text-align: right;">MTK 出貨份額</th>
+<th style="text-align: right;">MTK 營收份額</th>
+<th style="text-align: right;">高通出貨份額</th>
+<th style="text-align: right;">高通營收份額</th>
+<th style="text-align: right;">高通相對 ASP / MTK 相對 ASP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024 Q1</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">23%</td>
+<td style="text-align: right;">36%</td>
+<td style="text-align: right;">約 3.7 倍</td>
+</tr>
+<tr>
+<td>2024 Q4</td>
+<td style="text-align: right;">34%</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">21%</td>
+<td style="text-align: right;">34%</td>
+<td style="text-align: right;">約 4.2 倍</td>
+</tr>
+</tbody>
+</table>
+<p>這不是實際售價，只是相對價值密度。但方向很清楚：MTK 的量大，卻不等於拿到最多價值。</p>
+<p>2026 最新資料還沒有同等公開、完整的「營收份額」表，因此不能假裝已知道 Q1 2026 的 revenue share。但我們可以用三個財務訊號判斷壓力方向：</p>
+<ul>
+<li>MediaTek 2025 全年營收新台幣 5,959.66 億元，年增 12.3%；Q4 2025 Dimensity 9500 強勁放量，證明 MTK 的旗艦上攻仍有效。</li>
+<li>但 MediaTek 2025 全年毛利率 47.5%，年減 2.1 個百分點；2026 年 1–5 月累計營收年減 1.59%，表示高階放量沒有完全抵消整體產品組合 / 中低階壓力。</li>
+<li>Qualcomm FY2026 Q2 handset revenue 年減 13%，說明高通也受 handset 市場與記憶體成本影響；所以 2026 不是「高通全面順風、MTK 全面逆風」，而是 Android SoC 整體被成本與換機需求壓住，高階價值池變得更重要。</li>
+</ul>
+<h3 id="5-oryon-asp-android">5. Oryon 的殺傷力在「高 ASP 池」，不是全部 Android 市場<a class="headerlink" href="#5-oryon-asp-android" title="Permanent link">&para;</a></h3>
+<p>MTK 的基本盤是中低階與中階 5G 的大出貨。高通 Oryon 不太可能在短期內把這塊全部吃掉；高通也未必想用旗艦 Oryon 去打最便宜的量。</p>
+<p>真正的戰場是：</p>
+<ul>
+<li>Samsung Galaxy S / Fold / Flip 這類高曝光 Android 旗艦。</li>
+<li>中國品牌 Ultra / Pro / 遊戲手機 / 摺疊機。</li>
+<li>需要高階影像、遊戲、AI、modem 與長期更新承諾的機型。</li>
+<li>可以支撐更高 SoC ASP 與品牌聯名行銷的設計案。</li>
+</ul>
+<p>如果高通守住這些高階設計案，MTK 即使繼續出貨第一，也可能被固定在「量大但營收份額低」的位置。</p>
+<h2 id="swot-mtk-oryon">SWOT 分析：MTK 面對高通 Oryon<a class="headerlink" href="#swot-mtk-oryon" title="Permanent link">&para;</a></h2>
+<h3 id="strengths">Strengths｜優勢<a class="headerlink" href="#strengths" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>出貨規模與中低階 5G 基本盤強</strong><br />
+   MTK 在全球智慧手機 AP/SoC 出貨份額上仍領先，代表它對 OEM 的成本、供貨與產品線覆蓋很有吸引力。</p>
+</li>
+<li>
+<p><strong>Arm 公版核心路線的研發效率高</strong><br />
+   採用 Arm 最新核心讓 MTK 不必承擔完整自研 CPU 的長周期風險，可把資源集中在 SoC 整合、功耗、影像、AI、連線與客戶支援。</p>
+</li>
+<li>
+<p><strong>Dimensity 9400 / 9500 已證明可打進旗艦敘事</strong><br />
+   2024 年 Dimensity 9400 讓 flagship revenue 超過 20 億美元；到 2025 Q4，MediaTek 又明確說 Q4 營收季增主要受 Dimensity 9500 強勁放量帶動。這表示天璣旗艦不是只有聲量，也已連續兩代形成營收貢獻。</p>
+</li>
+<li>
+<p><strong>整機體驗不必然輸高通</strong><br />
+   Android Authority 遊戲實測顯示 Dimensity 9400 與 Snapdragon 8 Elite 在實際遊戲表現接近，甚至在熱與長時間穩定性上有可辯護空間。</p>
+</li>
+</ol>
+<h3 id="weaknesses">Weaknesses｜弱點<a class="headerlink" href="#weaknesses" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>出貨第一的含金量下降，ASP 結構仍偏低</strong><br />
+   Q1 2026 MediaTek 出貨份額仍是第一，但已由 Q1 2025 的 38% 降至 32%。較舊的 2024 公開營收份額也顯示，MediaTek 出貨高但營收份額低於高通。這是最核心弱點：MTK 拿到的量多，但高價值池仍多由高通、Apple 與部分垂直整合品牌分走。</p>
+</li>
+<li>
+<p><strong>缺少自製 CPU 的底層差異化敘事</strong><br />
+   MTK 可以說「我整合得很好」，但高通可以說「CPU 微架構是我自己定義」。在旗艦品牌行銷與投資人敘事上，後者更容易形成技術護城河想像。</p>
+</li>
+<li>
+<p><strong>高階品牌慣性仍偏向 Snapdragon</strong><br />
+   很多 Android 旗艦使用 Snapdragon 已形成消費者認知、遊戲開發者最佳化與通路話術。MTK 要打進高階，不只是效能問題，也是品牌信任切換成本。</p>
+</li>
+<li>
+<p><strong>旗艦突破仍可能集中在少數中國品牌機型</strong><br />
+   Q4 2025 Counterpoint 轉述資料提到 Dimensity 9500 受 vivo X300、OPPO Find X9 帶動。這是好消息，但也提醒 DD 重點：如果天璣旗艦主要集中在少數中國 OEM，而不是跨 Samsung、全球通路、摺疊機與 Ultra 系列廣泛滲透，旗艦營收成長會比較脆弱。</p>
+</li>
+</ol>
+<h3 id="opportunities">Opportunities｜機會<a class="headerlink" href="#opportunities" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>若高通 Oryon 手機偏熱或成本過高，MTK 可用穩定與性價比切入</strong><br />
+   自製 CPU 不是免費午餐。若高通峰值高但熱、功耗、BOM 或供貨壓力大，MTK 可用「長時間穩定體驗 + 成本彈性」爭取高階以外的大量設計案。</p>
+</li>
+<li>
+<p><strong>中國 Android 品牌需要第二供應來源</strong><br />
+   OEM 不希望高階完全被高通鎖住。若 MTK 能提供接近旗艦體驗，品牌端有動機扶持天璣作為談判籌碼與產品差異化來源。</p>
+</li>
+<li>
+<p><strong>AI、影像、連線與電源管理可重新定義旗艦價值</strong><br />
+   如果未來手機旗艦差異從 CPU 峰值轉向端側 AI、影像 pipeline、低功耗 always-on、連線與遊戲穩定性，MTK 可把戰場拉回 SoC 整體能力。</p>
+</li>
+<li>
+<p><strong>ASIC / 車用 / Edge / AI PC 平台可分散手機旗艦壓力</strong><br />
+   MediaTek 官方產品線已把 smartphone、AI PC、automotive、ASIC / data center 等放在同一個 broader edge-to-cloud 敘事裡。若這些線成長，手機旗艦的敘事壓力仍重要，但不會是唯一成長來源。</p>
+</li>
+</ol>
+<h3 id="threats">Threats｜威脅<a class="headerlink" href="#threats" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>高通以 Oryon 建立跨手機、PC、車用的一體化平台敘事</strong><br />
+   這會讓高通更像「Android 陣營的 Apple 式底層能力供應商」，而 MTK 容易被定位為高效率整合者。</p>
+</li>
+<li>
+<p><strong>Samsung 與高階中國旗艦若持續偏向 Snapdragon，MTK 高階 ASP 上攻受限</strong><br />
+   旗艦設計案具有示範效果。Snapdragon 8 Elite Gen 5 官方列出 Samsung、OPPO、vivo、小米、Honor、OnePlus 等 OEM；若 Oryon 持續拿到最有曝光度的 Android 旗艦，MTK 的營收份額很難明顯上升。</p>
+</li>
+<li>
+<p><strong>高通可能把自製 CPU 下放到更低價格帶</strong><br />
+   Oryon 若逐步擴展到次旗艦或中高階，會壓縮 MTK 原本較舒服的中高階空間。</p>
+</li>
+<li>
+<p><strong>市場把「自研 CPU」等同於高階護城河</strong><br />
+   即使實際體驗差距不大，只要消費者、媒體與投資人相信自研 CPU 更高階，MTK 就需要付出更多行銷與實測證據來抵消敘事劣勢。2026 尤其麻煩的是，高通已把 Oryon 和 agentic AI、PC / data center / 車用敘事相連，不只是手機 CPU 敘事。</p>
+</li>
+<li>
+<p><strong>中低階記憶體成本與 UNISOC 分食，壓縮 MTK 基本盤</strong><br />
+   Q1 2026 UNISOC 出貨份額升至 14%，加上記憶體成本推高中低階手機價格，MTK 不是只在高階被高通壓，在低端也面臨價格帶經濟性變差與更低成本對手補位。</p>
+</li>
+</ol>
+<h2 id="dddue-diligence">DD｜Due Diligence 檢查框架<a class="headerlink" href="#dddue-diligence" title="Permanent link">&para;</a></h2>
+<p>以下不是投資建議，而是如果要做產業 / 公司 DD，應該持續追蹤的問題清單。</p>
+<h3 id="a-dd">A. 市場份額 DD：不要只看出貨，要拆成四層<a class="headerlink" href="#a-dd" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>總 AP/SoC 出貨份額</strong><br />
+   MTK 是否繼續維持全球第一？Q1 2026 仍第一，但已從 Q1 2025 的 38% 降到 32%。如果後續跌破 30% 或被 Apple / Qualcomm 拉近，就代表基本盤鬆動。</p>
+</li>
+<li>
+<p><strong>5G AP/SoC 出貨份額</strong><br />
+   低階 LTE 向 5G 遷移時，MTK 是否能吃到升級紅利？這決定中低階基本盤的品質。</p>
+</li>
+<li>
+<p><strong>高階 Android 設計案份額</strong><br />
+   應追蹤 Pro / Ultra / Fold / Flip / gaming phone / Samsung Galaxy S 系列中的天璣採用率，而不是只看總量。</p>
+</li>
+<li>
+<p><strong>營收份額與 ASP 指標</strong><br />
+   如果 MTK 出貨份額高但營收份額不升，代表仍停在低 ASP 結構。2026 公開頁面尚未給完整 revenue share，因此 DD 上要等 Counterpoint / Canalys / Omdia 等後續資料；在資料出來前，用 flagship SoC revenue、毛利率、產品組合與高階設計案份額作替代指標。</p>
+</li>
+</ol>
+<h3 id="b-ddoryon">B. 產品 DD：Oryon 是否真的形成可持續差距<a class="headerlink" href="#b-ddoryon" title="Permanent link">&para;</a></h3>
+<p>要看：</p>
+<ul>
+<li>單核 / 多核峰值是否穩定領先。</li>
+<li>長時間負載下是否過熱或降頻。</li>
+<li>真實遊戲、相機、AI 推理與多工是否有可感差距。</li>
+<li>OEM 實機是否普遍表現好，而不是只在 Qualcomm reference design 好。</li>
+<li>後續 Oryon 世代是否能每年穩定迭代。</li>
+</ul>
+<p>若 Oryon 只是單代峰值漂亮，但實機體驗不穩，MTK 的威脅會下降。若 Oryon 連續幾代都能在效能、功耗、AI 與跨平台開發工具上穩定領先，MTK 的高階敘事會更吃力。</p>
+<h3 id="c-dd">C. 客戶 DD：誰在用天璣旗艦，誰只拿來議價<a class="headerlink" href="#c-dd" title="Permanent link">&para;</a></h3>
+<p>關鍵問題：</p>
+<ul>
+<li>天璣旗艦是否進入全球銷量大的機型，還是只在中國市場特定型號？</li>
+<li>OEM 是把天璣放在最高階 Ultra，還是放在次旗艦 / 地區限定版？</li>
+<li>Samsung 是否有更多 MediaTek 高階採用，或仍主要偏向 Qualcomm / Exynos？</li>
+<li>中國品牌是否願意用天璣做最貴機型，而不只是用來降低 BOM 或對高通議價？</li>
+</ul>
+<p>如果 OEM 只把 MTK 當「高通備胎」或議價工具，MTK 的旗艦收入很難真正重估。</p>
+<h3 id="d-dd">D. 財務 DD：旗艦收入是否改善整體毛利與營收份額<a class="headerlink" href="#d-dd" title="Permanent link">&para;</a></h3>
+<p>MediaTek 2024 年營收新台幣約 5,306 億元，flagship revenue 超過 20 億美元。到 2025 年，全年營收升至新台幣 5,959.66 億元、年增 12.3%；Q4 2025 營收季增主要受 Dimensity 9500 強勁放量帶動。這表示旗艦上攻仍有效，但 2025 毛利率年減 2.1 個百分點、2026 年 1–5 月累計營收年減 1.59%，說明市場衝擊不能只看單一旗艦晶片聲量。</p>
+<p>可以追蹤：</p>
+<ul>
+<li>flagship revenue 是否連續成長，而不是只因 Dimensity 9400 / 9500 單代成功。</li>
+<li>毛利率是否因高階 SoC 占比增加而改善。</li>
+<li>研發費用率是否因追高階而上升太快，侵蝕營業利益率。</li>
+<li>高階 SoC 成長是否真的提高營收份額，而不是只替換原本中高階產品。</li>
+<li>2026 年後續月營收是否擺脫 1–5 月累計年減，尤其 Q3 / Q4 旗艦新機週期能否拉回成長。</li>
+</ul>
+<p>粗略情境：若以 MTK 2025 年總營收約新台幣 5,959.66 億元、旗艦收入約 30 億美元以上作基準（外媒曾轉述 2025 Q2 時 flagship chipset revenue 已達約 30 億美元；保守起見，這裡只作量級框架），若高通 Oryon / Snapdragon 8 Elite Gen 5 使 MTK 旗艦收入少拿 5%、10%、20%、30%，大致對應：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">假設 MTK 旗艦收入流失</th>
+<th style="text-align: right;">約流失金額</th>
+<th style="text-align: right;">約占 MTK 2025 總營收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">1.5 億美元，約新台幣 48 億元</td>
+<td style="text-align: right;">約 0.8%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">3 億美元，約新台幣 96 億元</td>
+<td style="text-align: right;">約 1.6%</td>
+</tr>
+<tr>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">6 億美元，約新台幣 192 億元</td>
+<td style="text-align: right;">約 3.2%</td>
+</tr>
+<tr>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">9 億美元，約新台幣 288 億元</td>
+<td style="text-align: right;">約 4.8%</td>
+</tr>
+</tbody>
+</table>
+<p>這個估算有意保守，只看旗艦收入，不假設毛利率、產品組合與股價評價倍數變化。實際市場反應可能比營收百分比大，因為旗艦設計案代表的是未來 ASP 與品牌升級可能性。</p>
+<h3 id="e-dd-cpu">E. 生態 DD：高通是否把 CPU 差異轉成軟體黏著<a class="headerlink" href="#e-dd-cpu" title="Permanent link">&para;</a></h3>
+<p>自製 CPU 本身不是終局。真正麻煩的是高通把 Oryon 變成軟體與開發者生態：</p>
+<ul>
+<li>PC / 手機 / 車用共用工具鏈與最佳化知識。</li>
+<li>AI SDK、遊戲引擎、相機 pipeline 與 NPU 工具更早支援 Snapdragon。</li>
+<li>OEM 工程團隊更熟悉高通除錯流程。</li>
+<li>開發者預設先針對 Snapdragon 旗艦最佳化。</li>
+</ul>
+<p>如果這些發生，MTK 面臨的不是單一 CPU 差距，而是生態慣性差距。</p>
+<h2 id="_5">第一性原理下的結論<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1-mtk-cpu">1. MTK 不會因高通自製 CPU 立刻失去基本盤，但基本盤品質正在被測試<a class="headerlink" href="#1-mtk-cpu" title="Permanent link">&para;</a></h3>
+<p>MTK 的量來自成本、供貨、產品線覆蓋與中低階 5G 遷移。高通 Oryon 的旗艦敘事不會直接消滅這些優勢。不過 Q1 2026 MTK 出貨份額已從一年前的 38% 降到 32%，表示基本盤不是無風險；記憶體成本、低價手機需求與 UNISOC 都在測試 MTK 的量大優勢。</p>
+<h3 id="2-asp">2. 真正風險是「上攻高階 ASP 被封頂」<a class="headerlink" href="#2-asp" title="Permanent link">&para;</a></h3>
+<p>MTK 需要從出貨第一變成營收份額更高，才有機會改變市場對它的評價。Dimensity 9500 放量顯示它有能力往上打；但如果毛利率沒有同步改善、營收份額沒有同步上升，代表高階化仍可能被價格競爭、產品組合與 OEM 議價抵消。Oryon 若強化高通在高階 Android 的地位，就會壓住 MTK 最重要的升級路徑。</p>
+<h3 id="3">3. 最值得追蹤的是營收份額，不是跑分新聞<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>跑分容易被單代產品、散熱設計、測試條件影響。2026 起更關鍵的是：</p>
+<ul>
+<li>MTK 營收份額是否從 2024 公開資料中的 13%–17% 往上走？</li>
+<li>flagship revenue 是否連續成長？</li>
+<li>毛利率能否停止下滑？</li>
+<li>2026 年 1–5 月累計營收年減能否在旗艦新機週期後反轉？</li>
+<li>高階 Android 設計案是否從單點突破變成廣泛採用？</li>
+</ul>
+<h3 id="4-mtk-oryon">4. MTK 的最佳反擊不是複製 Oryon，而是重新定義旗艦價值<a class="headerlink" href="#4-mtk-oryon" title="Permanent link">&para;</a></h3>
+<p>MTK 不一定要馬上自研 CPU。它可以用另一組第一性原理反擊：手機使用者買的是完整體驗，而不是 CPU 微架構本身。若 MTK 能在長時間穩定、AI、影像、連線、成本與 OEM 合作上做出可感差異，就能削弱 Oryon 的敘事壓力。</p>
+<h2 id="_6">我可以放進資料庫的筆記<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>高通 Oryon 對 MTK 的核心威脅不是出貨份額，而是高階 Android 的營收份額與 ASP 上限。</li>
+<li>2026 最新 Counterpoint 出貨資料顯示：MTK Q1 2026 仍是第一，但從 Q1 2025 的 38% 降至 32%；這代表「出貨第一」仍在，但含金量正在下降。</li>
+<li>2026 的市場衝擊不是單一高通威脅，而是上下夾擊：上方有 Qualcomm Oryon、Apple A-series、Samsung Exynos 的高階 / 垂直整合；下方有記憶體成本與 UNISOC 分食中低階。</li>
+<li>Counterpoint 2024 Q1/Q4 顯示 MTK 出貨份額領先，但高通營收份額領先；這是「量」與「價值池」分叉的典型案例。2026 目前公開資料尚不足以更新 revenue share，只能用財報、毛利率、flagship revenue 與高階設計案替代觀察。</li>
+<li>MediaTek 2025 全年營收新台幣 5,959.66 億元、年增 12.3%，Dimensity 9500 帶動 Q4；但全年毛利率 47.5%、年減 2.1 個百分點，2026 年 1–5 月累計營收年減 1.59%，說明旗艦放量不必然等於整體財務品質改善。</li>
+<li>SWOT 看，MTK 的優勢在出貨、成本、整合與中低階 5G；弱點在高階品牌敘事、自研 CPU 差異化、ASP 結構，以及中低階市場被記憶體成本與 UNISOC 侵蝕。</li>
+<li>DD 時要追蹤五個核心指標：高階設計案份額、營收份額、flagship revenue 連續性、毛利率是否隨高階化改善、2026 後續月營收是否擺脫累計年減。</li>
+<li>第一性原理：SoC 市場的本質不是賣晶片規格，而是幫 OEM 降低整機風險、建立旗艦溢價、取得長期軟硬體支援。</li>
+</ul>
+<h2 id="_7">仍不確定的地方<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Counterpoint 的公開頁面提供 2026 出貨份額，但更細的 ASP、營收份額、價格帶、品牌別設計案資料可能在付費報告內。</li>
+<li>2026 尚未找到同等公開、完整的 AP/SoC revenue share 表，因此本文不能把 2024 的 revenue share 直接當成 2026 現況，只能當成價值密度結構基準。</li>
+<li>Snapdragon 8 Elite / Snapdragon 8 Elite Gen 5、Dimensity 9400 / 9500 的實機表現高度依賴 OEM 散熱、電池、軟體調校，不能只用單一測試推論所有手機。</li>
+<li>MTK 後續 Dimensity 9600、Samsung 採用情況、中國品牌 Ultra / Fold 機型導入程度，以及記憶體價格是否回落，會改變判斷。</li>
+<li>本文情境估算使用約略匯率與簡化假設，只作風險量級框架，不作財務預測。</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
