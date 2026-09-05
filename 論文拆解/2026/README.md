@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-09-05｜WISE；FailBench](./2026-09-05/README.md)
 - [2026-09-04｜World-Model Evaluation Under Feedback；ZETA](./2026-09-04/README.md)
 - [2026-09-03｜EmbodiedSkills；DroneCATS](./2026-09-03/README.md)
 - [2026-09-02｜VerNav；Adaptive Action Chunking](./2026-09-02/README.md)
