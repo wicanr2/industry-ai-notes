@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-09-08｜RoboRMBench；Latent Semantic Scaffolding](./2026-09-08/README.md)
 - [2026-09-07｜Evidence-Gated VLA；R2S-Eval](./2026-09-07/README.md)
 - [2026-09-06｜AdaRoboVLG；FWBC-VLA](./2026-09-06/README.md)
 - [2026-09-05｜WISE；FailBench](./2026-09-05/README.md)
