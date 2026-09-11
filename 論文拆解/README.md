@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-09-11](./2026/2026-09-11/README.md)
 - [2026-09-10](./2026/2026-09-10/README.md)
 - [2026-09-09](./2026/2026-09-09/README.md)
 - [2026-09-08](./2026/2026-09-08/README.md)
@@ -47,6 +48,7 @@
 
 ## 2026
 
+- [2026-09-11｜Show-Harness；FreqFM](./2026/2026-09-11/README.md)
 - [2026-09-10｜TANGO；DeCAL](./2026/2026-09-10/README.md)
 - [2026-09-09｜Neuro-Symbolic Procedural VLA；RoboSPA](./2026/2026-09-09/README.md)
 - [2026-09-08｜RoboRMBench；Latent Semantic Scaffolding](./2026/2026-09-08/README.md)
