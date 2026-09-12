@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-09-12｜HuRo；ReactHuman](./2026-09-12/README.md)
 - [2026-09-11｜Show-Harness；FreqFM](./2026-09-11/README.md)
 - [2026-09-10｜TANGO；DeCAL](./2026-09-10/README.md)
 - [2026-09-09｜Neuro-Symbolic Procedural VLA；RoboSPA](./2026-09-09/README.md)
