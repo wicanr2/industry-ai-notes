@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-09-14｜IMLE-VLA；ActSafeGuard](./2026-09-14/README.md)
 - [2026-09-13｜No Free Checker；SyncWorld](./2026-09-13/README.md)
 - [2026-09-12｜HuRo；ReactHuman](./2026-09-12/README.md)
 - [2026-09-11｜Show-Harness；FreqFM](./2026-09-11/README.md)
