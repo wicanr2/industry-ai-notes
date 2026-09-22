@@ -4,6 +4,7 @@
 
 ## 最新日期
 
+- [2026-09-22](./2026/2026-09-22/README.md)
 - [2026-09-21](./2026/2026-09-21/README.md)
 - [2026-09-20](./2026/2026-09-20/README.md)
 - [2026-09-14](./2026/2026-09-14/README.md)
@@ -53,6 +54,7 @@
 
 ## 2026
 
+- [2026-09-22｜RoboDawn；Manipulation-Feasible NAMO](./2026/2026-09-22/README.md)
 - [2026-09-21｜When Should a Failing Robot Ask?；AtomEgo](./2026/2026-09-21/README.md)
 - [2026-09-20｜SafeHarness；Workspace Models](./2026/2026-09-20/README.md)
 - [2026-09-14｜IMLE-VLA；ActSafeGuard](./2026/2026-09-14/README.md)
