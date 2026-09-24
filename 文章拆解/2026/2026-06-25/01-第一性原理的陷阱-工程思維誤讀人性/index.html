@@ -1,0 +1,954 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/2026/2026-06-25/01-%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86%E7%9A%84%E9%99%B7%E9%98%B1-%E5%B7%A5%E7%A8%8B%E6%80%9D%E7%B6%AD%E8%AA%A4%E8%AE%80%E4%BA%BA%E6%80%A7/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>第一性原理的陷阱：當你用工程思維誤讀人性 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第一性原理的陷阱：當你用工程思維誤讀人性
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼放進思維筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章核心要點
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文章核心要點">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 第一性原理被口號化後，變成一種社交貨幣
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 濫用第一性原理有三種好處：省成本、給地位、可免責
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 社會系統的第一性原理常常不是你以為的那個主詞
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 工程系統是封閉系統，社會系統是開放系統
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 反身性與多重均衡，是社會系統裡最容易被工程思維忽略的兩個幽靈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 社會科學中的第一性不是定律，而是約束
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 最後目標不是求真，而是堅固性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章架構地圖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型一：找錯原子檢查表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型二：社會系統第一性不是定律，而是約束
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robustness-elegance" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型三：Robustness 優先於 Elegance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型四：社會科學的第一性原理＝演化限制 + 制度約束
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      對我之後做新聞拆解的提醒
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">第一性原理的陷阱：當你用工程思維誤讀人性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">原文資訊<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>文章標題：第一性原理的陷阱：當你用工程思維誤讀人性</li>
+<li>作者：Vincent Cheng-Wen Yu 余鎮文</li>
+<li>來源：Substack</li>
+<li>原文修改時間：2026-02-25T05:05:44.703Z</li>
+<li>讀取／整理日期：2026-06-25</li>
+<li>文章出處：<a href="https://vincentcwyu.substack.com/p/ad1">Vincent Cheng-Wen Yu 余鎮文｜第一性原理的陷阱：當你用工程思維誤讀人性</a></li>
+</ul>
+<h2 id="_3">為什麼放進思維筆記<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>這篇文章直接補強我目前在做的「第一性原理新聞拆解」方法論。它提醒我：第一性原理不是把所有脈絡砍掉後，用漂亮邏輯重新推一遍；真正困難的是找到正確的分析原子、正確的主詞，以及那些歷史脈絡背後的隱藏約束。</p>
+<p>如果我要用第一性原理看新聞與產業事件，這篇文章是在提醒我：<strong>不要把工程系統的方法直接搬到社會系統。</strong> 對工程問題來說，簡化可能讓真理浮現；但對市場、制度、組織、人性問題來說，過度簡化可能只是把真正重要的約束刪掉。</p>
+<h2 id="_4">一句話拆解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>文章主張：第一性原理在社會科學裡不能被當成「免除脈絡成本」的通行證；它真正有用的方式，是辨認稀缺性、資訊不對稱、激勵不相容、交易成本等底層約束，並檢查策略是否足夠堅固，而不是幻想推導出唯一正解。</p>
+<h2 id="_5">文章核心要點<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 第一性原理被口號化後，變成一種社交貨幣<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>作者一開始把「第一性原理」從思考工具拆成社交現象：在創業、商業、知識社群中，這個詞常常被用來展示聰明、遠見與反傳統。但很多時候，它不是回到真實底層，而是繞過現實脈絡的修辭。</p>
+<p>這裡的重點不是反對第一性原理，而是反對把它變成「我可以不用讀歷史、不用理解制度、不用處理例外」的免責牌。</p>
+<h3 id="2">2. 濫用第一性原理有三種好處：省成本、給地位、可免責<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>文章拆出這個詞受歡迎的誘因：</p>
+<ul>
+<li><strong>省成本策略</strong>：不用引用文獻、不用理解歷史、不用處理既有反例，好像一句「回到第一性原理」就能歸零重想。</li>
+<li><strong>地位訊號</strong>：它讓說話者看起來像是 Elon Musk 式的高階思考者，而不是普通管理者。</li>
+<li><strong>免責裝置</strong>：失敗時可以說「邏輯沒錯，只是現實還沒跟上」。</li>
+</ul>
+<p>這段很重要，因為它把一個思考工具的流行，還原成使用者的誘因結構。</p>
+<h3 id="3">3. 社會系統的第一性原理常常不是你以為的那個主詞<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>作者用中國三四線城市私人醫院集團的例子說明：如果只從「病人需求」看，價格高、服務普通的醫院似乎不該成功。但如果把分析層級往下挖，真正被滿足的不是病人的醫療需求，而是地方官員的醫保資金池壓力。</p>
+<p>這裡的關鍵句是：<strong>不是邏輯失效，是找錯了原子。</strong></p>
+<p>在社會系統裡，真正的第一性原理不是抽象的「使用者需要什麼」，而是權力結構中誰真的能決定資源配置、誰承擔成本、誰得到保護。</p>
+<h3 id="4">4. 工程系統是封閉系統，社會系統是開放系統<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>文章把誤用來源放在「錯置圖層」：人們把自然科學的成功，誤解為只要找到永恆定律，就能推導社會世界。</p>
+<p>但工程／物理系統裡，研究對象不會因為你的模型而改變行為；市場／社會系統裡，人會根據你的模型調整行為。這就是反身性。</p>
+<p>這提醒我：如果一個商業模型、投資策略、平台規則被公開理解，它本身就會改變參與者行為，讓原本有效的規則失效。</p>
+<h3 id="5">5. 反身性與多重均衡，是社會系統裡最容易被工程思維忽略的兩個幽靈<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>文章用 UST/Luna 例子說明：數學閉環在理性人假設下看似完整，但當信心變成變數，系統就可能進入擠兌與死亡螺旋。</p>
+<p>多重均衡則提醒：同樣的底層假設，可能推導出完全不同結果。大家都追求安全，可以長成互信社區，也可以長成高成本低安全的猜疑社區。差別在於信任、預期、協調等湧現屬性。</p>
+<h3 id="6">6. 社會科學中的第一性不是定律，而是約束<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>作者提出一個很好的修正：社會科學裡的第一性通常不是像 <code>F=ma</code> 的定律，而是約束：</p>
+<ul>
+<li>資源稀缺性</li>
+<li>資訊不對稱</li>
+<li>激勵不相容</li>
+<li>交易成本</li>
+</ul>
+<p>這些約束不保證你一定贏，但可以排除高機率會輸的設計。換句話說，第一性原理在社會系統中的功能不是找到唯一正解，而是建立「拒絕自我感動的清單」。</p>
+<h3 id="7">7. 最後目標不是求真，而是堅固性<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>文章結尾把第一性原理從「哲學上的深度」拉回「工程上的生存」：面對反身性與多重均衡，我們追求的不是永恆真理，而是 robustness——即使假設稍微偏離、參與者行為改變、情境切換，也不會立刻崩潰的設計。</p>
+<p>這裡也接上 Chesterton’s Fence：拆掉柵欄前，先理解它為什麼存在。許多傳統慣例不是愚蠢殘留，而是災難後留下的疤痕。</p>
+<h2 id="_6">文章架構地圖<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>區塊</th>
+<th>表面內容</th>
+<th>深層功能</th>
+<th>想讓讀者轉念的地方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開頭</td>
+<td>第一性原理被商業社群濫用</td>
+<td>先拆掉讀者對流行詞的崇拜</td>
+<td>「這不是萬能鑰匙，可能只是修辭」</td>
+</tr>
+<tr>
+<td>為什麼大家愛用</td>
+<td>省成本、地位訊號、免責裝置</td>
+<td>把概念流行還原成誘因分析</td>
+<td>「工具會被人性改造成社交貨幣」</td>
+</tr>
+<tr>
+<td>醫院案例</td>
+<td>私人醫院成功不是因為病人價值</td>
+<td>示範找錯主詞會推錯結論</td>
+<td>「真正的原子可能是權力與資金池」</td>
+</tr>
+<tr>
+<td>封閉 vs. 開放系統</td>
+<td>工程對象不反應，人會反應</td>
+<td>指出工程思維套用社會系統的錯位</td>
+<td>「模型會改變模型中的人」</td>
+</tr>
+<tr>
+<td>反身性與多重均衡</td>
+<td>Luna、信任社區例子</td>
+<td>把抽象問題具體化</td>
+<td>「同一組假設不會只導向一個世界」</td>
+</tr>
+<tr>
+<td>社會第一性是約束</td>
+<td>稀缺、資訊、激勵、交易成本</td>
+<td>給出可替代的正確用法</td>
+<td>「不要求唯一正解，要排除必敗設計」</td>
+</tr>
+<tr>
+<td>結論</td>
+<td>Robustness 與 Chesterton’s Fence</td>
+<td>把文章收束成方法論警語</td>
+<td>「傳統可能是災難留下的知識」</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">第一性原理拆解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>這篇文章本身的第一性問題是：<strong>為什麼一個在工程與自然科學中有效的思考方法，移植到社會系統時會失效？</strong></p>
+<p>可能的底層答案：</p>
+<ol>
+<li><strong>社會系統不是單一目標函數</strong>：不同參與者有不同效用函數，病人、官員、股東、管理者的最優解不一致。</li>
+<li><strong>權力決定哪個需求被滿足</strong>：市場表面的使用者不一定是真正的決策者或付費者。</li>
+<li><strong>人會根據模型改變行為</strong>：預測、規則、制度一旦被理解，就可能被套利、規避或反向塑造。</li>
+<li><strong>信任與預期是內生變數</strong>：它們不是背景條件，而是系統會自我強化或自我摧毀的核心變數。</li>
+<li><strong>歷史慣例可能是壓縮過的災難記憶</strong>：看似低效的制度，有時是在防止某種更糟的失敗模式。</li>
+</ol>
+<h2 id="_8">可抽象成的思考模型<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">模型一：找錯原子檢查表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>在分析社會／商業事件時，不要只問：</p>
+<ul>
+<li>使用者需要什麼？</li>
+<li>產品是否更便宜、更好？</li>
+<li>邏輯上是否更有效率？</li>
+</ul>
+<p>還要問：</p>
+<ul>
+<li>誰真正做決策？</li>
+<li>誰付錢？</li>
+<li>誰承擔失敗成本？</li>
+<li>誰能給資源、牌照、保護或分配權？</li>
+<li>這個系統真正解決的是哪個人的恐懼？</li>
+</ul>
+<h3 id="_10">模型二：社會系統第一性不是定律，而是約束<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>分析一個制度、平台、商業模式時，可以先檢查：</p>
+<ul>
+<li>是否假設資源不稀缺？</li>
+<li>是否假設資訊完全透明？</li>
+<li>是否假設參與者激勵自然一致？</li>
+<li>是否低估交易成本？</li>
+<li>是否假設信任會自動存在？</li>
+<li>是否忽略參與者會根據規則改變行為？</li>
+</ul>
+<h3 id="robustness-elegance">模型三：Robustness 優先於 Elegance<a class="headerlink" href="#robustness-elegance" title="Permanent link">&para;</a></h3>
+<p>在社會系統裡，一個設計不應只問「邏輯是否優雅」，而要問：</p>
+<ul>
+<li>當信任下降 20% 時會不會崩？</li>
+<li>當參與者開始套利時會不會崩？</li>
+<li>當資訊延遲或不完整時會不會崩？</li>
+<li>當權力方換人時會不會崩？</li>
+<li>當最壞行為者出現時會不會崩？</li>
+</ul>
+<h3 id="_11">模型四：社會科學的第一性原理＝演化限制 + 制度約束<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>也許社會科學中的第一性原理，應該建立在「生物性的演化限制」與「制度性的摩擦約束」上，而不是追求像物理定律那樣的單一路徑預測。</p>
+<p>可以這樣理解：</p>
+<ul>
+<li><strong>生物性的演化限制</strong>：人會趨利避害、重視地位、害怕損失、偏好熟人信任、對陌生人大規模合作有認知負荷。</li>
+<li><strong>制度性的摩擦約束</strong>：資源稀缺、資訊不對稱、激勵不相容、交易成本、監督成本、執行成本。</li>
+<li><strong>開放系統的不確定性</strong>：人會根據規則調整行為；信任、恐懼、敘事與預期會改變均衡。</li>
+</ul>
+<h4 id="_12">鄧巴數註解<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p><strong>鄧巴數（Dunbar's number）</strong> 是人類學家 Robin Dunbar 提出的概念，常被概括為：一個人能穩定維持的有意義社交關係有認知上限，常見說法約為 <strong>150 人左右</strong>。</p>
+<p>在這篇筆記裡，鄧巴數不是被當成精準鐵律，而是一個組織設計提醒：<strong>人類不是無限可擴張的信任機器。</strong> 當群體規模變大，單靠熟人信任、默契、道德感與非正式規範會越來越不夠，需要制度、流程、角色、紀錄、懲罰與協調機制來接手。</p>
+<p>所以，演化限制給我們的是「約束」，不是「預測」：它限制你能怎麼設計，但不保證系統一定會走到哪個均衡。</p>
+<p>相關模型筆記：<a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/%E7%A4%BE%E6%9C%83%E7%A7%91%E5%AD%B8%E7%9A%84%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86/">社會科學的第一性原理</a></p>
+<h2 id="_13">我可以放進資料庫的筆記<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>第一性原理不是刪除脈絡，而是找到真正不可忽略的底層約束。</li>
+<li>在社會系統裡，最容易犯的錯不是邏輯錯，而是主詞錯：把使用者當決策者，把需求當權力，把效率當可執行性。</li>
+<li>口號化的第一性原理有三個誘因：省成本、顯得聰明、失敗時可免責。</li>
+<li>工程問題追求唯一真解；社會問題更常追求堅固性。</li>
+<li>反身性表示：當模型被人知道，模型就成為系統的一部分。</li>
+<li>多重均衡表示：同一個底層假設可能導向完全不同的社會結果。</li>
+<li>傳統、慣例、制度柵欄有時不是愚蠢殘留，而是災難後留下的壓縮知識。</li>
+<li>在拆掉一個看似不合理的規則前，要先找出它原本防止的是哪種失敗。</li>
+</ul>
+<h2 id="_14">對我之後做新聞拆解的提醒<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>之後用第一性原理拆新聞時，要多加一層檢查：</p>
+<ol>
+<li>我是否把「看得見的主角」誤認成「真正的決策者」？</li>
+<li>我是否把「使用者需求」誤認成「系統會滿足的需求」？</li>
+<li>我是否忽略了地方政府、監管者、資本市場、供應鏈瓶頸等權力節點？</li>
+<li>我是否把一個開放的人性系統，錯當成封閉工程系統？</li>
+<li>我是否只在找漂亮解釋，而沒有檢查這個解釋是否能承受反例？</li>
+</ol>
+<h2 id="_15">仍不確定的地方<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ul>
+<li>文章對「社會科學」的概括很有啟發，但不同領域的可建模程度差異很大；例如金融市場、平台治理、醫療制度、組織管理，反身性與制度摩擦強度不同。</li>
+<li>醫院案例很適合說明「主詞錯置」，但若要作為投資或政策判斷，仍需要更多具體公司資料、地方醫保政策與財務數據支撐。</li>
+<li>「第一性是約束不是定律」很有用，但實務上如何排列約束優先級，仍需要個案判斷。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

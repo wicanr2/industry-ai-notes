@@ -1,0 +1,1102 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-07-01/03-ros2-open-rmf%E5%95%86%E7%94%A8%E7%94%A2%E5%93%81%E7%B7%9A%E8%A7%80%E5%AF%9F/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>ROS 2 & Open-RMF 相關專欄｜從商用產品線看機器人開源堆疊的落地邊界 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ros-2-open-rmf" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ROS 2 &amp; Open-RMF 相關專欄｜從商用產品線看機器人開源堆疊的落地邊界
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原始問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-open-rmf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      分層模型：不要把 ROS 2 與 Open-RMF 混成同一層
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分層模型：不要把 ROS 2 與 Open-RMF 混成同一層">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-robot-runtime-ros-2-nav2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Robot runtime 層：ROS 2 / Nav2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fleet-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Fleet adapter 層：把機器人接到調度語言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-facility-interoperability-open-rmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Facility interoperability 層：Open-RMF 的核心價值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-business-orchestration-wcs-wms-mes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Business orchestration 層：WCS / WMS / MES
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      指標廠商整理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dexory-ros-2-nav2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dexory：最清楚的 ROS 2 / Nav2 商用化案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dexory：最清楚的 ROS 2 / Nav2 商用化案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開證據
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dexory-neele-vat" class="md-nav__link">
+    <span class="md-ellipsis">
+      補充影片：Dexory × Neele-Vat 的商用場域訊號
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理解讀
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kion-group-ros" class="md-nav__link">
+    <span class="md-ellipsis">
+      KION Group：大型物流設備商的 ROS 能力吸收
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KION Group：大型物流設備商的 ROS 能力吸收">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開證據
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      證據邊界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理解讀
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-robotics-zebraros-ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Robotics / Zebra：ROS 商用化的早期代表，但 ROS 2 證據要保守
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fetch Robotics / Zebra：ROS 商用化的早期代表，但 ROS 2 證據要保守">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開證據
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      對使用者原句的修正
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理解讀
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-open-rmf_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROS 2 與 Open-RMF 的商用產品化路徑
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS 2 與 Open-RMF 的商用產品化路徑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arobot-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      路徑 A：Robot-first
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfleet-facility-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      路徑 B：Fleet / facility-first
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cincumbent-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      路徑 C：Incumbent integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-rmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      對 Open-RMF 的判斷框架
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      來源
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ros-2-open-rmf">ROS 2 &amp; Open-RMF 相關專欄｜從商用產品線看機器人開源堆疊的落地邊界<a class="headerlink" href="#ros-2-open-rmf" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原始問題<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用者提供了一組「ROS 2 深度整合至商用產品線」的指標性廠商：Dexory、KION Group、Fetch Robotics，並希望整理到 ROS 2 &amp; Open-RMF 相關專欄。</p>
+<p>這篇筆記的重點不是把三家公司都硬歸類為 Open-RMF 使用者，而是先把層次拆開：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ROS 2 / Nav2：單台機器人的感知、定位、導航、控制與節點通訊
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Open-RMF：多機器人、多廠牌、多樓層 / 電梯 / 門禁 / 任務調度的互操作協調層
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>WCS / WMS / MES：倉儲、製造、物流營運系統的業務調度層
+</code></pre></div>
+<p>商用產品通常不會公開完整架構，因此這裡把「公開證據」與「合理推論」分開寫。</p>
+<h2 id="_2">一句話結論<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Dexory 是目前公開資料中最強的 ROS 2 / Nav2 商用落地案例；KION 顯示大型物流設備商正在把 ROS / ROS 2 能力納入自動化產品線，但公開產品級細節較少；Fetch Robotics 則更像 ROS 商用化的早期代表，公開資料主要指向 ROS 1 / Fetch &amp; Freight 生態，而不是明確的 ROS 2 + DDS 車隊案例。Open-RMF 應放在「跨廠牌協調層」理解，不能把所有 ROS 2 商用 AMR 都直接等同於 Open-RMF 產品。</p>
+</blockquote>
+<h2 id="ros-2-open-rmf_1">分層模型：不要把 ROS 2 與 Open-RMF 混成同一層<a class="headerlink" href="#ros-2-open-rmf_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-robot-runtime-ros-2-nav2">1. Robot runtime 層：ROS 2 / Nav2<a class="headerlink" href="#1-robot-runtime-ros-2-nav2" title="Permanent link">&para;</a></h3>
+<p>這層處理單台機器人能不能可靠移動：</p>
+<ul>
+<li>感測器資料流：LiDAR、camera、IMU、wheel odometry。</li>
+<li>Localization / mapping。</li>
+<li>Path planning / control / obstacle avoidance。</li>
+<li>Lifecycle、action、topic、service。</li>
+<li>Nav2 的 planner、controller、behavior tree、costmap、recovery behavior。</li>
+</ul>
+<p>商用 AMR 如果說「採用 ROS 2 / Nav2」，通常是這一層。</p>
+<h3 id="2-fleet-adapter">2. Fleet adapter 層：把機器人接到調度語言<a class="headerlink" href="#2-fleet-adapter" title="Permanent link">&para;</a></h3>
+<p>這層把不同機器人的私有 API 轉成共同任務語言：</p>
+<ul>
+<li>dispatch task</li>
+<li>report robot state</li>
+<li>pause / resume / cancel</li>
+<li>battery / charging</li>
+<li>traffic negotiation</li>
+<li>map / lane / waypoint</li>
+</ul>
+<p>Open-RMF 的 fleet adapter 就在這一層發揮作用。</p>
+<h3 id="3-facility-interoperability-open-rmf">3. Facility interoperability 層：Open-RMF 的核心價值<a class="headerlink" href="#3-facility-interoperability-open-rmf" title="Permanent link">&para;</a></h3>
+<p>Open-RMF 官方定位是「A Common Language for Robot Interoperability」。它最早為 healthcare 場景發展，但官方也說可用於 offices、airports、seaports、shopping malls、factories、distribution centers 等。</p>
+<p>這層處理的是：</p>
+<ul>
+<li>多廠牌機器人不要在走廊互卡。</li>
+<li>機器人要和電梯、門禁、充電站、建築設備互動。</li>
+<li>任務不是只派給某台 robot，而是需要跨系統協調。</li>
+</ul>
+<h3 id="4-business-orchestration-wcs-wms-mes">4. Business orchestration 層：WCS / WMS / MES<a class="headerlink" href="#4-business-orchestration-wcs-wms-mes" title="Permanent link">&para;</a></h3>
+<p>倉儲物流公司真正賣給客戶的通常不是 ROS 2，而是：</p>
+<ul>
+<li>盤點準確率。</li>
+<li>揀貨效率。</li>
+<li>庫位最佳化。</li>
+<li>訂單履約速度。</li>
+<li>與 WMS / WCS / ERP 串接。</li>
+</ul>
+<p>因此 ROS 2 / Open-RMF 在商用敘事中常被藏在底層，公開資料不一定會主動揭露。</p>
+<h2 id="_3">指標廠商整理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>廠商</th>
+<th>核心產品 / 應用領域</th>
+<th>公開 ROS 2 / ROS 證據</th>
+<th>與 Open-RMF 的關係判斷</th>
+<th>筆記</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dexory</td>
+<td>高層貨架庫存盤點機器人、倉儲 digital twin / DexoryView</td>
+<td>官方 ROSCon 2024 文表示 ROS 2 是 autonomous mobile robots 與 DexoryView 的核心；ROSCon 2023 談 Nav2 bidirectional navigation；Nav2 / ROS Index 提到 Dexory 是 Nav2 sponsor</td>
+<td>目前比較像 ROS 2 / Nav2 深度商用案例；未看到官方明確說使用 Open-RMF</td>
+<td>最強案例</td>
+</tr>
+<tr>
+<td>KION Group</td>
+<td>叉車、無人叉車、廠內物流、自動化倉儲設備</td>
+<td>ROS-Industrial current members 列 KION；Open Robotics Discourse / 招募資料顯示 KION India 尋找 ROS / ROS 2 / C++ robotics 能力</td>
+<td>公開資料只能支持「ROS 能力進入產品研發組織」，不能直接證明 Open-RMF 產品化</td>
+<td>中等證據</td>
+</tr>
+<tr>
+<td>Fetch Robotics / Zebra</td>
+<td>Fetch / Freight AMR、物流與揀貨車隊；後被 Zebra 收購</td>
+<td>GitHub <code>fetchrobotics/fetch_ros</code> 是 Fetch Robotics 的 open ROS components；公開 manual 是 Fetch &amp; Freight Research Edition Noetic；repo README 提過未來 ROS 2 support planning / forthcoming</td>
+<td>更像 ROS 商用化早期代表；公開資料不足以支持「ROS 2 DDS 跨 AP 車隊」這個具體說法</td>
+<td>要謹慎標註</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dexory-ros-2-nav2">Dexory：最清楚的 ROS 2 / Nav2 商用化案例<a class="headerlink" href="#dexory-ros-2-nav2" title="Permanent link">&para;</a></h2>
+<h3 id="_4">公開證據<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Dexory 官方在 ROSCon 2024 回顧中寫到：</p>
+<ul>
+<li>團隊分享「deploying and scaling robotics solutions powered by ROS 2」。</li>
+<li>Guillaume Doisy 參與「Successfully deploying ROS 2 into production」panel。</li>
+<li>Dexory 從小型 robotics start-up 擴展到部署近 100 台 autonomous mobile robots。</li>
+<li>其 production software stack 使用最新版本 ROS 2。</li>
+<li>官方明確寫：「With ROS 2 at the core of our autonomous mobile robots and the DexoryView platform」。</li>
+</ul>
+<p>Dexory 官方 ROSCon 2023 文章則談 Guillaume Doisy 在 ROSCon 分享「Bidirectional Navigation with Nav2」，重點是非圓形、對稱 footprint 的機器人如何支援雙向移動。</p>
+<p>Nav2 / ROS Index 頁面也列出 Dexory：</p>
+<blockquote>
+<p>Dexory develops robotics and AI logistics solutions to drive better business decisions using a digital twin of warehouses to provide inventory insights.</p>
+</blockquote>
+<p>Open Robotics Discourse 的 Nav2 討論還提到，Nav2 MPPI controller 對「大型、高慣性工業車輛」的 low / asymmetric acceleration 支援，是受 Dexory 的大型車輛需求推動。</p>
+<h3 id="dexory-neele-vat">補充影片：Dexory × Neele-Vat 的商用場域訊號<a class="headerlink" href="#dexory-neele-vat" title="Permanent link">&para;</a></h3>
+<p>使用者補充的 Dexory 官方 YouTube 影片《Dexory Robot x Neele Vat | Autonomous Robots Transform Inventory Management》（2026-01-30）提供了一個更貼近商業場域的證據：Dexory 描述其 autonomous robots 自 2025 年初在 Neele-Vat 位於 Rotterdam Pernis 的倉儲場域運作，覆蓋約 40,000 個 pallet locations，並將整倉掃描自動化到每週 3 次。</p>
+<p>影片與描述中值得記錄的商業訊號是：</p>
+<ul>
+<li>robot 每晚在倉儲中自主巡行，從 wall to wall、floor to ceiling 掃描儲位。</li>
+<li>目標不是「展示機器人會走」，而是把 cycle counting 從人工週期盤點變成連續資料採集。</li>
+<li>影片描述 robot 可掃描最高約 14m 貨架，速度可達每小時約 10,000 個 pallet locations。</li>
+<li>AI / computer vision 將原始 physical data 轉成 DexoryView / Dexory 軟體平台中的 actionable insights。</li>
+<li>客戶端價值集中在 misplaced pallets、unexpected empty locations、stock accuracy、root-cause analysis 與服務可靠度。</li>
+</ul>
+<p>這段影片不能直接證明 Dexory 使用 Open-RMF；它比較強化的是「ROS 2 / Nav2 類 runtime 的商業需求為何重要」：倉儲客戶真正付錢的是庫存可視性與盤點可靠度，而不是底層 middleware 名稱。</p>
+<h3 id="_5">第一性原理解讀<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Dexory 的場景不是普通辦公室小 AMR，而是高貨架倉儲盤點：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>高貨架 + 密集通道 + 24/7 運轉 + 大型車體 + 高慣性
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>→ 需要穩定 localization / planning / control
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>→ 通用 Nav2 必須能處理非圓形 footprint、雙向行駛、低加速度限制
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>→ 商用需求反過來推動開源 navigation stack 成熟
+</code></pre></div>
+<p>這裡值得注意的是：Dexory 不是只「拿 ROS 2 來用」，而是透過 ROSCon、Nav2 sponsorship、具體 controller 改進需求，進入開源 stack 的共演關係。</p>
+<h2 id="kion-group-ros">KION Group：大型物流設備商的 ROS 能力吸收<a class="headerlink" href="#kion-group-ros" title="Permanent link">&para;</a></h2>
+<h3 id="_6">公開證據<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>KION 是全球大型 industrial trucks / warehouse equipment / intralogistics 集團。公開可查到的 ROS 證據主要是：</p>
+<ul>
+<li>ROS-Industrial current members 頁面列出 KION Group，描述其在 100 多個國家提供 factory、warehouse、distribution center 的 material / information flow 解決方案。</li>
+<li>Open Robotics Discourse 上出現 KION India 的 robotics ROS / C++ developer 招募內容；搜尋結果摘要明確提到 KION Group 是 industrial truck 與 intralogistic automation 的大型組織。</li>
+<li>CareersInRobotics 上也有 KION Group Senior Robotics Engineer 職缺，技能列 C++、ROS 2、Python。</li>
+</ul>
+<h3 id="_7">證據邊界<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>這些資料支持：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>KION 組織內需要 ROS / ROS 2 robotics software 能力
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>KION 在 ROS-Industrial 生態中可見
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>KION 的產品場景天然對應 AGV / AMR / forklift autonomy / intralogistics
+</code></pre></div>
+<p>但目前公開資料不足以嚴格證明：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>某一款 KION 商用無人叉車 = 以 ROS 2 作為正式 production runtime
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>某一套 KION fleet system = 已使用 Open-RMF
+</code></pre></div>
+<p>所以這裡要把 KION 放在「大型 incumbent 正在吸收 ROS 2 能力」而不是「已公開 Open-RMF 產品」那一類。</p>
+<h3 id="_8">第一性原理解讀<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>KION 這類公司真正的架構挑戰通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>既有叉車 / AGV / WCS / 客戶現場安全規範
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>+ 新一代 autonomous stack
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>+ 與 WMS / MES / ERP 串接
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>+ 車隊、路權、充電、維修、SLA
+</code></pre></div>
+<p>ROS 2 可能位於 vehicle autonomy 層，但上層很可能仍由 KION / Dematic 自己的 WCS、fleet manager 或客戶既有系統主導。Open-RMF 若進入，通常會是跨廠牌、多設備互通的 adapter layer，而不是取代 WCS。</p>
+<h2 id="fetch-robotics-zebraros-ros-2">Fetch Robotics / Zebra：ROS 商用化的早期代表，但 ROS 2 證據要保守<a class="headerlink" href="#fetch-robotics-zebraros-ros-2" title="Permanent link">&para;</a></h2>
+<h3 id="_9">公開證據<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Fetch Robotics 公開資料顯示：</p>
+<ul>
+<li>GitHub <code>fetchrobotics/fetch_ros</code> 是「Open ROS Components for Robots from Fetch Robotics」。</li>
+<li>Fetch &amp; Freight Research Edition manual 是 ROS Noetic + Ubuntu 20.04；文件保留作 existing users / historical reference。</li>
+<li><code>fetch_ros</code> README 的 buildfarm development branches 表格曾列 ROS 2 Dashing planning / forthcoming 類描述。</li>
+<li>Zebra 於 2021 年宣布收購 Fetch Robotics，使其 AMR 能力納入 Zebra 的 enterprise asset intelligence / automation portfolio。</li>
+</ul>
+<h3 id="_10">對使用者原句的修正<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>使用者提供的說法中提到：</p>
+<blockquote>
+<p>Fetch Robotics 利用 ROS 2 的 DDS 確保車隊在龐大物流中心內，於 Wi-Fi 跨 AP 切換時的通訊可靠度。</p>
+</blockquote>
+<p>這個描述在概念上合理，因為 ROS 2 的 DDS 確實與 distributed communication / QoS / discovery 有關；但本次公開查證沒有找到 Fetch 官方明確說「商用車隊以 ROS 2 DDS 解決 Wi-Fi roaming」的來源。</p>
+<p>因此在筆記中應標註為：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>概念相容，但公開證據不足；Fetch 更穩健的定位是 ROS 商用化早期代表，而非已公開 ROS 2 DDS 車隊案例。
+</code></pre></div>
+<h3 id="_11">第一性原理解讀<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Fetch 的重要性在於它證明過一件事：ROS 不只可以存在於研究機器人，也可以包裝成可銷售、可維護、可部署的 AMR 產品。</p>
+<p>但 ROS 1 到 ROS 2 的商用遷移不是自然發生；中間有很多 production concern：</p>
+<ul>
+<li>網路品質與 fleet scale。</li>
+<li>QoS / discovery / namespace / lifecycle。</li>
+<li>OTA update。</li>
+<li>客戶現場 support。</li>
+<li>與 WMS / WCS 的 SLA。</li>
+<li>安全與停機責任。</li>
+</ul>
+<p>Fetch 是「ROS 商用化」的好案例；若要把它列為「ROS 2 深度整合」，還需要更強來源。</p>
+<h2 id="ros-2-open-rmf_2">ROS 2 與 Open-RMF 的商用產品化路徑<a class="headerlink" href="#ros-2-open-rmf_2" title="Permanent link">&para;</a></h2>
+<p>從這三個案例可以抽象出三種商用化路徑：</p>
+<h3 id="arobot-first">路徑 A：Robot-first<a class="headerlink" href="#arobot-first" title="Permanent link">&para;</a></h3>
+<p>代表：Dexory。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>先做出一台能在真實環境可靠運作的 robot
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>→ ROS 2 / Nav2 成為 autonomy runtime
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>→ 商用需求推動 navigation stack 客製化
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>→ 再包成 data platform / digital twin / warehouse intelligence
+</code></pre></div>
+<p>這條路徑的核心是「robot 本身就是資料採集與執行端」。</p>
+<h3 id="bfleet-facility-first">路徑 B：Fleet / facility-first<a class="headerlink" href="#bfleet-facility-first" title="Permanent link">&para;</a></h3>
+<p>代表：Open-RMF 的典型目標場景。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>現場已有多廠牌 robot / elevator / door / charger
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>→ 問題不是單台 robot 會不會走
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>→ 問題是多系統如何避免互卡、共用路權、完成任務
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>→ Open-RMF 作為 interoperability layer
+</code></pre></div>
+<p>這條路徑最適合醫院、機場、商場、辦公樓、港口、工廠、distribution center。</p>
+<h3 id="cincumbent-integration">路徑 C：Incumbent integration<a class="headerlink" href="#cincumbent-integration" title="Permanent link">&para;</a></h3>
+<p>代表：KION / Zebra 類公司。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>原本已有叉車、倉儲系統、客戶渠道、維修網路
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>→ 吸收 ROS / ROS 2 開源能力
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>→ 但產品包裝仍以 WCS / WMS / fleet platform / service contract 呈現
+</code></pre></div>
+<p>這條路徑下，ROS 2 往往不會是銷售頁主角，而是工程組織與底層軟體架構的一部分。</p>
+<h2 id="open-rmf">對 Open-RMF 的判斷框架<a class="headerlink" href="#open-rmf" title="Permanent link">&para;</a></h2>
+<p>判斷某商用系統是否「接近 Open-RMF 產品化」，不能只看它是否用 ROS 2。應該看四個訊號：</p>
+<ol>
+<li>
+<p><strong>是否有 fleet adapter / connector</strong><br />
+   是否公開提到把自家 fleet manager 接到 RMF。</p>
+</li>
+<li>
+<p><strong>是否處理 facility resources</strong><br />
+   電梯、門、閘機、充電站、走廊路權。</p>
+</li>
+<li>
+<p><strong>是否跨廠牌</strong><br />
+   只調度自家 robot 的 fleet manager，不一定需要 Open-RMF；跨廠牌才更接近 RMF 的價值。</p>
+</li>
+<li>
+<p><strong>是否把任務抽象成共通語言</strong><br />
+   例如 delivery、cleaning、patrol、inventory scan，而不是只下發自家 API 的 waypoint。</p>
+</li>
+</ol>
+<p>用這個框架看：</p>
+<ul>
+<li>Dexory：強 ROS 2 / Nav2；Open-RMF 訊號未明確。</li>
+<li>KION：可能有 fleet / WCS 深度；Open-RMF 訊號未明確。</li>
+<li>Fetch：強 ROS 商用歷史；ROS 2 / Open-RMF 訊號需保守。</li>
+</ul>
+<h2 id="_12">可放進資料庫的筆記<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>ROS 2、Nav2 與 Open-RMF 是同一個商用 robotics stack 的不同層。ROS 2 / Nav2 解的是單台機器人能否穩定導航與控制；Open-RMF 解的是多機器人、多廠牌與建築設備之間的互操作；WCS / WMS / MES 解的是業務任務與倉儲營運。Dexory 是公開資料中最清楚的 ROS 2 / Nav2 商用化案例，且商用需求反向推動 Nav2；KION 代表大型物流設備商吸收 ROS / ROS 2 能力；Fetch 代表 ROS 商用化早期路徑，但公開證據不足以直接支持 ROS 2 DDS 車隊說法。不要把「用了 ROS 2」直接等同於「用了 Open-RMF」。</p>
+</blockquote>
+<h2 id="_13">仍不確定的地方<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ol>
+<li>KION 是否有公開產品明確宣稱 ROS 2 runtime 或 Open-RMF adapter？本次只看到會員 / 招募 / 生態訊號。</li>
+<li>Fetch / Zebra 的現行 AMR 產品線是否已從 ROS 1 遷移到 ROS 2？公開文件較舊或偏 research edition。</li>
+<li>Dexory 是否有使用 Open-RMF 或只是 ROS 2 / Nav2 + 自家 DexoryView fleet / data platform？公開頁面目前支持後者，不支持前者。</li>
+<li>Open-RMF 在 distribution center 的實際 commercial deployment 名單仍需另做來源盤點，尤其要找 adapter repository、case study、或客戶場域證據。</li>
+</ol>
+<h2 id="_14">來源<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.open-rmf.org/">Open-RMF 官方網站：A Common Language for Robot Interoperability</a></li>
+<li><a href="https://www.dexory.com/insights/dexory-at-roscon-2024-scaling-success-with-ros-2">Dexory｜Dexory at ROSCon 2024: Scaling Success with ROS 2</a></li>
+<li><a href="https://www.youtube.com/watch?v=jgQ51fDQwRI">YouTube｜Dexory Robot x Neele Vat | Autonomous Robots Transform Inventory Management</a></li>
+<li><a href="https://www.dexory.com/insights/roscon23-bidirectional-navigation-with-nav2-guillaume-doisy">Dexory｜ROSCon'23: Bidirectional navigation with Nav2</a></li>
+<li><a href="https://index.ros.org/r/navigation2/">ROS Index｜navigation2 repository overview</a></li>
+<li><a href="https://discourse.openrobotics.org/t/nav2-blog-improving-mppi-for-high-interia-industrial-vehicles/54403">Open Robotics Discourse｜Nav2 Blog: Improving MPPI for High-Inertia Industrial Vehicles</a></li>
+<li><a href="https://rosindustrial.org/current-members/">ROS-Industrial｜Current Members</a></li>
+<li><a href="https://discourse.openrobotics.org/t/robotics-ros-c-developer-kion-india/51497">Open Robotics Discourse｜Robotics ROS, C++ Developer @ KION India</a></li>
+<li><a href="https://github.com/fetchrobotics/fetch_ros">GitHub｜fetchrobotics/fetch_ros</a></li>
+<li><a href="https://fetchrobotics.github.io/docs/">Fetch &amp; Freight Research Edition Manual</a></li>
+<li><a href="https://www.zebra.com/us/en/about-zebra/newsroom/press-releases/2021/zebra-technologies-to-acquire-fetch-robotics.html">Zebra press release｜Zebra Technologies to Acquire Fetch Robotics</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

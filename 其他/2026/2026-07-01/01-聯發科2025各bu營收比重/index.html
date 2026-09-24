@@ -1,0 +1,956 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-07-01/01-%E8%81%AF%E7%99%BC%E7%A7%912025%E5%90%84bu%E7%87%9F%E6%94%B6%E6%AF%94%E9%87%8D/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>聯發科 2025 各 BU 營收比重：從公開揭露反推，而不是把產品名直接當組織名 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2025-bu" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              聯發科 2025 各 BU 營收比重：從公開揭露反推，而不是把產品名直接當組織名
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原始問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      資料來源與證據邊界
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="資料來源與證據邊界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要來源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      重要限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開揭露先給出的硬數字
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bu" class="md-nav__link">
+    <span class="md-ellipsis">
+      先把「BU」翻成外部可觀察的三組產品群
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      逐季營收與產品群比重
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      反推 2025 全年產品群營收比重
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解：為什麼這個切法比「產品清單」更有用？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解：為什麼這個切法比「產品清單」更有用？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 營收不是技術分類，而是客戶採購預算的分類
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 手機 55% 代表聯發科仍是手機平台公司，但已不是純手機公司
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-smart-edge-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Smart Edge 的 40% 是最需要拆解的部分，因為它不是單一市場
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-power-ic-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Power IC 只有 5%，但它的戰略意義可能大於營收占比
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      這份資料對投資 / 產業判讀的含義
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="這份資料對投資 / 產業判讀的含義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      可守住的結論
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進資料庫的一句話
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2025-bu">聯發科 2025 各 BU 營收比重：從公開揭露反推，而不是把產品名直接當組織名<a class="headerlink" href="#2025-bu" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原始問題<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用者想知道：「聯發科 2025 各 BU 的營收比重」。這個問題看似是查一張表，但第一個要拆掉的假設是：公開財報通常不直接揭露內部 BU 損益；它揭露的是合併營收、收入類型、地區、客戶集中度，以及法說會使用的產品群營收比重。</p>
+<p>所以這份筆記採用的定義是：</p>
+<blockquote>
+<p>以聯發科 2025 年法說會反覆使用的三個 <strong>Product Group</strong> 作為外部可觀察的 BU proxy：Mobile Phone、Smart Edge Platforms、Power IC。</p>
+</blockquote>
+<p>這不是內部組織圖，而是投資人可追蹤的營收結構。</p>
+<h2 id="_2">資料來源與證據邊界<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">主要來源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>聯發科 2025 年年報：<a href="https://www.mediatek.com/hubfs/728015/MediaTek%20Assets/Pdfs/Annual%20Reports/114%E5%B9%B4%E8%81%AF%E7%99%BC%E7%A7%91%E6%8A%80%E5%B9%B4%E5%A0%B1.pdf"><code>114年聯發科技年報</code></a></li>
+<li>聯發科 2025 年英文年報：<a href="https://www.mediatek.com/hubfs/728015/MediaTek%20Assets/Pdfs/Annual%20Reports/2025-English-Annual-Report.pdf"><code>2025 English Annual Report</code></a></li>
+<li>聯發科投資人關係頁：<a href="https://www.mediatek.com/investor-relations/financial-information"><code>Financial Information</code></a></li>
+<li>2025 年各季法說簡報：</li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q1/Presentation.pdf"><code>2025Q1 Presentation</code></a></li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q2/Presentation.pdf"><code>2025Q2 Presentation</code></a></li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q3/Presentation.pdf"><code>2025Q3 Presentation</code></a></li>
+<li><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q4/Presentation.pdf"><code>2025Q4 Presentation</code></a></li>
+<li>2025 年度合併營收月報：<a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Monthly%20Reports/2025/2025-%E5%90%88%E4%BD%B5%E8%B2%A1%E5%8B%99%E5%A0%B1%E5%91%8A.pdf"><code>2025 合併財務報告／月營收彙總</code></a></li>
+<li>2025Q4 合併財報：<a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Financial%20Reports/2025/%E7%AC%AC4%E5%AD%A3%20%E5%90%88%E4%BD%B5%E8%B2%A1%E5%8B%99%E5%A0%B1%E5%91%8A.pdf"><code>第4季 合併財務報告</code></a></li>
+<li>證交所 OpenAPI 現況查核：<a href="https://openapi.twse.com.tw/v1/opendata/t187ap03_L"><code>上市公司基本資料 t187ap03_L</code></a>、<a href="https://openapi.twse.com.tw/v1/opendata/t187ap05_L"><code>每月營收 t187ap05_L</code></a>。公開資訊觀測站互動頁在本機直接 POST 查詢時回傳安全阻擋頁，因此本筆記以聯發科公開在 IR 頁、並可對應證交所／公開資訊觀測站格式的財報與月營收 PDF 為主。</li>
+</ol>
+<h3 id="_4">重要限制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>年報沒有直接給「BU 營收表」。它給的是：全年合併營收、收入認列、地區、客戶集中度、主要產品用途與市場分析。</li>
+<li>法說簡報給的是季度 Product Group revenue breakdown，而且是整數百分比，附註明確說加總可能因四捨五入不等於 100%。</li>
+<li>因此「2025 全年 BU 比重」必須由：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>全年產品群營收 ≈ Σ（各季合併營收 × 該季產品群比重）
+</code></pre></div>
+<p>來反推。這是一個可審計的估算，不是公司正式揭露的年度 BU 表。</p>
+<h2 id="_5">公開揭露先給出的硬數字<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>2025 年聯發科合併營收：<strong>新台幣 595,965,682 仟元</strong>，約 <strong>5,959.66 億元</strong>。</p>
+<p>年報致股東報告書也以整數描述為營收再創新高，達 <strong>新台幣 5,960 億元</strong>，年增 <strong>12.3%</strong>。2025Q4 合併財報的關鍵查核事項則揭露：</p>
+<ul>
+<li>營業收入淨額：595,965,682 仟元</li>
+<li>商品銷售收入：585,345,737 仟元</li>
+<li>勞務及其他營業收入：10,619,945 仟元</li>
+<li>主要收入來源為銷售晶片</li>
+</ul>
+<p>這代表我們要切的主體不是「所有服務收入」，而是以晶片產品銷售為核心的產品群結構。</p>
+<h2 id="bu">先把「BU」翻成外部可觀察的三組產品群<a class="headerlink" href="#bu" title="Permanent link">&para;</a></h2>
+<p>2025 法說簡報使用三組 Product Group：</p>
+<table>
+<thead>
+<tr>
+<th>外部揭露產品群</th>
+<th>法說定義</th>
+<th>可理解成的業務重心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile Phone</td>
+<td>5G / 4G / 3G smartphone and feature phone</td>
+<td>手機 SoC 與手機基頻平台，是最大現金流底座</td>
+</tr>
+<tr>
+<td>Smart Edge Platforms</td>
+<td>router、broadband、PON、laptop、wireless headset、smart speaker、automotive、ARM-based computing and IoT、TV、consumer / enterprise customized service</td>
+<td>非手機邊緣運算平台；包含連網、電視、平板 / 筆電、車用、ASIC / 客製化服務等，是成長與多角化敘事核心</td>
+</tr>
+<tr>
+<td>Power IC</td>
+<td>Power IC</td>
+<td>電源管理 / 類比晶片，規模較小但和裝置、車用、資料中心需求有連動</td>
+</tr>
+</tbody>
+</table>
+<p>年報的「主要產品」分類更細，列出：行動運算裝置晶片、無線通訊及寬頻網路晶片、數位電視晶片、客製化晶片、車用晶片、類比晶片。這些產品在法說口徑裡大致被收斂成上面三組：手機單獨列出；多數非手機數位 / 連網 / 車用 / ASIC 進入 Smart Edge Platforms；類比電源進入 Power IC。</p>
+<h2 id="_6">逐季營收與產品群比重<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>月營收彙總給出的 2025 年累計營收，可拆出四季營收：</p>
+<table>
+<thead>
+<tr>
+<th>季度</th>
+<th style="text-align: right;">季營收（新台幣百萬元）</th>
+<th style="text-align: right;">Mobile Phone</th>
+<th style="text-align: right;">Smart Edge Platforms</th>
+<th style="text-align: right;">Power IC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1Q25</td>
+<td style="text-align: right;">153,312</td>
+<td style="text-align: right;">56%</td>
+<td style="text-align: right;">39%</td>
+<td style="text-align: right;">5%</td>
+</tr>
+<tr>
+<td>2Q25</td>
+<td style="text-align: right;">150,369</td>
+<td style="text-align: right;">52%</td>
+<td style="text-align: right;">43%</td>
+<td style="text-align: right;">6%</td>
+</tr>
+<tr>
+<td>3Q25</td>
+<td style="text-align: right;">142,097</td>
+<td style="text-align: right;">53%</td>
+<td style="text-align: right;">42%</td>
+<td style="text-align: right;">5%</td>
+</tr>
+<tr>
+<td>4Q25</td>
+<td style="text-align: right;">150,188</td>
+<td style="text-align: right;">59%</td>
+<td style="text-align: right;">37%</td>
+<td style="text-align: right;">5%</td>
+</tr>
+<tr>
+<td>2025 全年</td>
+<td style="text-align: right;">595,966</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>注意：2Q25 的 52% + 43% + 6% = 101%，4Q25 的 59% + 37% + 5% = 101%。這不是錯，而是法說簡報整數百分比四捨五入造成的現象。因此下面的金額要看成「約略量級」。</p>
+<h2 id="2025">反推 2025 全年產品群營收比重<a class="headerlink" href="#2025" title="Permanent link">&para;</a></h2>
+<p>用每季營收加權後，得到：</p>
+<table>
+<thead>
+<tr>
+<th>Product Group / BU proxy</th>
+<th style="text-align: right;">估算營收（新台幣百萬元）</th>
+<th style="text-align: right;">估算營收（新台幣億元）</th>
+<th style="text-align: right;">未強制歸一比重</th>
+<th style="text-align: right;">若強制歸一後比重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile Phone</td>
+<td style="text-align: right;">327,969</td>
+<td style="text-align: right;">3,279.7</td>
+<td style="text-align: right;">55.0%</td>
+<td style="text-align: right;">54.8%</td>
+</tr>
+<tr>
+<td>Smart Edge Platforms</td>
+<td style="text-align: right;">239,701</td>
+<td style="text-align: right;">2,397.0</td>
+<td style="text-align: right;">40.2%</td>
+<td style="text-align: right;">40.0%</td>
+</tr>
+<tr>
+<td>Power IC</td>
+<td style="text-align: right;">31,302</td>
+<td style="text-align: right;">313.0</td>
+<td style="text-align: right;">5.3%</td>
+<td style="text-align: right;">5.2%</td>
+</tr>
+<tr>
+<td>合計</td>
+<td style="text-align: right;">598,972</td>
+<td style="text-align: right;">5,989.7</td>
+<td style="text-align: right;">100.5%</td>
+<td style="text-align: right;">100.0%</td>
+</tr>
+</tbody>
+</table>
+<p>比較穩健的結論是：</p>
+<blockquote>
+<p>聯發科 2025 年外部可觀察的營收結構約為：<strong>手機 55%、Smart Edge 40%、Power IC 5%</strong>。</p>
+</blockquote>
+<p>如果要更保守寫法：</p>
+<ul>
+<li>Mobile Phone：<strong>約 55%</strong>，約新台幣 <strong>3,260–3,280 億元</strong>量級。</li>
+<li>Smart Edge Platforms：<strong>約 40%</strong>，約新台幣 <strong>2,380–2,400 億元</strong>量級。</li>
+<li>Power IC：<strong>約 5%</strong>，約新台幣 <strong>300 億元上下</strong>。</li>
+</ul>
+<h2 id="_7">第一性原理拆解：為什麼這個切法比「產品清單」更有用？<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 營收不是技術分類，而是客戶採購預算的分類<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>晶片公司可以用很多方式分類產品：製程、IP、終端、封裝、功能、客戶。但營收真正來自客戶採購預算，所以投資人最需要的分類是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>誰在買？買來放進什麼終端？這個終端的換機 / 升級週期是否足以支撐 ASP？
+</code></pre></div>
+<p>Mobile Phone 是單一巨大終端市場；Smart Edge 是一籃子終端與平台；Power IC 是功能型元件。三者的本質不同，不應只用「晶片」一詞混在一起。</p>
+<h3 id="2-55">2. 手機 55% 代表聯發科仍是手機平台公司，但已不是純手機公司<a class="headerlink" href="#2-55" title="Permanent link">&para;</a></h3>
+<p>手機仍是最大收入池，原因很直覺：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>手機出貨量 × SoC ASP × 旗艦 / 高階滲透率 = 最大營收底座
+</code></pre></div>
+<p>年報提到 2025 年聯發科全球手機市場佔有率穩居第一，且旗艦晶片貢獻超過 30 億美元營收。這說明手機不只是量大，也正在把價值往高階平台拉。</p>
+<p>但如果手機只有 55%，另一面就是：非手機已經接近 45%。這意味著市場不能再只用「Android 手機循環」理解聯發科。</p>
+<h3 id="3-smart-edge-40">3. Smart Edge 的 40% 是最需要拆解的部分，因為它不是單一市場<a class="headerlink" href="#3-smart-edge-40" title="Permanent link">&para;</a></h3>
+<p>Smart Edge Platforms 包含：Wi-Fi、寬頻、PON、筆電、耳機、智慧音箱、車用、ARM computing、IoT、TV、consumer / enterprise customized service。</p>
+<p>這其實是多個不同商業模型的集合：</p>
+<ul>
+<li>連網晶片：靠規格升級，如 Wi-Fi 7、10G-PON。</li>
+<li>TV / 消費電子：靠平台滲透與成本整合。</li>
+<li>車用：靠長認證週期、長產品生命週期、低失效率要求。</li>
+<li>ASIC / 客製化：靠大客戶、長案期、先進 IP 與封裝 / SerDes 能力。</li>
+<li>ARM computing / Edge AI：靠效能功耗比與軟硬體平台整合。</li>
+</ul>
+<p>所以 Smart Edge 不是「其他」。它是聯發科從單一手機 SoC 公司，轉成「邊緣運算平台與客製化矽智財公司」的證據。</p>
+<h3 id="4-power-ic-5">4. Power IC 只有 5%，但它的戰略意義可能大於營收占比<a class="headerlink" href="#4-power-ic-5" title="Permanent link">&para;</a></h3>
+<p>Power IC 約 5%，直接看營收不大。但從第一性原理看，電源管理是所有高效能電子系統的約束條件：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>算力提升 → 功耗密度提高 → 電源轉換 / 管理 / 保護需求上升
+</code></pre></div>
+<p>年報也提到類比晶片受惠 5G、電腦、IoT、穿戴、車用、資料中心及工業用等市場。它不一定會成為最大收入池，但可能是聯發科在車用、資料中心、邊緣 AI 裝置裡提高方案完整度的輔助拼圖。</p>
+<h2 id="_8">這份資料對投資 / 產業判讀的含義<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">可守住的結論<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>手機仍是主營收引擎</strong>：2025 約 55%。</li>
+<li><strong>非手機平台已經很大</strong>：Smart Edge 約 40%，不是邊角業務。</li>
+<li><strong>Power IC 是小而關鍵的支撐層</strong>：約 5%，但和高功耗、高整合系統的趨勢相連。</li>
+<li><strong>聯發科的估值敘事不應只看手機市佔率</strong>：還要看 Smart Edge 裡的 ASIC、車用、寬頻、Wi-Fi、ARM computing、TV 與 Edge AI 哪些能提高 ASP 和毛利穩定性。</li>
+</ol>
+<h3 id="_10">仍不確定的地方<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>公司沒有公開 Smart Edge 內部子項目的年度營收比重，所以無法從公開資料精準拆出 ASIC、車用、TV、Wi-Fi、寬頻各自占比。</li>
+<li>Product Group 的百分比為法說簡報整數比例，不能當成審計後的年度 BU 金額。</li>
+<li>「BU」若指公司內部事業單位、管理責任中心或人員組織，公開資料無法完整還原；本筆記使用的是投資人關係口徑的產品群 proxy。</li>
+</ul>
+<h2 id="_11">可放進資料庫的一句話<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>聯發科 2025 年用公開資料可重建的營收結構約為：Mobile Phone 55%、Smart Edge Platforms 40%、Power IC 5%；這不是年報直接揭露的 BU 表，而是用 2025 各季法說產品群比重乘上季度營收後反推的投資人視角營收地圖。真正重要的不是 55/40/5 的小數點，而是聯發科已從「手機 SoC 為主」變成「手機現金流 + Smart Edge 多平台成長 + Power IC 支撐層」的三層結構。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
