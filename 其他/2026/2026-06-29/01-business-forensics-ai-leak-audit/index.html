@@ -1,0 +1,1165 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-06-29/01-business-forensics-ai-leak-audit/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Business Forensics AI / Imara：公開 repo 是否已經「leak」的專案稽核筆記 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#business-forensics-ai-imara-repo-leak" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Business Forensics AI / Imara：公開 repo 是否已經「leak」的專案稽核筆記
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原始資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      我實際檢查了什麼
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="我實際檢查了什麼">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-github-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. GitHub metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 本機 repo 結構
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-secret-sensitive-filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Secret / sensitive filename 掃描
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-secret-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Secret regex 掃描結果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leak" class="md-nav__link">
+    <span class="md-ellipsis">
+      真正的 leak 是哪一種？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="真正的 leak 是哪一種？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secret-leak-source-ip-leak" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一層：不是 secret leak，而是 source / IP leak
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二層：部署與攻擊面線索公開
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三層：商業與法律策略公開
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      專案設計拆解：它到底在做什麼？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="專案設計拆解：它到底在做什麼？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      表面產品
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      內部模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心價值主張
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全與外洩判斷
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全與外洩判斷">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      目前沒有看到的東西
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leak_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍然應該當成 leak 的東西
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      風險矩陣
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題的本質不是「有沒有一把 key」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      這個 repo 的訊號是「把內部工作台當成公開展示櫃」
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      建議處置順序
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建議處置順序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      P0：立刻決定 repo 邊界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-secret-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      P1：做正式 secret scan 與輪替判斷
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2：重整公開 / 私有資料分層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3：線上面做一次黑箱驗證
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leak_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      「三種 leak」模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      「公開不等於開源，但公開會破壞保密」模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="business-forensics-ai-imara-repo-leak">Business Forensics AI / Imara：公開 repo 是否已經「leak」的專案稽核筆記<a class="headerlink" href="#business-forensics-ai-imara-repo-leak" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原始資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>專案：<a href="https://github.com/bouwerruan10-boop/business-forensics-ai"><code>bouwerruan10-boop/business-forensics-ai</code></a></li>
+<li>本機副本：<code>~/tmp2/business-forensics-ai</code></li>
+<li>本次檢查日期：2026-06-29</li>
+<li>遠端狀態：GitHub repo 為 <strong>public</strong>，預設分支 <code>main</code>。</li>
+<li>最新遠端 commit：<code>e38239d7ad31f9f54bac6a4fc6a5ea8f524f93d9</code>，訊息為 <code>feat(verify): the 'prove it' contract now travels onto exported PDF + HTML</code>。</li>
+<li>注意：本筆記只記錄「是否外洩」的判斷與風險結構；不收錄任何實際 secret 值。</li>
+</ul>
+<h2 id="_2">一句話結論<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>如果「leak」指的是 <strong>API key / password / token 等可直接濫用的秘密值</strong>，這次掃描沒有看到明確外洩；但如果「leak」指的是 <strong>私有商業產品的完整原始碼、商業計畫、稽核報告、部署線索與 go-to-market 材料公開在 GitHub</strong>，那答案是：<strong>已經是高風險公開曝露</strong>。</p>
+<p>最關鍵的矛盾是：<code>README.md</code> 開頭寫著「CONFIDENTIAL &amp; PROPRIETARY — NOT OPEN SOURCE」與「trade-secret material」，但 GitHub repo metadata 顯示 <code>private=false</code> / <code>visibility=public</code>。這不是傳統 secret leak，而是 <strong>repository exposure / source disclosure</strong>。</p>
+<h2 id="_3">我實際檢查了什麼<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1-github-metadata">1. GitHub metadata<a class="headerlink" href="#1-github-metadata" title="Permanent link">&para;</a></h3>
+<p>透過 <code>gh repo view</code> 與 GitHub API 讀回：</p>
+<ul>
+<li><code>nameWithOwner</code>: <code>bouwerruan10-boop/business-forensics-ai</code></li>
+<li><code>isPrivate</code>: <code>false</code></li>
+<li><code>visibility</code>: <code>public</code></li>
+<li><code>defaultBranch</code>: <code>main</code></li>
+<li>repo 建立時間：2026-06-18</li>
+<li>最新更新：2026-06-28</li>
+<li>語言面：主要為 Python、JavaScript，另有 Batchfile、PowerShell、HTML、CSS、Dockerfile。</li>
+</ul>
+<h3 id="2-repo">2. 本機 repo 結構<a class="headerlink" href="#2-repo" title="Permanent link">&para;</a></h3>
+<p>本機 <code>~/tmp2/business-forensics-ai</code> 是一個正常 Git repo，remote 指向：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/bouwerruan10-boop/business-forensics-ai.git
+</code></pre></div>
+<p>排除 <code>.git</code>、<code>node_modules</code>、venv、cache、build 後，工作樹約：</p>
+<ul>
+<li>358 個 tracked files</li>
+<li>約 3.4 MB 非排除內容</li>
+<li>主要目錄：<code>backend/</code>, <code>frontend/</code>, <code>docs/</code>, <code>legal/</code>, <code>scripts/</code>, <code>.github/</code></li>
+</ul>
+<h3 id="3-secret-sensitive-filename">3. Secret / sensitive filename 掃描<a class="headerlink" href="#3-secret-sensitive-filename" title="Permanent link">&para;</a></h3>
+<p>檢查 tracked 檔名後，與 secret / credential / data 相關的顯著項目：</p>
+<ul>
+<li><code>backend/.env.example</code></li>
+<li><code>backend/.env - Copy.example</code></li>
+<li><code>TEST_DATA.csv</code></li>
+<li><code>backend/data/benchmarks.json</code></li>
+<li><code>docs/gtm/IMARA_Accountant_Shortlist.csv</code></li>
+<li><code>docs/reports/Imara_Investor_Report_Accessible.html</code></li>
+<li><code>docs/reports/assets/_ir_preview_p1.png</code></li>
+<li><code>docs/reports/assets/_ir_preview_p6.png</code></li>
+</ul>
+<p>沒有看到真正的 <code>.env</code>、<code>.db</code>、<code>.sqlite</code>、<code>.pdf</code>、<code>.xlsx</code> 被 tracked；本機工作樹也沒有找到未追蹤的 <code>.env</code> / DB / PDF / Excel 殘留。</p>
+<h3 id="4-secret-regex">4. Secret regex 掃描結果<a class="headerlink" href="#4-secret-regex" title="Permanent link">&para;</a></h3>
+<p>我用多組模式掃描目前 tracked text files 與 Git history unique blobs，包括：</p>
+<ul>
+<li>Anthropic key 形狀：<code>sk-ant-...</code></li>
+<li>OpenAI key 形狀：<code>sk-...</code> / <code>sk-proj-...</code></li>
+<li>GitHub PAT：<code>ghp_...</code> 等</li>
+<li>AWS Access Key：<code>AKIA...</code></li>
+<li>Private key block</li>
+<li>JWT-like token</li>
+<li>generic <code>api_key=</code>, <code>secret=</code>, <code>token=</code>, <code>password=</code> assignment</li>
+</ul>
+<p>結果：</p>
+<ul>
+<li>目前工作樹：5 個候選命中。</li>
+<li>Git history：15 個候選命中。</li>
+</ul>
+<p>人工檢視後，這些命中看起來主要是 <strong>false positive</strong>：</p>
+<ol>
+<li><code>backend/agents/base_agent.py</code> 的 <code>api_key=</code> 是把 <code>ANTHROPIC_API_KEY</code> 變數傳入 SDK，不是硬編碼 key。</li>
+<li>幾個 markdown 文件中的 <code>sk-...</code> 命中，其實是英文句子或破折號造成的形狀誤判，例如 <code>sk--...</code>、<code>sk-by-...</code>、<code>sk-Dat...</code> 這類片段，不像有效 API key。</li>
+<li><code>.env.example</code> 內的 key 欄位是 placeholder，值已用 <code>***</code> / 空值形式處理。</li>
+</ol>
+<p>所以：<strong>我沒有看到可立即拿去使用的 API key / token / private key 外洩。</strong></p>
+<h2 id="leak">真正的 leak 是哪一種？<a class="headerlink" href="#leak" title="Permanent link">&para;</a></h2>
+<p>這個 repo 比較像三層曝露：</p>
+<h3 id="secret-leak-source-ip-leak">第一層：不是 secret leak，而是 source / IP leak<a class="headerlink" href="#secret-leak-source-ip-leak" title="Permanent link">&para;</a></h3>
+<p><code>README.md</code> 自稱：</p>
+<blockquote>
+<p>CONFIDENTIAL &amp; PROPRIETARY — NOT OPEN SOURCE.</p>
+</blockquote>
+<p>同時 repo 是 public。這代表外部人可以直接取得：</p>
+<ul>
+<li>backend FastAPI 架構</li>
+<li>multi-agent pipeline 設計</li>
+<li>scoring / verification / report export 邏輯</li>
+<li>frontend UI 與資料呈現模式</li>
+<li>security audit / hardening plan</li>
+<li>product roadmap</li>
+<li>GTM 名單與 sales/research material</li>
+<li>legal draft / trademark risk / NDA / terms / privacy draft</li>
+</ul>
+<p>這些不一定是「憑證」，但很可能是創業專案最有價值的 know-how。</p>
+<h3 id="_4">第二層：部署與攻擊面線索公開<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>docs/</code>、<code>scripts/</code>、<code>frontend</code> 與 <code>backend/main.py</code> 裡透露了足夠多的運維資訊，例如：</p>
+<ul>
+<li>Vercel frontend domain pattern：<code>business-forensics-ai.vercel.app</code> 與 preview deploy pattern。</li>
+<li>Railway backend URL 在 live e2e script 中出現。</li>
+<li>API route 結構：<code>/api/analyze</code>, <code>/api/status/{id}</code>, <code>/api/report/{id}</code>, <code>/api/shared/{token}</code>, <code>/api/admin/*</code>, <code>/api/v1/*</code> 等。</li>
+<li>auth model：operator password → bearer token；optional <code>API_SECRET_KEY</code> / <code>ADMIN_API_KEY</code>。</li>
+<li>rate limit、upload size、file type allowlist、CORS policy、health endpoint、share-token behavior。</li>
+</ul>
+<p>這些不是「直接失竊」，但會讓攻擊者不用猜系統長什麼樣子。安全上通常叫 <strong>reconnaissance advantage</strong>：攻擊者可以從 source code 直接建立攻擊地圖。</p>
+<h3 id="_5">第三層：商業與法律策略公開<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>docs/gtm/IMARA_Accountant_Shortlist.csv</code> 看起來是 go-to-market shortlist；<code>legal/</code> 內有 NDA、operator agreement、terms、privacy、trademark risk 等草案；<code>docs/audits/</code> 有安全稽核結論與 remediation history。</p>
+<p>這些資料不一定含個資或 secret，但會暴露：</p>
+<ul>
+<li>目標客群與銷售路線。</li>
+<li>產品尚未補強或曾經補強的安全問題。</li>
+<li>法律風險與品牌命名風險。</li>
+<li>產品定位：South African SMEs、funding / lender decision-support、POPIA / NCA governance。</li>
+</ul>
+<p>所以這一層是 <strong>business confidentiality leak</strong>。</p>
+<h2 id="_6">專案設計拆解：它到底在做什麼？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">表面產品<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Imara 是給南非 SME 的 AI business intelligence / funding-readiness 工具。使用者上傳財務、銀行、稅務、法律、HR、business plan 等文件後，backend 會跑多個 Claude specialist agents，再輸出 dashboard、PDF / HTML report、score、roadmap、credit memo 等。</p>
+<h3 id="_8">內部模型<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>這個專案不是單純「把文件丟給 LLM 摘要」，而是明顯想做一個 deterministic-first 的 WAT system：</p>
+<ul>
+<li><strong>Workflow</strong>：CEO pipeline 定義 phase、agent 順序與報告組裝。</li>
+<li><strong>Agents</strong>：Claude agents 負責解釋、排序、敘事，不應該自己發明數字。</li>
+<li><strong>Tools</strong>：financial ratios、distress score、tax optimizer、simulation、faithfulness verifier 等 deterministic services 負責計算。</li>
+</ul>
+<p>這個設計方向是合理的：金融 / credit / lender-facing 場景裡，LLM 最危險的是「講得像真的但數字不受約束」。把數字、score、ratio、threshold 放在 deterministic services，LLM 只做 narrate / prioritize，能降低 hallucination 風險。</p>
+<h3 id="_9">核心價值主張<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>它真正想賣的不是「AI 顧問報告」，而是：</p>
+<blockquote>
+<p>把 SME 原本混亂、不可貸、不可投資的資料，整理成 lender / investor 可讀、可驗證、可追責的 evidence package。</p>
+</blockquote>
+<p>所以後期 commit 訊息才會強調 <code>prove it contract</code>、verification evidence、PDF / HTML export。這是對的：如果最終買單者是 lender / accountant / government programme，可信度不是 UI 美觀，而是「每個數字能不能被追溯、每個結論能不能被 challenge」。</p>
+<h2 id="_10">安全與外洩判斷<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">目前沒有看到的東西<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>我沒有看到以下明確外洩：</p>
+<ul>
+<li>有效 Anthropic / OpenAI / GitHub / AWS key。</li>
+<li>private key block。</li>
+<li>真實 <code>.env</code> 檔。</li>
+<li>SQLite production DB。</li>
+<li>客戶上傳原始文件。</li>
+<li>明顯的真實財報 / 銀行流水 / 稅務文件。</li>
+</ul>
+<p><code>TEST_DATA.csv</code> 看起來像示範月營收 / 成本 / 現金資料；<code>docs/gtm/IMARA_Accountant_Shortlist.csv</code> 是公開可查的公司名單整理，敏感度偏商業策略而非個資密碼。</p>
+<h3 id="leak_1">仍然應該當成 leak 的東西<a class="headerlink" href="#leak_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>完整原始碼公開</strong>：如果作者本意是 proprietary，那 public repo 本身就是 leak。</li>
+<li><strong>安全稽核文件公開</strong>：即使漏洞已補，攻擊者仍能知道歷史弱點、架構假設與 auth 邊界。</li>
+<li><strong>部署端點公開</strong>：live e2e script 暴露 production API base，方便外部探測。</li>
+<li><strong>GTM / legal / roadmap 公開</strong>：對 competitor / opportunistic attacker 都有價值。</li>
+<li><strong>license / visibility 矛盾</strong>：repo public 但 README 說非 open source，會造成法律與治理混亂；公開不等於授權，但實務上已經降低保密主張強度。</li>
+</ol>
+<h2 id="_12">風險矩陣<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>風險</th>
+<th style="text-align: right;">等級</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API key / password 直接外洩</td>
+<td style="text-align: right;">低</td>
+<td>掃描未見有效 secret；<code>.env</code> 與 DB 沒有 tracked。</td>
+</tr>
+<tr>
+<td>原始碼 / trade secret 外洩</td>
+<td style="text-align: right;">高</td>
+<td>repo public，且 README 自稱 confidential / proprietary。</td>
+</tr>
+<tr>
+<td>攻擊面 reconnaissance</td>
+<td style="text-align: right;">中高</td>
+<td>route、auth、部署、rate limit、share-token、admin 設計都可讀。</td>
+</tr>
+<tr>
+<td>客戶資料外洩</td>
+<td style="text-align: right;">低到未知</td>
+<td>repo 內未見 production DB / uploaded docs；但若 live endpoint 有 public share 或 auth 關閉，需另做線上驗證。</td>
+</tr>
+<tr>
+<td>商業策略外洩</td>
+<td style="text-align: right;">中高</td>
+<td>GTM shortlist、legal drafts、roadmap、research/audit docs 皆公開。</td>
+</tr>
+<tr>
+<td>法律 / IP 主張受損</td>
+<td style="text-align: right;">中</td>
+<td>public GitHub 與 proprietary 聲明並存，容易造成後續執行困難。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_13">第一性原理拆解<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="key">問題的本質不是「有沒有一把 key」<a class="headerlink" href="#key" title="Permanent link">&para;</a></h3>
+<p>很多人談 leak 只找 <code>.env</code>。但在 AI SaaS / fintech-ish 工具裡，真正值錢的常常不是 key，而是：</p>
+<ul>
+<li>agent workflow 怎麼拆；</li>
+<li>deterministic verification 怎麼接；</li>
+<li>scoring / model card / governance 怎麼包裝；</li>
+<li>市場定位與客戶路線；</li>
+<li>安全稽核與補強路徑。</li>
+</ul>
+<p>也就是說，<strong>secret leak 是 credential compromise；public proprietary repo 是 capability / strategy compromise。</strong> 前者是「有人能不能登入你的帳號」，後者是「別人能不能複製你的產品邏輯與攻擊你的系統」。</p>
+<h3 id="repo">這個 repo 的訊號是「把內部工作台當成公開展示櫃」<a class="headerlink" href="#repo" title="Permanent link">&para;</a></h3>
+<p>它看起來像一個由 AI coding agent 高速迭代的 repo：文件很多、稽核很多、handoff 很完整、commit message 很長。這對協作非常好，但如果 repo 是 public，就會出現反效果：</p>
+<ul>
+<li>對自己：每個設計決策都可追溯。</li>
+<li>對外人：每個設計決策也都可觀察。</li>
+</ul>
+<p>這就是 AI-agent era 的新風險：代理人很擅長留下完整脈絡，但完整脈絡若放錯邊界，就等於把內部會議室直播出去。</p>
+<h2 id="_14">建議處置順序<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="p0-repo">P0：立刻決定 repo 邊界<a class="headerlink" href="#p0-repo" title="Permanent link">&para;</a></h3>
+<p>如果這不是刻意 open-source demo，應立刻：</p>
+<ol>
+<li>將 GitHub repo 改成 private。</li>
+<li>檢查是否已有 forks / clones / GitHub code search 快取；若有，視為已外流，不要假設改 private 就消失。</li>
+<li>停止把 <code>docs/audits</code>, <code>docs/gtm</code>, <code>legal</code>, <code>HANDOFF.md</code>, <code>SESSION_STATE.md</code> 這類內部材料放在 public repo。</li>
+<li>分離 public demo repo 與 private product repo。</li>
+</ol>
+<h3 id="p1-secret-scan">P1：做正式 secret scan 與輪替判斷<a class="headerlink" href="#p1-secret-scan" title="Permanent link">&para;</a></h3>
+<p>雖然這次未見有效 secret，仍建議：</p>
+<ol>
+<li>用 <code>gitleaks</code> / GitHub secret scanning 掃全歷史。</li>
+<li>檢查 GitHub Security → Secret scanning alerts。</li>
+<li>若任何 key 曾經進入 public history，直接 rotate，不要只刪檔。</li>
+<li>把 <code>.gitleaks.toml</code> 放進 CI gate，push 前阻擋。</li>
+</ol>
+<h3 id="p2">P2：重整公開 / 私有資料分層<a class="headerlink" href="#p2" title="Permanent link">&para;</a></h3>
+<p>建議至少拆成三層：</p>
+<ul>
+<li><strong>Public marketing repo</strong>：README、demo screenshots、high-level architecture、license 清楚的 public artifacts。</li>
+<li><strong>Private app repo</strong>：backend/frontend/source/tests/deploy scripts。</li>
+<li><strong>Private operations vault</strong>：GTM 名單、legal drafts、audit reports、handoff、session state、operator runbooks、production URLs。</li>
+</ul>
+<h3 id="p3">P3：線上面做一次黑箱驗證<a class="headerlink" href="#p3" title="Permanent link">&para;</a></h3>
+<p>本次主要是 repo / source audit，還沒有對 production endpoint 做 destructive 或付費操作。下一步可以只做安全的 GET / unauth 測試：</p>
+<ul>
+<li><code>/api/health</code> 是否顯示 <code>auth_required=true</code>。</li>
+<li><code>/api/admin/*</code> 未帶 token 是否 401。</li>
+<li><code>/api/report/{random_uuid}</code> 是否 401 / 404，而不是 detail leak。</li>
+<li><code>/api/shared/{random}</code> 是否只有 410 / 404。</li>
+<li>frontend JS bundle 是否含 <code>VITE_API_KEY</code> 或其他敏感 env。</li>
+</ul>
+<p>不要在未授權下跑 <code>/api/analyze</code>，因為它可能花費 Anthropic / SERPER credits。</p>
+<h2 id="_15">可抽象成的思考模型<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="leak_2">「三種 leak」模型<a class="headerlink" href="#leak_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Credential leak</strong>：key / token / password 外洩，後果是帳號或資源被濫用。</li>
+<li><strong>Data leak</strong>：客戶資料、DB、文件、報表外洩，後果是隱私、法規與信任損害。</li>
+<li><strong>Capability leak</strong>：原始碼、roadmap、prompt、agent workflow、security audit、GTM strategy 外洩，後果是競爭與攻擊面暴露。</li>
+</ol>
+<p>這個 repo 目前不像第一種，暫時也沒看到第二種；最明顯是第三種。</p>
+<h3 id="_16">「公開不等於開源，但公開會破壞保密」模型<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>GitHub public repo 可以同時寫著 proprietary license；法律上外人未必有使用權。但保密性的 practical value 已經受損，因為：</p>
+<ul>
+<li>內容可被 clone。</li>
+<li>搜尋引擎與 code search 可能索引。</li>
+<li>forks / caches / mirrors 可能存在。</li>
+<li>攻擊者不需要 license 才能閱讀與學習。</li>
+</ul>
+<p>所以要問的不是「授權了嗎」，而是「還能主張這是秘密嗎」。</p>
+<h2 id="_17">放進資料庫的筆記<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>business-forensics-ai</code> public repo 沒看到明確有效 API key / token / private key 外洩，但 repo 本身公開了 proprietary source、security audits、GTM、legal drafts 與部署線索；應視為 source / business confidentiality leak。</li>
+<li>對 AI-agent 快速迭代專案，<code>CLAUDE.md</code>, <code>HANDOFF.md</code>, <code>SESSION_STATE.md</code>, <code>docs/audits/</code>, <code>docs/gtm/</code>, <code>legal/</code> 往往比程式碼更像內部會議紀錄；public repo 要特別排除這些。</li>
+<li>Secret scanning 只能回答「鑰匙是否外洩」，不能回答「能力、策略與攻擊地圖是否外洩」。</li>
+</ul>
+<h2 id="_18">仍不確定的地方<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ul>
+<li>我沒有查 GitHub forks / clones / external mirrors，因此不能判斷外流範圍。</li>
+<li>我沒有對 production API 做 live black-box 探測，也沒有使用任何付費 / side-effect endpoint。</li>
+<li><code>AUTH_ENABLED</code>、<code>ADMIN_API_KEY</code>、<code>API_SECRET_KEY</code> 等 production env 是否正確設定，需要看 Railway / Vercel dashboard 或用只讀 endpoint 安全驗證。</li>
+<li>若 repo 過去曾短暫 commit 真實 <code>.env</code> 後又刪除，這次 regex 未命中不代表 100% 不存在；正式流程仍應跑 gitleaks / GitHub Advanced Security secret scanning。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

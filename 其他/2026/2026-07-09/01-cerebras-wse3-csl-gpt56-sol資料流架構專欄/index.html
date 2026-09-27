@@ -1,0 +1,889 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-07-09/01-cerebras-wse3-csl-gpt56-sol%E8%B3%87%E6%96%99%E6%B5%81%E6%9E%B6%E6%A7%8B%E5%B0%88%E6%AC%84/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>技術專欄｜Cerebras WSE-3 與 GPT-5.6 Sol：不是更大的 GPU，而是把記憶體牆拆成 90 萬個小房間 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cerebras-wse-3-gpt-56-sol-gpu-90" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              技術專欄｜Cerebras WSE-3 與 GPT-5.6 Sol：不是更大的 GPU，而是把記憶體牆拆成 90 萬個小房間
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      先釐清：使用者論述中哪些是已查到的，哪些要保留不確定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="先釐清：使用者論述中哪些是已查到的，哪些要保留不確定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      較有來源支持的部分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      需要標示不確定或修正的部分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-csl" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼 CUDA 使用者會看不懂 CSL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wse-3-44gb-80gb-44gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      WSE-3 的關鍵：不是 44GB 比 80GB 大，而是 44GB 的位置不同
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stencil-computation-wse" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼 stencil computation 特別適合 WSE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm-cerebras" class="md-nav__link">
+    <span class="md-ellipsis">
+      那 LLM 推論為什麼也可以放到 Cerebras？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      思考模型：把硬體差異拆成三個問題
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="思考模型：把硬體差異拆成三個問題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 資料在哪裡？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 平行性由誰負責描述？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 工作負載的通訊圖長什麼樣？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      小結
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cerebras-wse-3-gpt-56-sol-gpu-90">技術專欄｜Cerebras WSE-3 與 GPT-5.6 Sol：不是更大的 GPU，而是把記憶體牆拆成 90 萬個小房間<a class="headerlink" href="#cerebras-wse-3-gpt-56-sol-gpu-90" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用者提供材料：關於 OpenAI GPT-5.6 Sol 在 Cerebras 上推出、CUDA 與 CSL 程式模型差異、WSE-3 資料流架構、SRAM 頻寬與 stencil computation 加速的論述。</li>
+<li>補充查核日期：2026-07-09</li>
+<li>主要來源：</li>
+<li>OpenAI｜<a href="https://openai.com/index/previewing-gpt-5-6-sol/">Previewing GPT-5.6 Sol: a next-generation model</a></li>
+<li>Cerebras｜<a href="https://www.cerebras.ai/product-chip">Product - Chip / The Future of AI is Wafer Scale</a></li>
+<li>NVIDIA｜<a href="https://www.nvidia.com/en-us/data-center/h100/">NVIDIA H100 Tensor Core GPU</a></li>
+<li>arXiv｜Elia Belli and Daniele De Sensi, <a href="https://arxiv.org/abs/2605.07954v1">Stencil Computations on Cerebras Wafer-Scale Engine</a>, 2026-05-08</li>
+</ul>
+<h2 id="_2">一句話拆解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>GPU 是「很多執行緒共享一個龐大而分層的記憶體系統」；Cerebras WSE-3 比較像「把 90 萬個小處理器鋪在一整片晶圓上，每個處理器只管自己的 48 KB SRAM，資料像水流一樣在相鄰格子之間被明確送過去」。</p>
+<p>這不是單純的「Cerebras 比 NVIDIA 快」，而是兩種計算哲學的差異：</p>
+<ul>
+<li>GPU 解決的是：如何讓大量 thread / warp 共同餵飽高吞吐的 SM，並盡量把 HBM、cache、shared memory 用到極致。</li>
+<li>WSE 解決的是：如果把記憶體直接放在每個 PE 旁邊，並讓資料移動變成程式明確描述的一部分，哪些工作負載可以避開傳統記憶體牆？</li>
+</ul>
+<h2 id="_3">先釐清：使用者論述中哪些是已查到的，哪些要保留不確定<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">較有來源支持的部分<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>OpenAI 確實提到 GPT-5.6 Sol 將在 Cerebras 上提供。</strong><br />
+   OpenAI 的 GPT-5.6 Sol 預覽頁寫到：將在 7 月於 Cerebras 上推出 GPT-5.6 Sol，速度最高可到 <strong>750 tokens/s</strong>，初期提供給 select customers。這裡我查到的是 750 tokens/s，不是 3,000 tokens/s。</p>
+</li>
+<li>
+<p><strong>Cerebras 官方宣稱 WSE-3 是晶圓級 AI 晶片。</strong><br />
+   Cerebras 產品頁稱 WSE-3 面積 46,225 mm²、4 兆電晶體、125 petaflops AI compute、900,000 AI-optimized cores。</p>
+</li>
+<li>
+<p><strong>Cerebras 官方與論文都支持「大量分散式 SRAM」這個核心敘事。</strong><br />
+   Cerebras 產品頁與 Belli / De Sensi 的 stencil 論文都把 WSE-3 的優勢放在 on-chip SRAM、mesh interconnect、資料流架構與避免 off-chip memory bottleneck 上。</p>
+</li>
+<li>
+<p><strong>H100 的 80GB 與約 3TB/s 等級頻寬是合理比較基準。</strong><br />
+   NVIDIA H100 頁面列出 SXM 版本 GPU memory 80GB、memory bandwidth 3.35TB/s；使用者說的「每秒 3 TB」可視為約略值。</p>
+</li>
+</ol>
+<h3 id="_5">需要標示不確定或修正的部分<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>「gpt-oss-120B 每秒 3,000 tokens」不等同於 GPT-5.6 Sol。</strong><br />
+   Cerebras 產品頁可見其推論服務有「超過 3,000 tokens/s」的敘事，但 OpenAI GPT-5.6 Sol 官方頁面寫的是在 Cerebras 上最高 750 tokens/s。兩者可能是不同模型、不同批次、不同量測條件，不能直接混在一起。</p>
+</li>
+<li>
+<p><strong>「stencil computation 較 H100 有 95–210 倍」我沒有在本次查核中找到直接來源。</strong><br />
+   我查到的 2026 arXiv 論文是以 WSE-3 對 NVIDIA A100 baseline 比較，摘要與正文提到最高 <strong>342×</strong> speedup；若要主張 H100 的 95–210×，需要另找該數字的原始 benchmark 或報告。</p>
+</li>
+<li>
+<p><strong>「完全沒有 kernel 啟動」需要更細緻地說。</strong><br />
+   從程式模型角度，CSL 的確不是 CUDA 那種 host launch GPU kernel、再由 thread blocks / warps 執行的模型；但 WSE 仍有 host 與 SDK 負責載入程式、配置 PE、串流資料與啟動任務。比較安全的說法是：它沒有 CUDA 式 thread/warp/kernel mental model，而不是整個系統沒有任何啟動或排程概念。</p>
+</li>
+</ol>
+<h2 id="cuda-csl">為什麼 CUDA 使用者會看不懂 CSL<a class="headerlink" href="#cuda-csl" title="Permanent link">&para;</a></h2>
+<p>如果熟悉 CUDA，你腦中的計算單位大概是這樣：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>一個 kernel
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  → 很多 block
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    → 每個 block 很多 thread
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      → 32 個 thread 組成 warp
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        → 存取 global memory / shared memory / registers / cache
+</code></pre></div>
+<p>所以 CUDA 程式設計常常在想：</p>
+<ul>
+<li>thread index 怎麼映射到資料？</li>
+<li>memory access 能不能 coalescing？</li>
+<li>shared memory tile 怎麼設計？</li>
+<li>warp divergence 會不會嚴重？</li>
+<li>global memory bandwidth 是否被浪費？</li>
+<li>occupancy 是否夠高？</li>
+</ul>
+<p>Cerebras CSL 的思考方向幾乎反過來：你不是先想「我要開多少 thread」，而是想「每個 PE 是一個小島，它手上有哪一小塊資料？它什麼時候要把 wavelet 送給東西南北的鄰居？收到資料後要觸發什麼計算？」</p>
+<p>比較像這樣：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>整片晶圓是一張 2D 網格
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  → 每個 PE 有自己的程式、自己的 SRAM、自己的 router
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    → PE 只能直接碰自己的本地 SRAM
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      → 要別人的資料，就把訊息沿著 mesh 傳過去
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        → 計算與通訊被設計成資料流
+</code></pre></div>
+<p>換句話說，CUDA 的核心抽象是「大量執行緒如何共同使用記憶體階層」；CSL / WSE 的核心抽象是「大量處理單元如何把資料移動本身變成計算圖的一部分」。</p>
+<h2 id="wse-3-44gb-80gb-44gb">WSE-3 的關鍵：不是 44GB 比 80GB 大，而是 44GB 的位置不同<a class="headerlink" href="#wse-3-44gb-80gb-44gb" title="Permanent link">&para;</a></h2>
+<p>使用者材料裡最重要的一句其實不是「WSE-3 有 44GB SRAM」，而是「這 44GB 不是一個所有核心共享的大池子」。</p>
+<p>H100 的 80GB HBM 很大，也很快，但它仍然是 off-chip HBM。GPU 的 SM 要從 HBM 拿資料，中間還要經過 cache、記憶體控制器、coalescing 規則與各種排程。GPU 很擅長把這套系統榨乾，但程式寫不好或工作負載不適合時，仍會撞到 memory wall。</p>
+<p>WSE-3 的 44GB on-chip SRAM 則被切成 90 萬份，放在 PE 旁邊。直覺上你可以把它想成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GPU：很多工人共用一個巨大倉庫，倉庫很快，但大家都要排路線、排車道、排規則。
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>WSE：每個工人桌上都有一個小抽屜，抽屜超快；但別人的抽屜你不能直接打開，只能傳紙條請隔壁轉交。
+</code></pre></div>
+<p>這帶來兩個同時存在的結果：</p>
+<ol>
+<li>
+<p><strong>本地存取極快。</strong><br />
+   SRAM 在 PE 旁邊，沒有傳統 GPU 那種 global memory access 形態；很多 memory-bound 工作如果能被切成本地小問題，就會非常吃香。</p>
+</li>
+<li>
+<p><strong>遠端資料變成顯式通訊成本。</strong><br />
+   PE 不能隨便讀別人的 SRAM。你必須把資料透過 mesh / wavelet routing 傳到該去的地方。這使得演算法設計更像在做「空間部署」：資料放哪裡、往哪裡流、何時同步，會直接決定效率。</p>
+</li>
+</ol>
+<p>所以 WSE-3 的優勢不是把 GPU 的所有功能都做得更大，而是把「記憶體靠近計算」這件事推到極端；代價是程式設計者要接受更強的空間性與通訊顯式性。</p>
+<h2 id="stencil-computation-wse">為什麼 stencil computation 特別適合 WSE<a class="headerlink" href="#stencil-computation-wse" title="Permanent link">&para;</a></h2>
+<p>Stencil computation 是科學計算裡很常見的模式，例如流體、熱傳、天氣、波動方程。它的基本形式是：每個格點的新值，取決於自己與鄰近格點。</p>
+<p>例如一個簡化的 2D stencil：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>new[x, y] = f(
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  old[x, y],
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  old[x-1, y], old[x+1, y],
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  old[x, y-1], old[x, y+1]
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>)
+</code></pre></div>
+<p>這種工作負載的特性是：</p>
+<ul>
+<li>計算量不一定很大；</li>
+<li>資料移動很多；</li>
+<li>每個點主要需要附近鄰居，不需要全域亂抓資料；</li>
+<li>網格結構天然對應到 2D PE mesh。</li>
+</ul>
+<p>這正好吻合 WSE 的長處。每個 PE 管一小塊網格，鄰居資料就從相鄰 PE 傳來。你不需要反覆從 HBM 拉資料，也不需要把所有資料塞進 shared memory tile 再小心處理 bank conflict。Belli / De Sensi 的論文因此把 WSE-3 描述成能有效消除 GPU stencil 實作常見的 off-chip memory bottleneck，並在其測試設定中對 A100 baseline 達到最高 342× speedup。</p>
+<p>但這也提醒我們：這種加速不是通用魔法。它最適合「空間局部性強、通訊圖規律、資料可以穩定鋪在網格上」的問題。若工作負載需要大量不規則查表、動態分支、全域 attention、或頻繁跨很遠的 PE 搬資料，WSE 的優勢就要重新驗證。</p>
+<h2 id="llm-cerebras">那 LLM 推論為什麼也可以放到 Cerebras？<a class="headerlink" href="#llm-cerebras" title="Permanent link">&para;</a></h2>
+<p>LLM 推論不像 stencil 那麼簡單，尤其 transformer 會涉及矩陣乘法、KV cache、attention、MoE routing、batching、prefill / decode 不同階段等問題。這裡不能天真地說「LLM 就是 stencil」。比較合理的理解是：Cerebras 想把 LLM 推論也改寫成更適合 wafer-scale dataflow 的部署問題。</p>
+<p>對模型服務而言，使用者真正感受到的不是 FLOPS，而是：</p>
+<ul>
+<li>首 token latency；</li>
+<li>decode tokens/s；</li>
+<li>長上下文與 cache 行為；</li>
+<li>batch 與即時互動之間的取捨；</li>
+<li>API 是否能穩定供應；</li>
+<li>成本與配額。</li>
+</ul>
+<p>OpenAI 說 GPT-5.6 Sol 在 Cerebras 上最高 750 tokens/s，這個訊號的意義不只是「有一個更快晶片」。更深的意義是：前沿模型服務商開始把模型能力分層成不同部署路線。有些路線追求最大模型能力；有些路線追求互動速度；有些路線追求成本；有些路線追求資料主權或供應多元化。</p>
+<p>Cerebras 在這裡扮演的是「非 GPU 推論供應路線」。它不一定取代 H100 / B200，而是提供一個不同的 latency / throughput / memory locality trade-off。</p>
+<h2 id="_6">思考模型：把硬體差異拆成三個問題<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>下次看到「某某 AI 晶片比 GPU 快幾倍」時，不要先問倍數，而是先問三件事。</p>
+<h3 id="1">1. 資料在哪裡？<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>是在 off-chip HBM？</li>
+<li>是在 on-chip SRAM？</li>
+<li>是每個核心私有？</li>
+<li>還是共享 cache / shared memory？</li>
+</ul>
+<p>計算速度常常不是第一瓶頸；資料在哪裡、搬多遠、能不能重用，才是底層瓶頸。</p>
+<h3 id="2">2. 平行性由誰負責描述？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CUDA：程式員描述 thread/block/grid，硬體負責 warp scheduling 與記憶體階層。</li>
+<li>WSE / CSL：程式員更直接描述 PE 之間的資料流、通訊與本地計算。</li>
+</ul>
+<p>抽象越高，開發越容易，但硬體特色可能被隱藏；抽象越貼近硬體，效能上限可能更高，但開發成本與演算法重寫成本也更高。</p>
+<h3 id="3">3. 工作負載的通訊圖長什麼樣？<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>如果資料主要跟鄰居互動，mesh 很自然。</li>
+<li>如果資料需要全域聚合，mesh 可能變成通訊瓶頸。</li>
+<li>如果資料流規律可預測，dataflow 架構很強。</li>
+<li>如果資料流高度動態、不規則，GPU 的成熟軟體生態可能更有彈性。</li>
+</ul>
+<h2 id="_7">可放進資料庫的筆記<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>WSE-3 不是「更大 GPU」，而是「晶圓級 2D PE mesh + 分散式 SRAM + 顯式資料流」的架構路線。</li>
+<li>H100 的優勢在成熟 CUDA 生態、HBM 容量/頻寬、通用 accelerator software stack；WSE-3 的優勢在把記憶體極度靠近計算，對 memory-bound、空間局部性強的問題特別有吸引力。</li>
+<li>看到 tokens/s 數字時，要先確認模型、batch、上下文長度、量化/精度、是否 streaming、是否單使用者互動、是否供應商最佳條件；不同模型的 tokens/s 不能直接互比。</li>
+<li>OpenAI GPT-5.6 Sol on Cerebras 的公開頁面寫的是最高 750 tokens/s；Cerebras 產品頁上的 3,000+ tokens/s 敘事應視為其他模型或其他條件，不能直接當成 GPT-5.6 Sol 的實測數字。</li>
+<li>Stencil 類問題之所以能在 WSE 上特別快，是因為問題本身的鄰接通訊圖與 WSE 的 2D mesh 很像；這不自動代表所有 LLM 或所有 HPC workloads 都會有同等倍數。</li>
+</ul>
+<h2 id="_8">仍不確定的地方<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>GPT-5.6 Sol 在 Cerebras 上的實際可用 API 條件、價格、模型限制、上下文長度、批次策略與穩定供應量，仍需等 OpenAI / Cerebras 更完整公開。</li>
+<li>使用者材料中的「gpt-oss-120B 每秒 3,000 tokens」與「stencil 較 H100 95–210×」可能來自其他 benchmark 或社群報導；本筆記目前只把它們作為待查線索，不當作已驗證結論。</li>
+<li>CSL 的實際開發體驗、debug 成本、編譯器成熟度與可移植性，不能只從硬體規格判斷；需要看實際 SDK 文件、範例與開發者案例。</li>
+</ul>
+<h2 id="_9">小結<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>如果用一句話讓 CUDA 使用者理解 Cerebras：不要把 WSE-3 想成「有更多核心的 GPU」，而要想成「把一個大問題鋪到晶圓上的 90 萬個小房間，每個房間都有自己的小記憶體與門口，資料必須沿著走廊傳」。</p>
+<p>它的強項來自把記憶體牆切碎：每個 PE 的本地資料非常近、非常快；它的限制也來自同一件事：遠端資料不是你想讀就讀，必須被設計成通訊。真正的問題不是「Cerebras 會不會取代 GPU」，而是「哪些 AI / HPC 工作負載，值得為這種資料流機器重寫？」</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

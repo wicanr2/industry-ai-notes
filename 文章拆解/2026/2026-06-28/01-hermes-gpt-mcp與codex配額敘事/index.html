@@ -1,0 +1,1154 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/2026/2026-06-28/01-hermes-gpt-mcp%E8%88%87codex%E9%85%8D%E9%A1%8D%E6%95%98%E4%BA%8B/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>專題｜Hermes GPT v0.3.0、MCP 與「突破 Codex 配額」敘事：一篇 AI 科技新聞如何把工具整合寫成趨勢故事 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hermes-gpt-v030mcp-codex-ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              專題｜Hermes GPT v0.3.0、MCP 與「突破 Codex 配額」敘事：一篇 AI 科技新聞如何把工具整合寫成趨勢故事
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話拆解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      先做事實校準：文章說法 vs GitHub 內容
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="先做事實校準：文章說法 vs GitHub 內容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章主要主張
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub repo 實際說法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大落差
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      為什麼這篇值得拆
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章架構地圖
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文章架構地圖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 標題：直接把產品定位成「突破限制」
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-codex-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 開頭：把開發者痛點設定為 Codex API 用量上限
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hermes-gpt-hermeshermes-agenthermes-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 「Hermes GPT 是什麼」：把 Hermes、Hermes Agent、Hermes GPT 混成一條線
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 「MCP 是什麼」：用開放協議建立趨勢合法性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 「突破 Codex 配額」：把成本問題寫成架構問題
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 結尾：升級成「開放協議對抗單一廠商」
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一性原理拆解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一性原理拆解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本問題
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      文章忽略的稀缺資源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      更準確的因果鏈
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hermes-gpt-v030" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hermes GPT v0.3.0 的真正重點：不是無限制生成，而是可控外接
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hermes GPT v0.3.0 的真正重點：不是無限制生成，而是可控外接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operator-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator Mode 的核心思想
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      這篇文章的寫法與敘事策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="這篇文章的寫法與敘事策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 把工具 release 寫成生產力解放故事
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 用 MCP 當技術合法性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 用取捨段落增加可信度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 最後收束到開放協議與反平台鎖定
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      可抽象成的思考模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可抽象成的思考模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型一：趨勢稿的「熱詞串接」檢查法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型二：介面與能力要分開看
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型三：替代雲端配額有三條路，不要混為一談
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      模型四：開放協議的價值不是「繞過」，而是「可替換」
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      我可以放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍不確定的地方
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      最後的思考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hermes-gpt-v030mcp-codex-ai">專題｜Hermes GPT v0.3.0、MCP 與「突破 Codex 配額」敘事：一篇 AI 科技新聞如何把工具整合寫成趨勢故事<a class="headerlink" href="#hermes-gpt-v030mcp-codex-ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>原文標題：Hermes GPT v0.3.0：透過 MCP 把本地模型接進 ChatGPT，突破 Codex 配額限制</li>
+<li>來源：INSIDE「網路趨勢觀察」欄位</li>
+<li>作者：Mia</li>
+<li>發布時間：2026-06-27</li>
+<li>使用者提供欄位：人工智慧；MCP、Hermes GPT、本地模型、Codex 配額、開放協議</li>
+<li>讀取日期：2026-06-28</li>
+<li>讀取方式：使用者貼上文章全文；原站頁面未由工具直接讀取驗證。</li>
+<li>並讀 GitHub：<a href="https://github.com/asimons81/hermes-gpt">asimons81/hermes-gpt</a></li>
+<li>讀取 commit：<code>b84bff50385a09c7881e378effadd50d7be8e61b</code></li>
+<li>GitHub metadata：repo 建立於 2026-06-18；預設分支 <code>master</code>；MIT License；讀取時 109 stars。</li>
+<li><code>pyproject.toml</code>：版本 <code>0.3.0</code>，description 是 <code>Local-dev MCP sidecar for exposing selected Hermes Agent capabilities.</code></li>
+<li>並讀 Hermes Agent：Hermes Agent 是 Nous Research 的開源 agent framework，可使用 OpenAI、OpenRouter、Anthropic、local/custom provider 等多種模型；但這不等於 <code>hermes-gpt</code> repo 本身就是「把本地模型接進 ChatGPT」的模型路由器。</li>
+</ul>
+<blockquote>
+<p>勘誤說明：前一版筆記誤以原先 URL 讀到的 Jarsy / RWA 文章為主題。此版改為依使用者貼上的 Hermes GPT 文章全文重寫，並保留 GitHub 實際內容作為校對基準。</p>
+</blockquote>
+<h2 id="_2">一句話拆解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>這篇 INSIDE 文章表面上在介紹 Hermes GPT v0.3.0，實際上更像一篇「把 MCP、本地模型、ChatGPT 介面、Codex 配額、開放協議」幾個熱門詞串成趨勢故事的 AI 輔助稿；它的敘事方向抓到了開發者想逃離單一雲端配額限制的真問題，但和 GitHub repo 的實際定位有明顯落差：<code>hermes-gpt</code> README 說的是 <strong>local-dev MCP sidecar，暴露本機 Hermes Agent 的部分能力給 MCP clients</strong>，不是一個明確以「本地模型替代 Codex、突破配額」為核心的產品。</p>
+<h2 id="vs-github">先做事實校準：文章說法 vs GitHub 內容<a class="headerlink" href="#vs-github" title="Permanent link">&para;</a></h2>
+<h3 id="_3">文章主要主張<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>使用者貼上的 INSIDE 文章大致有幾個主張：</p>
+<ol>
+<li>Hermes GPT v0.3.0 讓 ChatGPT 介面透過 MCP 將請求路由到本機 Hermes 模型。</li>
+<li>這讓開發者可以繞過 OpenAI Codex API 用量上限。</li>
+<li>Hermes 是可本地運行的開源 LLM，Hermes GPT 是建立在其上的前端工具。</li>
+<li>MCP 是 Anthropic 提出的 AI 工具互通協議，正在成為事實標準。</li>
+<li>這代表開放協議讓使用者不再受限於單一廠商生態系。</li>
+</ol>
+<h3 id="github-repo">GitHub repo 實際說法<a class="headerlink" href="#github-repo" title="Permanent link">&para;</a></h3>
+<p><code>asimons81/hermes-gpt</code> README 的核心定位是：</p>
+<blockquote>
+<p><code>hermes-gpt</code> is a standalone MCP sidecar for Hermes Agent. It imports selected local Hermes Agent internals at runtime and exposes them to MCP clients without modifying Hermes Agent source files.</p>
+</blockquote>
+<p>README 還明確寫：</p>
+<ul>
+<li>這是 <strong>local-dev release</strong>。</li>
+<li>不是 hosted service。</li>
+<li>不是 Hermes Agent fork。</li>
+<li>不是 generic remote dev container。</li>
+<li>不是 DevSpace replacement。</li>
+<li>預設安全姿態是本機可信環境、HTTP bind 到 <code>127.0.0.1</code>。</li>
+<li>public / remote release 在沒有 real OAuth 或其他 ChatGPT-compatible auth layer 前不支援。</li>
+</ul>
+<p>這代表 GitHub 的產品重點是「讓 MCP client 連到 Hermes Agent 的工具與操作面」，而不是「把 ChatGPT 的模型請求偷偷改送到本地模型」。</p>
+<h3 id="_4">最大落差<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>文章把 <code>Hermes GPT</code> 寫成「本地模型路由器」：</p>
+<blockquote>
+<p>ChatGPT 介面能透過 MCP 將請求路由到本機部署的 Hermes 模型。</p>
+</blockquote>
+<p>但 GitHub repo 讀到的是「MCP sidecar for Hermes Agent internals」：</p>
+<ul>
+<li>它暴露 file read/search、memory search、skill list/view 等 default tools。</li>
+<li>v0.2.0 / v0.3.0 重點是 Operator / Owner Mode、cron、skills、config、workspace、diagnostics、recovery、audit。</li>
+<li><code>pyproject.toml</code> description 也是「exposing selected Hermes Agent capabilities」，不是「running local Hermes model behind ChatGPT」。</li>
+</ul>
+<p>所以更精準的說法應該是：</p>
+<blockquote>
+<p>Hermes GPT v0.3.0 是一個本機 MCP sidecar，讓 ChatGPT 或其他 MCP client 可以在受控權限下操作本機 Hermes Agent 的部分能力；它可能間接接觸 Hermes Agent 配置的各種模型 provider，但 repo 本身不是一個以 Codex 替代或本地模型推理為主的模型閘道。</p>
+</blockquote>
+<h2 id="_5">為什麼這篇值得拆<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>這篇值得拆，不是因為它技術描述準確，而是因為它展示了 AI 科技新聞常見的一種寫法：</p>
+<ol>
+<li>找一個真實 GitHub release。</li>
+<li>抓幾個當紅詞：MCP、本地 LLM、ChatGPT、Codex、開放協議。</li>
+<li>把它們接成「開發者突破封閉平台限制」的大敘事。</li>
+<li>在最後加上「開放協議正在重塑 AI 基礎設施」。</li>
+</ol>
+<p>這種寫法很容易讀，因為它符合讀者的心理期待：大家都知道雲端 AI 有配額、有成本、有隱私疑慮；大家也都聽過 MCP 正在變熱門；因此只要有一個 repo 名叫 Hermes GPT，就很容易被包成「用本地模型繞過 Codex 配額」的故事。</p>
+<p>問題是：趨勢故事一旦走太快，就會把產品的實際邊界寫丟。</p>
+<h2 id="_6">文章架構地圖<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 標題：直接把產品定位成「突破限制」<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>標題是全文最強的 framing：</p>
+<blockquote>
+<p>透過 MCP 把本地模型接進 ChatGPT，突破 Codex 配額限制</p>
+</blockquote>
+<p>它一次放進三個吸引點：</p>
+<ul>
+<li><strong>熟悉介面</strong>：ChatGPT。</li>
+<li><strong>替代後端</strong>：本地模型。</li>
+<li><strong>痛點解除</strong>：Codex 配額。</li>
+</ul>
+<p>這個標題的效果很好，因為它不是單純說「v0.3.0 release」，而是把 release 寫成一個權力轉移：使用者從 OpenAI 配額限制中拿回控制權。</p>
+<p>但也正是這裡最需要小心。GitHub README 沒有把 <code>Codex quota bypass</code> 放在核心定位；<code>hermes-gpt</code> 的重點是 MCP 工具面與 operator 安全模型。標題很可能把「Hermes Agent 可搭配多種 provider」延伸成「Hermes GPT 用本地模型替代 Codex」，這是概念跳躍。</p>
+<h3 id="2-codex-api">2. 開頭：把開發者痛點設定為 Codex API 用量上限<a class="headerlink" href="#2-codex-api" title="Permanent link">&para;</a></h3>
+<p>文章第一段說開發者社群長期受 OpenAI Codex API 用量上限困擾，Hermes GPT v0.3.0 提供開源方案繞過這道牆。</p>
+<p>這段的功能是建立問題意識：不是介紹工具，而是先定義敵人。敵人是「用量上限」。一旦敵人被定義出來，接下來所有技術名詞都會被讀成解放工具。</p>
+<p>這種寫法在科技新聞裡很有效，但如果產品本身不是為這個痛點設計，就會造成錯位。</p>
+<h3 id="3-hermes-gpt-hermeshermes-agenthermes-gpt">3. 「Hermes GPT 是什麼」：把 Hermes、Hermes Agent、Hermes GPT 混成一條線<a class="headerlink" href="#3-hermes-gpt-hermeshermes-agenthermes-gpt" title="Permanent link">&para;</a></h3>
+<p>文章說 Hermes 是可在本地電腦或私有伺服器上運行的開源 LLM，Hermes GPT 則是建立在此基礎上的前端工具。</p>
+<p>這裡有幾個層次容易混淆：</p>
+<ul>
+<li><strong>Hermes / Nous Hermes models</strong>：Nous Research 的模型系列，可以本地或雲端部署。</li>
+<li><strong>Hermes Agent</strong>：一個開源 AI agent framework，可串多種模型 provider、工具、gateway、skills、cron、MCP。</li>
+<li><strong>hermes-gpt repo</strong>：第三方 local-dev MCP sidecar，從 README 看，是為 Hermes Agent 暴露部分 internals 給 MCP client。</li>
+</ul>
+<p>文章把這些壓成「本地 Hermes 模型 + ChatGPT 前端工具」，這讓敘事變簡單，但犧牲了準確性。</p>
+<h3 id="4-mcp">4. 「MCP 是什麼」：用開放協議建立趨勢合法性<a class="headerlink" href="#4-mcp" title="Permanent link">&para;</a></h3>
+<p>文章對 MCP 的解釋方向大致合理：MCP 是 Anthropic 提出的協議，讓 AI 工具共享上下文與互相呼叫，正在被各類工具採用。</p>
+<p>這段的敘事功能是把 Hermes GPT 從單一 repo 拉進「開放協議浪潮」。讀者不只是在讀一個小工具，而是在讀 AI 工具生態從封閉 API 走向互通協議。</p>
+<p>這是全文較有價值的部分：即使它對 Hermes GPT 的產品定位有誤，MCP 作為整合層的重要性確實值得觀察。</p>
+<h3 id="5-codex">5. 「突破 Codex 配額」：把成本問題寫成架構問題<a class="headerlink" href="#5-codex" title="Permanent link">&para;</a></h3>
+<p>文章指出本地模型不依賴外部配額，只受限於本機硬體，因此適合每天大量生成、測試、重構程式碼的工程師。</p>
+<p>這段抓到一個真痛點：重度開發者確實會遇到配額、成本、等待週期、資料外傳等問題。</p>
+<p>但它把兩件事混在一起：</p>
+<ul>
+<li><strong>本地模型替代雲端模型</strong>：這確實可能降低外部配額依賴。</li>
+<li><strong>Hermes GPT v0.3.0 的實際 release</strong>：GitHub 上看到的重點是 operator reliability、diagnostics、recovery、safe dry-run，而不是模型推理替代 Codex。</li>
+</ul>
+<p>也就是說，文章提出的趨勢可能成立，但拿這個 repo 當例子時，證據不足。</p>
+<h3 id="6">6. 結尾：升級成「開放協議對抗單一廠商」<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>文章最後說 Hermes GPT 反映開發者社群越來越常見的策略：當主流 AI 服務用量門檻成為瓶頸，工程師會尋找開源替代方案，透過協議層整合嵌入既有 workflow。</p>
+<p>這是全文真正想講的主題。Hermes GPT 只是例子，核心論點是：</p>
+<blockquote>
+<p>開放協議讓使用者可以保留介面，替換底層能力，從而減少對單一廠商的依賴。</p>
+</blockquote>
+<p>這個大方向值得保留，但需要把「趨勢觀察」與「具體產品事實」拆開看。</p>
+<h2 id="_7">第一性原理拆解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">基本問題<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>這篇文章真正處理的底層問題是：</p>
+<blockquote>
+<p>當開發者已經習慣某個 AI 操作介面，但受制於該介面的成本、配額、模型選擇或資料政策時，有沒有辦法保留介面、替換後端能力？</p>
+</blockquote>
+<p>這可以拆成四個子問題：</p>
+<ol>
+<li><strong>介面黏著</strong>：使用者不想離開 ChatGPT / Codex / IDE workflow。</li>
+<li><strong>後端限制</strong>：雲端模型有配額、價格、隱私與政策限制。</li>
+<li><strong>協議橋接</strong>：MCP 讓外部工具與 agent 能以標準方式被呼叫。</li>
+<li><strong>安全邊界</strong>：把本機能力接給外部介面後，如何避免權限外洩與誤操作？</li>
+</ol>
+<p>文章只強調前三點，GitHub repo 其實更重視第四點。</p>
+<h3 id="_9">文章忽略的稀缺資源<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>如果要真的把本地能力接進 ChatGPT，稀缺的不是「能不能寫一個 MCP server」，而是：</p>
+<ul>
+<li>穩定的本地 runtime；</li>
+<li>清楚的權限模型；</li>
+<li>auth / tunnel / private boundary；</li>
+<li>對 secret paths 的防護；</li>
+<li>dry-run 與 direct mutation 的分離；</li>
+<li>可追溯的 audit log；</li>
+<li>對不同模型能力差異的誠實呈現；</li>
+<li>使用者知道自己正在把外部 client 接到本機工具。</li>
+</ul>
+<p><code>hermes-gpt</code> v0.3.0 的 GitHub 內容反而大量在處理這些問題，而不是文章強調的「無上限生成」。</p>
+<h3 id="_10">更準確的因果鏈<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>文章暗示的因果鏈是：</p>
+<ol>
+<li>Codex 有配額。</li>
+<li>本地模型沒有外部配額。</li>
+<li>MCP 可讓 ChatGPT 呼叫本地模型。</li>
+<li>Hermes GPT v0.3.0 做到這件事。</li>
+<li>因此開發者可以突破 Codex 配額。</li>
+</ol>
+<p>但根據 GitHub，更穩妥的因果鏈應該改成：</p>
+<ol>
+<li>AI agent / coding workflow 需要連接本機工具、檔案、技能、cron、設定與診斷能力。</li>
+<li>MCP 提供一種讓外部 client 呼叫本機能力的協議介面。</li>
+<li><code>hermes-gpt</code> 以 sidecar 方式匯入 Hermes Agent 的部分 internals，暴露給 MCP clients。</li>
+<li>因為這會打開本機能力，所以 repo 設計了 read-only default、dry-run、operator level、owner ack、denied paths、audit log。</li>
+<li>這類架構可能成為「保留前端介面、替換或擴充後端能力」的基礎，但不能直接等同於「繞過 Codex 配額」。</li>
+</ol>
+<h2 id="hermes-gpt-v030">Hermes GPT v0.3.0 的真正重點：不是無限制生成，而是可控外接<a class="headerlink" href="#hermes-gpt-v030" title="Permanent link">&para;</a></h2>
+<p>GitHub README 顯示 v0.3.0 是 <strong>Operator Reliability Release</strong>，新增或強化：</p>
+<ul>
+<li><code>hermes_operator_doctor</code>：read-only 深度健康檢查。</li>
+<li><code>hermes_operator_snapshot</code>：目前狀態摘要。</li>
+<li><code>hermes_release_doctor</code>：release readiness checks，分類為 PASS / WARN / BLOCKED。</li>
+<li><code>hermes_operator_recover</code>：保守、dry-run-first 的 recovery sequence。</li>
+<li>structured error envelope：<code>{success, ok, error, layer, code, safe_message, suggested_action, trace_id}</code>。</li>
+<li>diagnostic / recovery statuses：PASS / WARN / FAIL / UNSUPPORTED。</li>
+<li>recovery 預設 dry-run，需要 <code>apply=true</code> 才會 mutate。</li>
+</ul>
+<p>這些東西不像「無配額程式碼生成器」，更像一個把本機 agent 系統接給外部 client 時需要的操作控制面。</p>
+<h3 id="operator-mode">Operator Mode 的核心思想<a class="headerlink" href="#operator-mode" title="Permanent link">&para;</a></h3>
+<p>README 與 <code>docs/operator-mode.md</code> 反覆強調：</p>
+<ul>
+<li>預設 read-only。</li>
+<li>預設 dry-run。</li>
+<li>direct mutation 需要 server env：<code>HERMES_GPT_OPERATOR_APPLY_MODE=direct</code>。</li>
+<li>mutating tool call 還要明確傳 <code>dry_run=false</code>。</li>
+<li>Owner Mode 需要精確 acknowledgement：<code>I_UNDERSTAND_THIS_CAN_MUTATE_MY_MACHINE</code>。</li>
+<li><code>.env</code>、auth、token、SSH、vault 等路徑預設拒絕。</li>
+<li>不應公開暴露；若要遠端使用，至少要 VPN、Tailscale、OAuth 或等效 private boundary。</li>
+</ul>
+<p>如果這篇 INSIDE 文章要寫得更準，標題應該不是「突破 Codex 配額」，而比較像：</p>
+<blockquote>
+<p>Hermes GPT v0.3.0：用 MCP 把 ChatGPT 接到本機 Hermes Agent，重點放在 Operator Mode 與安全 dry-run</p>
+</blockquote>
+<p>這樣才貼近 repo 的 release 重點。</p>
+<h2 id="_11">這篇文章的寫法與敘事策略<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1-release">1. 把工具 release 寫成生產力解放故事<a class="headerlink" href="#1-release" title="Permanent link">&para;</a></h3>
+<p>文章不是從 changelog 開始，而是從「Codex 配額痛點」開始。這讓 release 變成某種解放方案：以前你被限制，現在你可以繞過限制。</p>
+<p>這種敘事很有點擊力，但風險是過度功能化：把一個以安全 operator control 為主的 sidecar，寫成「無上限生成」工具。</p>
+<h3 id="2-mcp">2. 用 MCP 當技術合法性<a class="headerlink" href="#2-mcp" title="Permanent link">&para;</a></h3>
+<p>MCP 在文章裡扮演「這不是 hack，而是開放協議趨勢」的角色。它讓繞過配額的行為看起來不是鑽漏洞，而是生態系自然演化。</p>
+<p>這裡的概念方向可以保留：開放協議確實會讓前端與後端逐漸鬆綁。但具體到 Hermes GPT，應該先描述它暴露的是 Hermes Agent tools，而不是直接斷言本地模型路由。</p>
+<h3 id="3">3. 用取捨段落增加可信度<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>文章也承認本地模型效能可能不如 OpenAI 最新模型，硬體有限時推理速度可能落後雲端。這段讓文章看起來不是單邊吹捧。</p>
+<p>但它承認的是「本地模型 vs 雲端模型」的取捨，而不是 <code>hermes-gpt</code> repo 真正面臨的「外部 client 連本機工具」安全取捨。</p>
+<h3 id="4">4. 最後收束到開放協議與反平台鎖定<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>結尾把個案放進開發者社群的創意應對策略：當主流 AI 服務有瓶頸，工程師會透過開源替代與協議整合降低依賴。</p>
+<p>這是全文最有用的觀察，也是可以從錯誤產品細節中抽出來保留的思考模型。</p>
+<h2 id="_12">可抽象成的思考模型<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">模型一：趨勢稿的「熱詞串接」檢查法<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>看到 AI 趨勢稿時，可以檢查它是否把幾個真實名詞串成一個未必真實的因果：</p>
+<ul>
+<li>熱詞 A：MCP。</li>
+<li>熱詞 B：本地模型。</li>
+<li>熱詞 C：ChatGPT。</li>
+<li>熱詞 D：Codex 配額。</li>
+<li>熱詞 E：開放協議。</li>
+</ul>
+<p>如果文章沒有明確證明 A 如何導致 B、B 如何解決 D，就要把它拆回原始文件看。這篇就是典型案例：MCP 和 Hermes GPT 都是真東西，但「透過本地模型突破 Codex 配額」需要更多證據。</p>
+<h3 id="_14">模型二：介面與能力要分開看<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>AI 工具常常有三層：</p>
+<ol>
+<li><strong>介面層</strong>：使用者在哪裡輸入？ChatGPT、IDE、CLI、Discord。</li>
+<li><strong>協議層</strong>：介面如何呼叫外部能力？MCP、HTTP、stdio、API。</li>
+<li><strong>能力層</strong>：實際做事的是什麼？模型推理、file tools、terminal、skills、cron、workspace。</li>
+</ol>
+<p>文章把協議層與能力層混在一起：因為 MCP 能連工具，所以就寫成能把本地模型接進 ChatGPT。實務上要分清楚：MCP server 可以暴露很多能力，不必然是模型替代。</p>
+<h3 id="_15">模型三：替代雲端配額有三條路，不要混為一談<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>如果目標真的是降低 Codex / OpenAI 配額依賴，大致有三條路：</p>
+<ol>
+<li><strong>模型替代</strong>：改用本地模型、其他雲端模型或自架 inference server。</li>
+<li><strong>工具增強</strong>：讓雲端模型呼叫本地工具，減少重複 token 與手工操作。</li>
+<li><strong>工作流重構</strong>：把大型任務拆成 cron、agent、local scripts、cache、批次流程。</li>
+</ol>
+<p><code>hermes-gpt</code> 更像第二條與第三條的基礎設施，不應直接被寫成第一條。</p>
+<h3 id="_16">模型四：開放協議的價值不是「繞過」，而是「可替換」<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>文章用「繞過 Codex 配額」做標題，容易把開放協議的價值說窄。更好的說法是：</p>
+<blockquote>
+<p>開放協議讓介面、工具、模型、資料與工作流之間的耦合降低，使用者可以替換其中一層，而不必整套重來。</p>
+</blockquote>
+<p>MCP 的長期意義在這裡，不是單純避開某個 API 的限制。</p>
+<h2 id="_17">我可以放進資料庫的筆記<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ul>
+<li>INSIDE 這篇 Hermes GPT 文章抓到「開發者想降低對雲端 AI 配額依賴」的真痛點，但把 <code>hermes-gpt</code> repo 寫成「本地模型接進 ChatGPT、突破 Codex 配額」時，與 GitHub README 的產品定位不符。</li>
+<li><code>asimons81/hermes-gpt</code> v0.3.0 的實際重點是 local-dev MCP sidecar、Operator Reliability、diagnostics、recovery、structured error、dry-run-first 與安全權限模型。</li>
+<li>分析 AI 工具報導時，要把介面層、協議層、能力層拆開：ChatGPT 是介面，MCP 是協議，Hermes Agent tools / local model / workspace / cron 才是能力層。</li>
+<li>MCP 的深層價值不是「繞過配額」本身，而是讓工具、模型與工作流可替換，降低單一廠商鎖定。</li>
+<li>高風險本機能力接到外部 client 時，安全設計比「能不能接上」更重要；Hermes GPT 的 read-only default、dry-run default、owner ack、denied paths、audit log 是真正值得觀察的產品設計。</li>
+<li>AI 輔助科技新聞常見問題：把真實 repo、真實協議、真實痛點接成過度順滑的故事；讀者需要回到 README、changelog、pyproject 與 docs 做事實校準。</li>
+</ul>
+<h2 id="_18">仍不確定的地方<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ol>
+<li>INSIDE 原文 URL 未由工具直接取得；本筆記依使用者貼上的全文分析。</li>
+<li>文章是否有其他未貼出的圖片說明、外部連結或官方文件引用，未能驗證。</li>
+<li><code>hermes-gpt</code> 未來是否會加入更明確的 local model routing，需看後續 release；就目前讀到的 v0.3.0 repo，不能把它描述成以本地模型替代 Codex 的工具。</li>
+<li>ChatGPT MCP connector 在不同帳號、方案與平台上的實際能力邊界，可能隨 OpenAI 產品更新而變動。</li>
+</ol>
+<h2 id="_19">最後的思考<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>這篇文章最有價值的地方不是產品資訊，而是暴露了一個正在形成的需求：開發者希望保留熟悉的 AI 操作介面，但不想把模型、工具、資料與配額全部交給同一個雲端平台。</p>
+<p>這個需求是真實的。MCP 也確實可能是解法的一部分。但越是接近本機能力，越不能只用「突破限制」的語言來包裝。真正成熟的方向，應該是：讓使用者可以替換底層能力，同時清楚知道自己打開了哪些權限、哪些動作只是 dry-run、哪些操作會真的改動本機。</p>
+<p>換句話說，未來 AI 工具的競爭不只在模型強度，也在控制面設計。能把能力外接出去很重要；能把外接後的風險收住，才是長期可用的基礎。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

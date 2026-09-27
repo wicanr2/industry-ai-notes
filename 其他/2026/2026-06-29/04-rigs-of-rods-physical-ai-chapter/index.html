@@ -1,0 +1,1252 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="新聞、文章、論文與專題的結構拆解筆記">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E5%85%B6%E4%BB%96/2026/2026-06-29/04-rigs-of-rods-physical-ai-chapter/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Rigs of Rods：把軟體車體物理當成 Physical AI 的「身體與接觸」章節 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rigs-of-rods-physical-ai" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rigs of Rods：把軟體車體物理當成 Physical AI 的「身體與接觸」章節
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原始資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一句話結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      它是什麼，不是什麼
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="它是什麼，不是什麼">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      它是什麼
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      它不是什麼
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      repo 結構觀察
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-beam" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心技術觀察：它把「身體」拆成 node / beam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop-physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理 loop 對 Physical AI 的可共用概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventphysical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      地形、接觸與 event：Physical AI 的世界不是背景圖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      腳本層：它提供了控制與實驗接口
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waypoint-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Waypoint AI：不是智能模型，但可當作控制基線
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autopilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autopilot：航空器控制的傳統接口
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freeforces-freebeams" class="md-nav__link">
+    <span class="md-ellipsis">
+      FreeForces / FreeBeams：可腳本化外力與臨時物理結構
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actorsimattributeslive-tinkering-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      ActorSimAttributes：live tinkering 是實體 AI 實驗的必要能力
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可共用的章節定位
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可共用的章節定位">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-graph-bounding-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 身體是 graph，不只是 bounding box
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-action-mode-actuator-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 控制不是單層 action，而是 mode + actuator + physics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 世界狀態需要可觀測、可修改、可記錄
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-constraint-robustness" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 外力與 constraint 是測試 robustness 的好工具
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      對現代 Physical AI 的限制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="對現代 Physical AI 的限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-robotics-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. robotics integration 不完整
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sensor-perception" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. sensor / perception 不是主軸
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-learning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. learning loop 不是主設計目標
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 授權與工程成本
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如果要實際改造成 Physical AI 實驗章節
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如果要實際改造成 Physical AI 實驗章節">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1：把它當成閱讀案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2：用腳本做控制實驗
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-agent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3：包一個外部 agent interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4：只移植概念，不移植 engine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebo-ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      跟 Gazebo / ROS 2 的關係
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      對台灣產業與實體 AI 的延伸
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進 Physical AI 章節的標題建議
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      最終判斷
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rigs-of-rods-physical-ai">Rigs of Rods：把軟體車體物理當成 Physical AI 的「身體與接觸」章節<a class="headerlink" href="#rigs-of-rods-physical-ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原始資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>專案：<a href="https://github.com/RigsOfRods/rigs-of-rods"><code>RigsOfRods/rigs-of-rods</code></a></li>
+<li>專案網站 / 下載：<a href="https://www.rigsofrods.org/download"><code>https://www.rigsofrods.org/download</code></a></li>
+<li>文件：<a href="https://docs.rigsofrods.org/"><code>https://docs.rigsofrods.org/</code></a></li>
+<li>Developer portal：<a href="https://developer.rigsofrods.org/"><code>https://developer.rigsofrods.org/</code></a></li>
+<li>本次檢查日期：2026-06-29</li>
+<li>本次檢查方式：讀取 GitHub metadata、shallow clone、<code>README.md</code>、<code>BUILDING.md</code>、<code>DEPENDENCIES.md</code>、<code>doc/doxygen/CodebaseOverview.md</code>、<code>doc/angelscript/ScriptingFeaturesOverview.md</code>、<code>doc/angelscript/FreeForces.md</code>、<code>doc/angelscript/FreeBeams.md</code>、<code>doc/angelscript/ActorSimAttributes.md</code>、核心 C++ 檔案與範例 AngelScript。</li>
+<li>最新檢查到的 commit：<code>d4625a821fca520c7cc3692c8013cd0352a916f2</code></li>
+<li>GitHub metadata：public repo，預設分支 <code>master</code>，主要語言 C++，GPLv3 or later，約 1.2k stars、204 forks；repo topic 包含 <code>physics-simulation</code>、<code>sandbox-game</code>、<code>soft-bodies</code>、<code>trucks</code>、<code>trailers</code>、<code>trains</code>、<code>boats</code>、<code>airplanes</code>、<code>cars</code>。</li>
+<li>最新 release：<code>2026.01</code>（2026-01-04）。</li>
+</ul>
+<h2 id="_2">一句話結論<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>Rigs of Rods</code> 不是現代 ROS / Gazebo / Isaac Sim 型的機器人訓練平台；它是一個開源的 <strong>soft-body physics sandbox</strong>，核心價值在於用「節點、樑、彈簧、阻尼、接觸、破壞、變形」來模擬車輛、機械、船、飛機與地形互動。</p>
+<p>如果把它放進 Physical AI 筆記，它最適合成為一個章節：</p>
+<blockquote>
+<p><strong>Physical AI 不只是 policy 或 VLA，還需要一個能描述身體、接觸、力、變形與控制介面的世界。Rigs of Rods 可作為理解 soft-body vehicle / machine simulation 的案例庫。</strong></p>
+</blockquote>
+<p>它的「共用」價值不在於直接拿來訓練通用 robot foundation model，而在於拆出幾個可移植的概念：可變形 body representation、力學步進、地形接觸、可腳本化控制、waypoint AI、外力 / ad-hoc beam、車輛格式與 mod 生態。</p>
+<h2 id="_3">它是什麼，不是什麼<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">它是什麼<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>根據 README，Rigs of Rods 是一個開源物理沙盒遊戲，可即時模擬車輛的運動與變形。它支援：</p>
+<ul>
+<li>汽車、卡車、火車、船、飛機、直升機、重機械。</li>
+<li>玩家在地圖中移動、進出車輛、同時 spawn 多個 vehicle / actor。</li>
+<li>鍵盤、gamepad、方向盤與踏板等輸入。</li>
+<li>社群 mod、車輛零件替換、AngelScript 腳本。</li>
+<li>多人連線、server browser。</li>
+</ul>
+<p>程式架構上，它是 monolithic C++ 程式，有自己的 main input / rendering loop；OGRE 主要負責 3D rendering，不是完整 game engine。很多「遊戲引擎」層的系統由 RoR 自己實作，例如 message queue、mod cache、terrain、actor、simulation、scripting。</p>
+<h3 id="_5">它不是什麼<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>它不是：</p>
+<ul>
+<li>ROS 2 middleware。</li>
+<li>Gazebo / Isaac Sim 那種以 robot sensor / robotics stack integration 為中心的 simulator。</li>
+<li>Gymnasium / RLBench / ManiSkill 那種以 RL / imitation learning benchmark 為中心的訓練環境。</li>
+<li>現成的 VLA / embodied AI benchmark。</li>
+<li>工業級安全驗證或 sim-to-real pipeline。</li>
+</ul>
+<p>所以不能把它誤讀為「可直接拿來做 Physical AI 訓練平台」。它更像是 Physical AI 課程裡的一章：<strong>從遊戲物理看可變形機械身體如何被建模、控制與暴露給腳本層。</strong></p>
+<h2 id="repo">repo 結構觀察<a class="headerlink" href="#repo" title="Permanent link">&para;</a></h2>
+<p>本次 shallow clone 後，重要目錄大致如下：</p>
+<ul>
+<li><code>source/main/physics/</code>：核心物理、actor、collision、air、flex、wheels、forces 等。</li>
+<li><code>source/main/gameplay/</code>：VehicleAI、Autopilot、角色、camera、gameplay logic。</li>
+<li><code>source/main/scripting/</code>：AngelScript engine 與 C++ binding。</li>
+<li><code>source/main/resources/</code>：rig definition、terrain、object、skin、dashboard、tuneup 等 file format parser。</li>
+<li><code>source/main/terrain/</code>：terrain geometry、terrain object、procedural road、terrain editor。</li>
+<li><code>resources/scripts/</code>：內建腳本與 demo，例如 vehicle input simulation、autopilot、truck physics、freeforce halfbeam、autotest scenario。</li>
+<li><code>resources/gadgets/</code>：script editor、rig editor、road editor、engine tool、shock tool、ogre inspector 等工具。</li>
+<li><code>doc/angelscript/</code>：腳本 API 與功能說明，共 108 個文件。</li>
+</ul>
+<p>依檔案數觀察，repo 不只是 C++ source，也包含大量資源檔、材質、mesh、image、shader、script、翻譯與工具。這符合它作為 long-lived simulation sandbox / game 的特性。</p>
+<h2 id="node-beam">核心技術觀察：它把「身體」拆成 node / beam<a class="headerlink" href="#node-beam" title="Permanent link">&para;</a></h2>
+<p>Codebase overview 明確指出，simulation subsystem 使用 mass-spring-damper physics：</p>
+<ul>
+<li><code>RoR::node_t</code>：物理節點，可理解為具備位置、速度、質量、受力狀態的點。</li>
+<li><code>RoR::beam_t</code>：節點之間的連桿 / 彈簧阻尼元件，承擔形變、應力、破壞等邏輯。</li>
+<li><code>Actor::CalcNodes()</code>：處理 node 的 collision、integrate velocity / position、重力、空氣阻力、水阻與浮力等。</li>
+<li><code>Actor::CalcBeams()</code>：處理 beam 長度偏差、彈簧力、阻尼力、shock、rope、support beam、deformation、breakage。</li>
+</ul>
+<p>這對 Physical AI 很有啟發：很多 embodied AI 論文會把「身體」簡化成 action vector 或 robot morphology token，但真實物體不是剛體方塊。車輛、懸吊、輪胎、纜繩、載具結構、軟性連接、拖曳、碰撞與變形，都會改變 action 的結果。</p>
+<p>Rigs of Rods 的視角是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>車輛 / 機械不是一個 rigid body
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>而是一張 node-beam graph
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>每個 timestep 更新：接觸 → 外力 → 彈簧阻尼 → 破壞/變形 → 積分 → 顯示
+</code></pre></div>
+<p>這可以轉成 Physical AI 的一個思維模型：</p>
+<blockquote>
+<p>policy 不只是對「物體中心點」輸出速度；policy 實際上是在控制一個有結構、有延遲、有彈性、有破壞閾值的身體。</p>
+</blockquote>
+<h2 id="loop-physical-ai">物理 loop 對 Physical AI 的可共用概念<a class="headerlink" href="#loop-physical-ai" title="Permanent link">&para;</a></h2>
+<p><code>Actor::CalcForcesEulerCompute()</code> 的呼叫順序很像一份物理系統的課綱。它依序做：</p>
+<ol>
+<li><code>CalcNodes()</code>：節點碰撞與積分。</li>
+<li><code>UpdateBoundingBoxes()</code>：更新 actor 包圍盒。</li>
+<li><code>CalcEventBoxes()</code>：處理地形 event box 互動。</li>
+<li><code>CalcReplay()</code>：replay 系統。</li>
+<li><code>CalcAircraftForces()</code>：airbrake、turboprop、screwprop、wing forces。</li>
+<li><code>CalcFuseDrag()</code>：機身阻力。</li>
+<li><code>CalcBuoyance()</code>：浮力。</li>
+<li><code>CalcDifferentials()</code>：差速器。</li>
+<li><code>CalcWheels()</code>：車輪、牽引控制、ABS 類邏輯。</li>
+<li><code>CalcShocks()</code>：懸吊 / shock。</li>
+<li><code>CalcHydros()</code>：hydro beams，可控制方向、speed、ailerons、rudder、elevator。</li>
+<li><code>CalcCommands()</code>：命令 / control input。</li>
+<li><code>CalcTies()</code>：tie / secure load。</li>
+<li><code>CalcTruckEngine()</code>：引擎。</li>
+<li><code>CalcMouse()</code>：玩家滑鼠抓取 node 的力。</li>
+<li><code>CalcBeams()</code>：beam force / deformation / breakage。</li>
+<li><code>CalcCabCollisions()</code>：cab collision。</li>
+<li><code>updateSlideNodeForces()</code>：slide node force。</li>
+<li><code>CalcForceFeedback()</code>：回饋力。</li>
+</ol>
+<p>這份順序的重要性在於：Physical AI 系統常常會把 simulator 看成黑盒，但如果要做可靠的控制與學習，必須理解力學步進的順序。控制輸入何時生效、碰撞何時更新、外力何時清空、感測值對應哪個 timestep，都會影響 policy 的穩定性。</p>
+<h2 id="eventphysical-ai">地形、接觸與 event：Physical AI 的世界不是背景圖<a class="headerlink" href="#eventphysical-ai" title="Permanent link">&para;</a></h2>
+<p>Codebase overview 對 terrain 的描述值得記下：</p>
+<ul>
+<li>terrain 由 heightmap 產生。</li>
+<li>terrain object 透過 ODEF 格式定義 visual mesh、collision mesh 或 event box。</li>
+<li>TOBJ 可定義靜態物件與 procedural road。</li>
+<li>collision 包含 node vs. static surface，並使用 ground model 定義 surface properties。</li>
+<li>event box 可以根據 avatar、truck、truck wheels、airplane、boat 等 filter 觸發。</li>
+</ul>
+<p>這對 Physical AI 的共用價值是：</p>
+<ol>
+<li><strong>環境不是美術背景，而是可互動的 constraint field。</strong></li>
+<li><strong>不同接觸材質會改變行動結果。</strong></li>
+<li><strong>world 裡應該有事件區域，而不只是幾何。</strong></li>
+<li><strong>任務可以從「到達座標」升級成「觸發某種世界狀態」。</strong></li>
+</ol>
+<p>如果未來做 AMR / 工地機器人 / 越野機器人模擬，這些概念可以轉到 Gazebo / Isaac / Mujoco：高度圖、collision object、surface model、event trigger、wheel-only filter、contact state logging。</p>
+<h2 id="_6">腳本層：它提供了控制與實驗接口<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Rigs of Rods 使用 AngelScript。Developer portal 說明，腳本可以：</p>
+<ul>
+<li>讀寫 console variables。</li>
+<li>瀏覽、搜尋、加入、移除 installed mods。</li>
+<li>透過 <code>game.pushMessage()</code> 把 request 放進主 message queue。</li>
+<li>接收 game events。</li>
+<li>讀取與模擬 controller inputs。</li>
+<li>live-adjust 某些 actor simulation attributes。</li>
+<li>spawn / inspect actors。</li>
+<li>link actors。</li>
+<li>teleport / move character。</li>
+<li>建立 FreeForces / FreeBeams。</li>
+<li>透過 OGRE binding 操作 scene graph、mesh、texture。</li>
+</ul>
+<p>這很適合拿來對照 Physical AI 的常見系統分層：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>高階任務 / script
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>→ message queue / API
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>→ actor control input 或 force actuator
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>→ physics loop
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>→ world state / event callback
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>→ script 或 agent 再決策
+</code></pre></div>
+<p>這與現代 robotics stack 的形式相似：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>LLM / task planner
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>→ skill library
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>→ ROS action/service/topic
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>→ controller / simulator
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>→ sensor/state feedback
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>→ planner 更新
+</code></pre></div>
+<p>差別在於 RoR 不是 ROS，但它展示了「腳本層如何安全地改變 simulation state」這個設計問題。</p>
+<h2 id="waypoint-ai">Waypoint AI：不是智能模型，但可當作控制基線<a class="headerlink" href="#waypoint-ai" title="Permanent link">&para;</a></h2>
+<p><code>VehicleAI</code> 是 simple waypoint AI。它可以：</p>
+<ul>
+<li>啟用 / 停用 AI。</li>
+<li>新增 waypoint。</li>
+<li>新增 waypoint dictionary。</li>
+<li>在 waypoint 綁定 event。</li>
+<li>在 waypoint 設定速度與 power。</li>
+<li>根據 vehicle rotation 與 waypoints 計算 offset translation。</li>
+</ul>
+<p>這不是現代學習式 policy，但它是一個好 baseline：</p>
+<ul>
+<li>對 navigation 來說，waypoint following 是最小可用控制策略。</li>
+<li>對 imitation / RL 來說，rule-based waypoint AI 可以產生初始 demonstration 或 curriculum。</li>
+<li>對 LLM planner 來說，waypoint 是介於語言任務與低階控制之間的中介 representation。</li>
+</ul>
+<p>Physical AI 筆記可以把它放在「classical baseline」章節：</p>
+<blockquote>
+<p>先讓機器能用 waypoint / PID / hand-coded controller 完成任務，再把 learned policy 加上去。不要一開始就把所有控制問題都交給 VLA。</p>
+</blockquote>
+<h2 id="autopilot">Autopilot：航空器控制的傳統接口<a class="headerlink" href="#autopilot" title="Permanent link">&para;</a></h2>
+<p><code>AutoPilot.h</code> 顯示 RoR 內部有航空器 autopilot 概念：</p>
+<ul>
+<li>heading mode：none、fixed、wing-leveler、nav。</li>
+<li>altitude mode：none、fixed、vertical speed。</li>
+<li>IAS / GPWS / ILS 相關狀態。</li>
+<li>控制輸出：ailerons、elevator、rudder、throttle。</li>
+<li>可設定 inertial reference nodes。</li>
+</ul>
+<p>這對 Physical AI 的啟發是：控制系統通常不是「輸出一個 action」而已，而是有模式、狀態、保護條件與多層控制器。語言模型若要接航空 / 車輛 / 工業設備，不應直接跳到 motor command，而應該呼叫既有控制模式或 skill。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>User / task planner: 維持航向、降低高度、接近 runway
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Autopilot / controller: heading mode、altitude mode、IAS、ILS deviation
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Physics: airfoil、engine、body drag、node/beam
+</code></pre></div>
+<p>這個分層比「LLM 直接輸出舵面角度」更接近工程現實。</p>
+<h2 id="freeforces-freebeams">FreeForces / FreeBeams：可腳本化外力與臨時物理結構<a class="headerlink" href="#freeforces-freebeams" title="Permanent link">&para;</a></h2>
+<p><code>FreeForces.md</code> 說明 FreeForces 是 global、persistent forces，作用於某個 actor 的某個 node。它可以是：</p>
+<ul>
+<li>constant force。</li>
+<li>towards coordinates。</li>
+<li>towards node。</li>
+</ul>
+<p>而 <code>FreeBeams.md</code> 把 FreeForces 擴充成接近 truck file 裡 beam 行為的 <code>HALFBEAM_GENERIC</code> / <code>HALFBEAM_ROPE</code>。若要完全模擬 beam，需要兩個相反方向的 halfbeam freeforces。</p>
+<p>這對 Physical AI 很有用，因為它提供一個可共用的實驗概念：</p>
+<ul>
+<li>在不改 vehicle rig 的情況下，加入外力、牽引、繩索、臨時連接。</li>
+<li>測試 agent 對干擾力、拖曳、綁定、載重變化的反應。</li>
+<li>把世界裡的 constraint 當成 runtime 可插拔元件。</li>
+</ul>
+<p>換到 ROS / Gazebo / Isaac，對應概念可能是 apply wrench、constraint joint、temporary link、contact force plugin、domain randomization force disturbance。</p>
+<h2 id="actorsimattributeslive-tinkering-ai">ActorSimAttributes：live tinkering 是實體 AI 實驗的必要能力<a class="headerlink" href="#actorsimattributeslive-tinkering-ai" title="Permanent link">&para;</a></h2>
+<p><code>ActorSimAttributes.md</code> 說，AngelScript 可對 actor physics attributes 做 live read / write，例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>void main() { thisActor.setSimAttribute(ACTORSIMATTR_TC_WHEELSLIP_CONSTANT, 0.2); }
+</code></pre></div>
+<p>文件也指出防作弊限制：race 會被中止，多人模式會 log warning 並不生效。</p>
+<p>這代表一個很重要的 simulator 設計原則：</p>
+<blockquote>
+<p>實驗需要 live parameter tuning，但產品 / 比賽 / 多人環境需要限制狀態竄改。</p>
+</blockquote>
+<p>Physical AI 如果要做可重現 benchmark，也會遇到同樣問題：</p>
+<ul>
+<li>哪些 physics parameter 可以 runtime randomize？</li>
+<li>哪些改動算 domain randomization，哪些算 cheating？</li>
+<li>logging 是否足以重現實驗？</li>
+<li>multiplayer / distributed evaluation 是否禁止 client-side physics mutation？</li>
+</ul>
+<h2 id="_7">可共用的章節定位<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>我會把這個 repo 放在 Physical AI 筆記的這一章：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Physical AI Stack
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├── World：terrain、heightmap、collision object、event box
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├── Body：node-beam soft body、wheel、shock、hydro、wing、propeller
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├── Contact：ground model、node collision、cab collision、water / buoyancy
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>├── Control：input events、VehicleAI、Autopilot、hydros、commands
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>├── Runtime Experiment：AngelScript、message queue、FreeForces、ActorSimAttributes
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>├── Visualization / Debug：OGRE、flexbody、debug view、force feedback
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>└── Benchmark Caveat：不是 ROS / Gazebo，缺少現代 sensor / RL / VLA integration
+</code></pre></div>
+<p>它最值得共用的不是整個 engine，而是以下思維模板：</p>
+<h3 id="1-graph-bounding-box">1. 身體是 graph，不只是 bounding box<a class="headerlink" href="#1-graph-bounding-box" title="Permanent link">&para;</a></h3>
+<p>用 node-beam graph 表示可變形 body，能自然描述：</p>
+<ul>
+<li>懸吊。</li>
+<li>車架扭曲。</li>
+<li>繩索。</li>
+<li>support beam。</li>
+<li>變形與破壞。</li>
+<li>軟性結構與力傳遞。</li>
+</ul>
+<h3 id="2-action-mode-actuator-physics">2. 控制不是單層 action，而是 mode + actuator + physics<a class="headerlink" href="#2-action-mode-actuator-physics" title="Permanent link">&para;</a></h3>
+<p>一個 aircraft / vehicle control stack 至少有：</p>
+<ul>
+<li>高階模式：heading、altitude、waypoint、nav。</li>
+<li>中階控制：steering、throttle、brake、rudder、elevator、ailerons。</li>
+<li>低階物理：engine、wheel friction、airfoil、beam force、collision。</li>
+</ul>
+<h3 id="3">3. 世界狀態需要可觀測、可修改、可記錄<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>AngelScript API 展示一個實驗平台應該具備：</p>
+<ul>
+<li>查詢 actor、resource、terrain、input。</li>
+<li>注入 message。</li>
+<li>接收 event。</li>
+<li>修改 parameter。</li>
+<li>加入外力。</li>
+<li>讀寫 local storage。</li>
+<li>debug script error。</li>
+</ul>
+<h3 id="4-constraint-robustness">4. 外力與 constraint 是測試 robustness 的好工具<a class="headerlink" href="#4-constraint-robustness" title="Permanent link">&para;</a></h3>
+<p>FreeForces / FreeBeams 可以轉成 Physical AI 的 robustness 測試：</p>
+<ul>
+<li>給機器人施加橫向力，看 navigation 是否穩定。</li>
+<li>加入拖曳或繩索，看 planner 是否理解連接限制。</li>
+<li>改變 wheel slip / friction，看 controller 是否適應。</li>
+<li>在水、坡地、崎嶇地形做 stress test。</li>
+</ul>
+<h2 id="physical-ai">對現代 Physical AI 的限制<a class="headerlink" href="#physical-ai" title="Permanent link">&para;</a></h2>
+<h3 id="1-robotics-integration">1. robotics integration 不完整<a class="headerlink" href="#1-robotics-integration" title="Permanent link">&para;</a></h3>
+<p>RoR 不是 ROS 2 simulator，因此缺少：</p>
+<ul>
+<li>ROS topic / service / action。</li>
+<li>TF tree。</li>
+<li>sensor plugin 生態。</li>
+<li>Nav2 / MoveIt integration。</li>
+<li>標準 robot description pipeline，例如 URDF / SDF。</li>
+</ul>
+<h3 id="2-sensor-perception">2. sensor / perception 不是主軸<a class="headerlink" href="#2-sensor-perception" title="Permanent link">&para;</a></h3>
+<p>它有 camera / rendering / dashboard / HUD / OGRE binding，但不是以 RGB-D、LiDAR、IMU、semantic segmentation、synthetic data export 為中心設計。</p>
+<p>對 VLA / perception-heavy Physical AI 來說，RoR 比較適合作為 dynamics / contact 案例，不適合作為 perception benchmark。</p>
+<h3 id="3-learning-loop">3. learning loop 不是主設計目標<a class="headerlink" href="#3-learning-loop" title="Permanent link">&para;</a></h3>
+<p>repo 內看到腳本與 autotest scenario，但不是 Gymnasium-style <code>reset/step/observation/reward/done</code> 環境。若要拿來做 RL，需要自行包裝：</p>
+<ul>
+<li>episode reset。</li>
+<li>state extraction。</li>
+<li>action injection。</li>
+<li>reward definition。</li>
+<li>deterministic seed / logging。</li>
+<li>batch simulation。</li>
+<li>headless mode。</li>
+</ul>
+<h3 id="4">4. 授權與工程成本<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>主專案是 GPLv3 or later。如果只是學習與研究筆記沒有問題；但若要把程式碼整合到商業 simulator 或閉源產品，必須嚴格評估授權影響。</p>
+<h2 id="physical-ai_1">如果要實際改造成 Physical AI 實驗章節<a class="headerlink" href="#physical-ai_1" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1">Phase 1：把它當成閱讀案例<a class="headerlink" href="#phase-1" title="Permanent link">&para;</a></h3>
+<p>目標不是跑訓練，而是建立物理概念：</p>
+<ul>
+<li>讀 <code>doc/doxygen/CodebaseOverview.md</code>。</li>
+<li>讀 <code>ActorForcesEuler.cpp</code> 的 force loop。</li>
+<li>讀 <code>SimData.h</code> 的 node / beam / actor data structure。</li>
+<li>讀 <code>FreeForces.md</code>、<code>FreeBeams.md</code>、<code>ActorSimAttributes.md</code>。</li>
+<li>讀 <code>VehicleAI.h/.cpp</code> 與相關 AngelScript binding。</li>
+</ul>
+<p>產出：一張 Physical AI body/contact/control stack 圖。</p>
+<h3 id="phase-2">Phase 2：用腳本做控制實驗<a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h3>
+<p>可從內建範例開始：</p>
+<ul>
+<li><code>resources/scripts/example_truck_setEventSimulatedValue.as</code>：對 actor 模擬 accelerator / steering / brake input。</li>
+<li><code>resources/scripts/example_autopilot.as</code>：航空器 autopilot 互動。</li>
+<li><code>resources/scripts/example_truck_physics.as</code>：讀取 / 展示 truck physics。</li>
+<li><code>resources/scripts/example_freeforce_halfbeam.as</code>：FreeForces / FreeBeams 實驗。</li>
+<li><code>resources/scripts/example_autotest_scenario.as</code>：自動測試情境概念。</li>
+</ul>
+<p>產出：一組小任務，例如「卡車沿 waypoint 前進，途中被外力推偏，測試是否能回到路線」。</p>
+<h3 id="phase-3-agent-interface">Phase 3：包一個外部 agent interface<a class="headerlink" href="#phase-3-agent-interface" title="Permanent link">&para;</a></h3>
+<p>如果真的要接 Physical AI agent，可以考慮：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>外部 Python agent
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>→ command channel / script / local file / network bridge
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>→ AngelScript message queue
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>→ actor input / force / waypoint
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>→ physics simulation
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>→ state dump / event callback / log
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>→ Python reward / planner
+</code></pre></div>
+<p>這會比直接改 C++ 低風險，但工程量仍不小。</p>
+<h3 id="phase-4-engine">Phase 4：只移植概念，不移植 engine<a class="headerlink" href="#phase-4-engine" title="Permanent link">&para;</a></h3>
+<p>更務實的做法是把 RoR 的概念轉進現代 robotics simulator：</p>
+<ul>
+<li>node-beam graph → deformable / articulated body representation。</li>
+<li>FreeForces → apply wrench / disturbance plugin。</li>
+<li>FreeBeams → temporary constraint / joint。</li>
+<li>waypoint AI → classical navigation baseline。</li>
+<li>ActorSimAttributes → domain randomization parameter API。</li>
+<li>event boxes → task success / trigger zones。</li>
+<li>force feedback → contact / wrench observation。</li>
+</ul>
+<h2 id="gazebo-ros-2">跟 Gazebo / ROS 2 的關係<a class="headerlink" href="#gazebo-ros-2" title="Permanent link">&para;</a></h2>
+<p>如果 Gazebo 是 Physical AI 的「標準機器人沙盒」，RoR 更像一個「車輛軟體物理專題教室」。</p>
+<ul>
+<li>Gazebo / ROS 2：適合學 AMR、sensor、navigation、manipulation、robot middleware。</li>
+<li>RoR：適合理解車輛 body deformation、soft-body mechanics、地形接觸、腳本化外力、mod-based physical object design。</li>
+</ul>
+<p>兩者不是替代關係，而是互補：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Gazebo / ROS 2：機器人系統工程
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Rigs of Rods：軟體車體與接觸物理
+</code></pre></div>
+<p>Physical AI 如果只學 ROS，容易把 body dynamics 想得太乾淨；如果只看 RoR，又會缺少現代 robotics middleware、sensor stack 與 learning benchmark。把它們放在不同章節比較合理。</p>
+<h2 id="ai">對台灣產業與實體 AI 的延伸<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<p>RoR 的案例對台灣 IPC、AMR、車載、工業自動化有幾個啟示：</p>
+<ol>
+<li><strong>機器人的差異化不只在模型，也在身體與場域。</strong> 物流車、越野車、工地設備、農機、船舶、特種載具，真正難處常在接觸、振動、載重、地形與可靠性。</li>
+<li><strong>Physical AI 需要 domain-specific simulator。</strong> 通用 VLA 不會自動理解輪胎打滑、懸吊、拖車、斜坡、水面、軟性連接。</li>
+<li><strong>傳統控制與 learned policy 要共存。</strong> Waypoint AI、autopilot、engine controller、stability aids 是可重用的底層 skill，不該被語言模型取代。</li>
+<li><strong>debug / tooling 是護城河。</strong> RoR 長期演化出 script editor、rig editor、shock tool、engine tool、OGRE inspector，這提醒我們 simulator 的價值常在工具鏈，而不只是物理公式。</li>
+</ol>
+<h2 id="physical-ai_2">可放進 Physical AI 章節的標題建議<a class="headerlink" href="#physical-ai_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Chapter: Soft-body Vehicle Simulation as Embodied Physics</code></li>
+<li><code>Chapter: Node-Beam Bodies, Terrain Contact, and Scriptable Forces</code></li>
+<li><code>Chapter: Rigs of Rods — 車輛軟體物理、接觸與可腳本化控制</code></li>
+</ul>
+<p>我會採用第三個，因為它最清楚說明不是泛泛的遊戲介紹，而是把它放在 Physical AI stack 裡的角色。</p>
+<h2 id="_8">最終判斷<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><code>RigsOfRods/rigs-of-rods</code> 對 Physical AI 的價值是「可變形載具與接觸物理的開源案例」，不是「現成機器人 AI 訓練平台」。</p>
+<p>可共用的核心是：</p>
+<ul>
+<li><strong>Body representation</strong>：node / beam / soft-body graph。</li>
+<li><strong>Dynamics loop</strong>：forces、collision、drag、buoyancy、wheels、shocks、hydros、beams。</li>
+<li><strong>Contact world</strong>：terrain、ground model、event box、collision object。</li>
+<li><strong>Control interface</strong>：input events、VehicleAI、Autopilot、message queue。</li>
+<li><strong>Experiment knobs</strong>：AngelScript、FreeForces、FreeBeams、ActorSimAttributes。</li>
+<li><strong>Tooling culture</strong>：mod、gadget、editor、debug view。</li>
+</ul>
+<p>限制也很明確：缺少 ROS / sensor / RL / VLA 的現代接口，GPLv3 授權也使商業整合需要小心。</p>
+<p>因此最好的使用方式是：把它當成 Physical AI 研究筆記裡「身體與接觸」的章節，從中抽出設計模式，再轉譯到 Gazebo、Isaac、MuJoCo 或自建 simulator。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
