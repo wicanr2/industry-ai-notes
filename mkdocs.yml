@@ -1,5 +1,5 @@
 site_name: Industry AI Notes
-site_description: 新聞、文章、論文與專題的結構拆解筆記
+site_description: 從產業新聞與論文方法累積可驗證的 AI 研究判斷
 site_url: https://wicanr2.github.io/industry-ai-notes/
 repo_url: https://github.com/wicanr2/industry-ai-notes
 repo_name: wicanr2/industry-ai-notes
@@ -11,6 +11,7 @@ not_in_nav: |
 
 nav:
   - 首頁: index.md
+  - 研究導覽: 研究導覽.md
   - 每日新聞: 新聞拆解/2026/index.md
   - 論文拆解: 論文拆解/index.md
   - 文章拆解: 文章拆解/index.md
