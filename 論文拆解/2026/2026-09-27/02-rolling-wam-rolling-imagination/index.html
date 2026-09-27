@@ -11,28 +11,24 @@
       
       
       
-        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/">
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/2026/2026-09-27/02-rolling-wam-rolling-imagination/">
       
       
-        <link rel="prev" href="../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/">
       
       
-        <link rel="next" href="../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>論文拆解 - Industry AI Notes</title>
+        <title>Rolling-WAM: World Action Models with Rolling Imagination - Industry AI Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -45,9 +41,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#rolling-wam-world-action-models-with-rolling-imagination" class="md-skip">
           跳轉到
         </a>
       
@@ -99,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="頁首">
-    <a href=".." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
@@ -119,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              論文拆解
+              Rolling-WAM: World Action Models with Rolling Imagination
             
           </span>
         </div>
@@ -242,7 +238,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
@@ -272,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -294,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
         
   
   
@@ -313,32 +309,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    論文拆解
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
         
   
   
@@ -349,53 +323,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      最新日期
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      年度索引
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2026" class="md-nav__link">
-    <span class="md-ellipsis">
-      2026
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -407,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
         
   
   
@@ -429,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
         
   
   
@@ -451,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         
   
   
@@ -473,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
         
   
   
@@ -495,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
         
   
   
@@ -537,9 +464,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      最新日期
+      為什麼選這篇
     </span>
   </a>
   
@@ -548,16 +484,85 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      年度索引
+      一句話理解
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2026" class="md-nav__link">
+  <a href="#summary-abstract" class="md-nav__link">
     <span class="md-ellipsis">
-      2026
+      Summary / Abstract 說了什麼
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction 的問題設定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      研究的第一性問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      可能的貢獻與限制（只基於 summary + introduction）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可能的貢獻與限制（只基於 summary + introduction）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      論文自稱
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      我的保守判讀
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可放進資料庫的筆記
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      後續想追的問題
     </span>
   </a>
   
@@ -582,139 +587,72 @@
   
 
 
-<h1 id="_1">論文拆解<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>這裡收錄近期 arXiv 論文的結構化閱讀筆記。每篇筆記預設只根據 arXiv summary/abstract 與 Introduction 撰寫；若未讀全文其他章節，會在單篇筆記中明確標示。</p>
-<h2 id="_2">最新日期<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="rolling-wam-world-action-models-with-rolling-imagination">Rolling-WAM: World Action Models with Rolling Imagination<a class="headerlink" href="#rolling-wam-world-action-models-with-rolling-imagination" title="Permanent link">&para;</a></h1>
+<h2 id="_1">原文資訊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="2026/2026-09-27/">2026-09-27</a></li>
-<li><a href="2026/2026-09-24/">2026-09-24</a></li>
-<li><a href="2026/2026-09-23/">2026-09-23</a></li>
-<li><a href="2026/2026-09-22/">2026-09-22</a></li>
-<li><a href="2026/2026-09-21/">2026-09-21</a></li>
-<li><a href="2026/2026-09-20/">2026-09-20</a></li>
-<li><a href="2026/2026-09-14/">2026-09-14</a></li>
-<li><a href="2026/2026-09-13/">2026-09-13</a></li>
-<li><a href="2026/2026-09-12/">2026-09-12</a></li>
-<li><a href="2026/2026-09-11/">2026-09-11</a></li>
-<li><a href="2026/2026-09-10/">2026-09-10</a></li>
-<li><a href="2026/2026-09-09/">2026-09-09</a></li>
-<li><a href="2026/2026-09-08/">2026-09-08</a></li>
-<li><a href="2026/2026-09-07/">2026-09-07</a></li>
-<li><a href="2026/2026-09-06/">2026-09-06</a></li>
-<li><a href="2026/2026-09-05/">2026-09-05</a></li>
-<li><a href="2026/2026-09-04/">2026-09-04</a></li>
-<li><a href="2026/2026-09-03/">2026-09-03</a></li>
-<li><a href="2026/2026-09-02/">2026-09-02</a></li>
-<li><a href="2026/2026-08-31/">2026-08-31</a></li>
-<li><a href="2026/2026-08-30/">2026-08-30</a></li>
-<li><a href="2026/2026-08-29/">2026-08-29</a></li>
-<li><a href="2026/2026-08-28/">2026-08-28</a></li>
-<li><a href="2026/2026-08-27/">2026-08-27</a></li>
-<li><a href="2026/2026-08-26/">2026-08-26</a></li>
-<li><a href="2026/2026-08-24/">2026-08-24</a></li>
-<li><a href="2026/2026-08-23/">2026-08-23</a></li>
-<li><a href="2026/2026-08-22/">2026-08-22</a></li>
-<li><a href="2026/2026-08-21/">2026-08-21</a></li>
-<li><a href="2026/2026-08-20/">2026-08-20</a></li>
-<li><a href="2026/2026-08-19/">2026-08-19</a></li>
-<li><a href="2026/2026-08-18/">2026-08-18</a></li>
-<li><a href="2026/2026-08-17/">2026-08-17</a></li>
-<li><a href="2026/2026-08-16/">2026-08-16</a></li>
-<li><a href="2026/2026-08-15/">2026-08-15</a></li>
-<li><a href="2026/2026-08-14/">2026-08-14</a></li>
-<li><a href="2026/2026-08-13/">2026-08-13</a></li>
-<li><a href="2026/2026-08-12/">2026-08-12</a></li>
-<li><a href="2026/2026-08-11/">2026-08-11</a></li>
-<li><a href="2026/2026-08-10/">2026-08-10</a></li>
-<li><a href="2026/2026-08-09/">2026-08-09</a></li>
-<li><a href="2026/2026-08-04/">2026-08-04</a></li>
-<li><a href="2026/2026-08-02/">2026-08-02</a></li>
-<li><a href="2026/2026-07-30/">2026-07-30</a></li>
-<li><a href="2026/2026-07-29/">2026-07-29</a></li>
-<li><a href="2026/2026-07-28/">2026-07-28</a></li>
+<li>論文：Rolling-WAM: World Action Models with Rolling Imagination</li>
+<li>作者：Yinghua Zhou、Junjie Ye、Yiqi Zhao、Hao Dong、Celina Shiyu Wang、Ruohai Ge、Tingyi Yang、Basile Van Hoorick、Gaurav Sukhatme、Vitor Guizilini、Yue Wang</li>
+<li>arXiv ID：2609.30247v1</li>
+<li>分類：cs.RO、cs.AI、cs.CV</li>
+<li>發表 / 更新：2026-09-24 / 2026-09-24（v1）</li>
+<li>連結：<a href="https://arxiv.org/abs/2609.30247v1">abs</a> / <a href="https://arxiv.org/pdf/2609.30247v1">pdf</a></li>
+<li>本次閱讀範圍：Summary/Abstract + Introduction（官方 arXiv HTML，讀至 Related Work 前）</li>
+<li>擷取日期：2026-09-27</li>
 </ul>
-<h2 id="_3">年度索引<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">為什麼選這篇<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>World Action Model 的吸引力，是讓動作生成能參考「環境接下來可能長什麼樣」；它的部署代價，則是每次重規劃都要對未來影片與動作做昂貴的聯合去噪。Rolling-WAM 直接處理這個 Physical AI 的時間約束：預測若來不及在控制週期內更新，再好的想像也可能降低反應性。</p>
+<p>這篇的獨立價值在於它沒有只做模型縮小或刪掉視覺未來，而是重新安排計算的時間結構：近期動作必須完整，遠期計畫可以暫時保持粗糙，並在後續觀察到來時逐步修正。這提供一個可重用的系統觀念——不是所有 horizon 都需要同時達到相同精度。</p>
+<h2 id="_3">一句話理解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Rolling-WAM 把原本每次重規劃都從頭完成的整段 video-action 去噪，改成跨控制週期滾動接力：先把最近的動作算清楚，較遠未來則保留並逐步精煉。</p>
+<h2 id="summary-abstract">Summary / Abstract 說了什麼<a class="headerlink" href="#summary-abstract" title="Permanent link">&para;</a></h2>
+<p>World Action Model（WAM）同時預測未來視覺與機器人動作，讓動作能利用預期的場景演化。但標準做法在每個 replanning cycle 都從純雜訊重建完整 horizon，即使 receding-horizon control 最後只執行最前面一小段，也會把未執行尾端丟棄。</p>
+<p>Rolling-WAM 維持一個由多個 video-action chunks 組成的滑動視窗。最近的 chunk 位於較低雜訊、在本輪完成去噪後立即執行；越遠的 chunk 保留越高雜訊，只做部分精煉。執行完第一段後，視窗前移，保留的未來預測在新相機觀察條件下繼續去噪，尾端再加入新的純雜訊 chunk。</p>
+<p>Abstract 自稱，這種安排在 LIBERO、RoboTwin 與真實 Unitree G1 任務上維持具競爭力的操作表現，並相對標準 joint WAM 帶來 4.5 倍 steady-state replanning speedup。這些數字來自 Abstract；本次未閱讀實驗章，未獨立核對比較條件。</p>
+<h2 id="introduction">Introduction 的問題設定<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Introduction 先肯定 WAM 的功能價值：聯合預測動作與未來觀察，能讓 policy 不只反應當前畫面，也預期場景如何隨操作改變。但在動態環境中，機器人仍需高頻 closed-loop replanning，才能根據最新觀察修正誤差。</p>
+<p>問題在於，標準 joint denoising 每一輪都處理完整 video-action sequence，且從純雜訊重新開始。控制只消耗近期動作，卻支付整段未來的完整推論成本；未執行部分雖曾幫助近期決策，之後仍被丟棄。於是模型的 predictive context 與即時反應性互相拉扯。</p>
+<p>作者把突破口放在跨週期重用：未執行的預測不是成品，也不是廢料，而是可在新觀察下繼續修正的中間狀態。Rolling-WAM 因而讓近程計畫具體、遠程計畫暫定；每個 chunk 隨時間靠近執行點，也逐步累積完整去噪步數。</p>
+<p>Introduction 最後將主張收斂成一個計算排程問題：在保留 explicit visual imagination 的前提下，把原本集中在單輪的 sequential denoising steps 分散至連續多輪，降低 steady-state 每次產生下一個可執行 chunk 的等待時間。</p>
+<h2 id="_4">研究的第一性問題<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="2026/">2026</a></li>
+<li><strong>基本問題</strong>：閉迴路控制只需要立刻可執行的近期動作，為何每次都要同步完成整段遠期預測？</li>
+<li><strong>約束</strong>：未來視覺能提供動作生成脈絡，但反覆生成會增加延遲；新觀察到來後，舊未來又可能失準。</li>
+<li><strong>既有方法卡點</strong>：每輪從純雜訊重算完整 horizon，浪費未執行尾端已投入的計算，也延後下一次控制更新。</li>
+<li><strong>作者試圖移動的邊界</strong>：把 future prediction 從「每輪一次性產品」改成「跨輪保存、接受新觀察修正的漸進狀態」。</li>
 </ul>
-<h2 id="2026">2026<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h2>
+<h2 id="summary-introduction">可能的貢獻與限制（只基於 summary + introduction）<a class="headerlink" href="#summary-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="_5">論文自稱<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="2026/2026-09-27/">2026-09-27｜RAPID；Rolling-WAM</a></li>
-<li><a href="2026/2026-09-24/">2026-09-24｜RoboFollow；Growing Harness</a></li>
-<li><a href="2026/2026-09-23/">2026-09-23｜TriWorldBench；PatchWAM</a></li>
-<li><a href="2026/2026-09-22/">2026-09-22｜RoboDawn；Manipulation-Feasible NAMO</a></li>
-<li><a href="2026/2026-09-21/">2026-09-21｜When Should a Failing Robot Ask?；AtomEgo</a></li>
-<li><a href="2026/2026-09-20/">2026-09-20｜SafeHarness；Workspace Models</a></li>
-<li><a href="2026/2026-09-14/">2026-09-14｜IMLE-VLA；ActSafeGuard</a></li>
-<li><a href="2026/2026-09-13/">2026-09-13｜No Free Checker；SyncWorld</a></li>
-<li><a href="2026/2026-09-12/">2026-09-12｜HuRo；ReactHuman</a></li>
-<li><a href="2026/2026-09-11/">2026-09-11｜Show-Harness；FreqFM</a></li>
-<li><a href="2026/2026-09-10/">2026-09-10｜TANGO；DeCAL</a></li>
-<li><a href="2026/2026-09-09/">2026-09-09｜Neuro-Symbolic Procedural VLA；RoboSPA</a></li>
-<li><a href="2026/2026-09-08/">2026-09-08｜RoboRMBench；Latent Semantic Scaffolding</a></li>
-<li><a href="2026/2026-09-07/">2026-09-07｜Evidence-Gated VLA；R2S-Eval</a></li>
-<li><a href="2026/2026-09-06/">2026-09-06｜AdaRoboVLG；FWBC-VLA</a></li>
-<li><a href="2026/2026-09-05/">2026-09-05｜WISE；FailBench</a></li>
-<li><a href="2026/2026-09-04/">2026-09-04｜World-Model Evaluation Under Feedback；ZETA</a></li>
-<li><a href="2026/2026-09-03/">2026-09-03｜EmbodiedSkills；DroneCATS</a></li>
-<li><a href="2026/2026-09-02/">2026-09-02｜VerNav；Adaptive Action Chunking</a></li>
-<li><a href="2026/2026-08-31/">2026-08-31｜PanelShield；ContextPilot</a></li>
-<li><a href="2026/2026-08-30/">2026-08-30｜STEP；TrapVLA</a></li>
-<li><a href="2026/2026-08-29/">2026-08-29｜CLAP；FlashVLA</a></li>
-<li><a href="2026/2026-08-28/">2026-08-28｜R³；MA-VLA</a></li>
-<li><a href="2026/2026-08-27/">2026-08-27｜WorldEcho／WorldSync；ARLI</a></li>
-<li><a href="2026/2026-08-26/">2026-08-26｜CounterAlign；Pointing-VLA</a></li>
-<li><a href="2026/2026-08-24/">2026-08-24｜Video2DoorTraversal；Surgical World-Action Modeling</a></li>
-<li><a href="2026/2026-08-23/">2026-08-23｜EXIMO；What Matters for Latent Actions</a></li>
-<li><a href="2026/2026-08-22/">2026-08-22｜OrthoSkillVLA；Self-Demonstrated VLA Fine-Tuning</a></li>
-<li><a href="2026/2026-08-21/">2026-08-21｜EAFG；DECOWAM</a></li>
-<li><a href="2026/2026-08-20/">2026-08-20｜Hydra-0；ManiGuard</a></li>
-<li><a href="2026/2026-08-19/">2026-08-19｜BATON；HAF</a></li>
-<li><a href="2026/2026-08-18/">2026-08-18｜BICPO-VLA；PRM-as-a-Judge 1.5</a></li>
-<li><a href="2026/2026-08-17/">2026-08-17｜ReflexVLA；ART</a></li>
-<li><a href="2026/2026-08-16/">2026-08-16｜FIRE-VLA；ContactGuard</a></li>
-<li><a href="2026/2026-08-15/">2026-08-15｜VLA Task Progress；HumanoidVLN</a></li>
-<li><a href="2026/2026-08-14/">2026-08-14｜G0.5；SHAPER</a></li>
-<li><a href="2026/2026-08-13/">2026-08-13｜FACT；SALT</a></li>
-<li><a href="2026/2026-08-12/">2026-08-12｜VANE；JEPA-WAM</a></li>
-<li><a href="2026/2026-08-11/">2026-08-11｜Planning Token Depth；AtlasVLA</a></li>
-<li><a href="2026/2026-08-10/">2026-08-10｜XEWorld；GAUGE</a></li>
-<li><a href="2026/2026-08-09/">2026-08-09｜In-Context VLA；Physical Prompt Injection</a></li>
-<li><a href="2026/2026-08-04/">2026-08-04｜WCM；HAM-VLN</a></li>
-<li><a href="2026/2026-08-02/">2026-08-02｜World Action Planner；Behavior-Aligned Representations</a></li>
-<li><a href="2026/2026-07-30/">2026-07-30｜INTACT；DC-WAM</a></li>
-<li><a href="2026/2026-07-29/">2026-07-29｜IDR；CoTinyVLA</a></li>
-<li><a href="2026/2026-07-28/">2026-07-28｜Pigey；MissionBench</a></li>
-<li><a href="2026/2026-07-27/">2026-07-27｜AXIS；Bias-Aware Compositional Robot Manipulation</a></li>
-<li><a href="2026/2026-07-26/">2026-07-26｜FORGE-plus；Sequential EQA Memory</a></li>
-<li><a href="2026/2026-07-25/">2026-07-25｜GS-Agent；MoE VLAs</a></li>
-<li><a href="2026/2026-07-24/">2026-07-24｜DEED；SeededGrasp</a></li>
-<li><a href="2026/2026-07-23/">2026-07-23｜RoboInter1.5；Masked Visual Actions</a></li>
-<li><a href="2026/2026-07-22/">2026-07-22｜FM-VLA；POT-VLA</a></li>
-<li><a href="2026/2026-07-20/">2026-07-20｜LifelongVLA；Reflex</a></li>
-<li><a href="2026/2026-07-19/">2026-07-19｜RoboTTT；MEMORA</a></li>
-<li><a href="2026/2026-07-17/">2026-07-17｜REAL；Anchor-Align</a></li>
-<li><a href="2026/2026-07-16/">2026-07-16｜PhysClaw-0；Semantic Anchoring</a></li>
-<li><a href="2026/2026-07-15/">2026-07-15｜VistaVLA；Jetson-PI</a></li>
-<li><a href="2026/2026-07-14/">2026-07-14｜CLAP；GenVid2Robot；RLPrompt（指定補讀）</a></li>
-<li><a href="2026/2026-07-13/">2026-07-13｜Learning More from Less；LDT-Coord</a></li>
-<li><a href="2026/2026-07-12/">2026-07-12｜Harness VLA；FabriVLA</a></li>
-<li><a href="2026/2026-07-11/">2026-07-11｜Native Video-Action Pretraining；Latent Memory Palace</a></li>
-<li><a href="2026/2026-07-09/">2026-07-09｜LaMem-VLA；EmbodiedGen V2</a></li>
-<li><a href="2026/2026-07-08/">2026-07-08｜Semantic Handoff；LingBot-VLA 2.0</a></li>
-<li><a href="2026/2026-07-07/">2026-07-07｜HiMe；ResTacVLA</a></li>
-<li><a href="2026/2026-07-06/">2026-07-06｜CaP-X；The Moving Eye</a></li>
-<li><a href="2026/2026-07-05/">2026-07-05｜Embodied.cpp；Task-Agnostic pretraining for VLAs</a></li>
-<li><a href="2026/2026-07-04/">2026-07-04｜VLA-Corrector；LIME Intent-aware Camera Motion</a></li>
-<li><a href="2026/2026-07-02/">2026-07-02｜Human-as-Humanoid；Z-1 RL for VLA</a></li>
-<li><a href="2026/2026-07-01/">2026-07-01｜ZR-0 Dense ECoT VLA；SPARK Anchored Robotic Keypoints；Speculative Speculative Decoding 專欄</a></li>
-<li><a href="2026/2026-06-30/">2026-06-30｜SA-VLA；Automating the Design of Embodied AgentArchitectures</a></li>
-<li><a href="2026/2026-06-29/">2026-06-29｜E-TTS；In-Context World Modeling</a></li>
-<li><a href="2026/2026-06-28/">2026-06-28｜LA4VLA；RouterVLA</a></li>
-<li><a href="2026/2026-06-27/">2026-06-27｜When Does Combining Language Models Help?</a></li>
-<li><a href="2026/2026-06-26/">2026-06-26｜Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It</a></li>
-<li><a href="2026/2026-06-25/">2026-06-25｜Learning Action Priors for Cross-embodiment Robot Manipulation</a></li>
+<li>提出跨 replanning cycles 分配聯合 video-action 去噪的 rolling formulation。</li>
+<li>用分層雜訊的滑動視窗，同時產生完整近期 chunk 與部分精煉的遠期 chunks。</li>
+<li>在新觀察到來後保留並更新未來預測，而非每輪全部丟棄重算。</li>
+<li>在模擬與真實人形機器人任務中降低 steady-state 重規劃延遲，同時維持具競爭力的任務表現。</li>
 </ul>
+<h3 id="_6">我的保守判讀<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>核心創意更像「計算的期限感知排程」而非單純更快的生成模型：近期資訊有硬 deadline，遠期資訊只需逐步成熟。</li>
+<li>保留舊預測能省計算，也會帶入 path dependence；若早期粗略未來嚴重偏離，新觀察是否能在有限更新步數內糾正，是重要風險。</li>
+<li>所謂 speedup 可能依賴 GPU 能否平行處理較長滑動視窗、chunk 數量與每輪步數設定；不能直接視為所有硬體與控制頻率下的固定收益。</li>
+<li>成功率與 4.5 倍 speedup 尚未由本次閱讀核對實驗 protocol、baseline tuning 與端到端 wall-clock 定義。</li>
+</ul>
+<h2 id="_7">可放進資料庫的筆記<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>不同時間距離需要不同完成度</strong>：近期決策追求可執行，遠期規劃先保留方向即可。</li>
+<li><strong>未完成計算也可以是狀態資產</strong>：中間去噪結果不必丟棄，可帶入下一輪並接受新證據修正。</li>
+<li><strong>Receding horizon 的浪費要顯式入帳</strong>：若每輪只執行前綴，就應衡量尾端預測被丟棄的比例。</li>
+<li><strong>即時 AI 的問題不只 FLOPs，而是 sequential critical path</strong>：把總計算攤開，可能比單純縮小模型更直接改善反應時間。</li>
+<li><strong>保存預測同時保存偏誤</strong>：任何 cache／rolling state 都要配套漂移偵測與重置條件。</li>
+<li><strong>世界模型的產品價值取決於控制週期</strong>：預測品質必須和更新頻率、感測延遲與安全反應期限一起評估。</li>
+<li><strong>計算排程可以成為模型架構的一部分</strong>：training noise profile 若與 deployment rolling schedule 對齊，排程不再只是推論端技巧。</li>
+</ol>
+<h2 id="_8">後續想追的問題<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li>4.5 倍 speedup 的 latency 邊界包含哪些前後處理與 GPU 同步成本？</li>
+<li>突發環境變化時，保留的遠期 chunks 多快能被新觀察改寫？是否有整窗重置機制？</li>
+<li>滑動視窗變長後，記憶體用量、吞吐與單輪 latency 如何交換？</li>
+<li>相較 action-only rolling diffusion，explicit future video 究竟在哪些任務提供可測的額外收益？</li>
+<li>真機安全控制是否獨立於 WAM 運行，推論暫停或預測漂移時如何 fallback？</li>
+</ol>
 
 
 
@@ -783,12 +721,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
