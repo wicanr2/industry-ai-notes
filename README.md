@@ -14,7 +14,7 @@
 |---|---|---|
 | 新聞拆解 | 每日選文、文章結構與產業判斷 | [最新 2026-09-27](./新聞拆解/2026/2026-09-27/README.md)｜[2026 年索引](./新聞拆解/2026/README.md) |
 | 文章拆解 | 長文、官方文件與技術文章 | [最新](./文章拆解/2026/2026-07-09/README.md)｜[總索引](./文章拆解/README.md) |
-| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-09-24](./論文拆解/2026/2026-09-24/README.md)｜[總索引](./論文拆解/README.md) |
+| 論文拆解 | arXiv / 研究論文的有限閱讀筆記 | [最新 2026-09-27](./論文拆解/2026/2026-09-27/README.md)｜[總索引](./論文拆解/README.md) |
 | 其他筆記 | 工具、專案、公司資料與 repo 稽核 | [最新](./其他/2026/2026-07-09/README.md)｜[總索引](./其他/README.md) |
 | 專題討論 | 跨材料知識地圖 | [專題索引](./專題討論/README.md)｜[AI Real Economy](./專題討論/AI-Real-Economy/README.md) |
 | 思考模型 | 跨筆記框架與檢查清單 | [模型索引](./思考模型/README.md) |
@@ -40,7 +40,7 @@
 - [2026-08-30 新聞](./新聞拆解/2026/2026-08-30/README.md)：[工業 AI 聯盟的共同資料飛輪](./新聞拆解/2026/2026-08-30/01-工業AI聯盟的共同資料飛輪.md)
 - [2026-08-29 新聞](./新聞拆解/2026/2026-08-29/README.md)：[實體 AI 工廠閉環](./新聞拆解/2026/2026-08-29/01-組織圖不是實體AI能力.md)、[人口推估作為制度壓力測試](./新聞拆解/2026/2026-08-29/02-人口預測是制度壓力測試.md)、[產業政策的同步啟動](./新聞拆解/2026/2026-08-29/03-產業政策要設計啟動順序.md)
 - [2026-08-28 新聞](./新聞拆解/2026/2026-08-28/README.md)：[AI營收集中度帳本](./新聞拆解/2026/2026-08-28/01-AI營收成長的集中度帳本.md)、[戰略選擇權分段買單](./新聞拆解/2026/2026-08-28/02-戰略選擇權需要分段買單.md)、[人類保留不是職稱清單](./新聞拆解/2026/2026-08-28/03-人類保留不是職稱清單.md)
-- [2026 年論文索引](./論文拆解/2026/README.md)｜[最新 2026-09-24](./論文拆解/2026/2026-09-24/README.md)：VLA 指令遵循的評估盲點、可成長的 LLM agent harness
+- [2026 年論文索引](./論文拆解/2026/README.md)｜[最新 2026-09-27](./論文拆解/2026/2026-09-27/README.md)：從示範建立可驗證的機器人程式、跨控制週期滾動的 World Action Model
 
 ## 目前主題線索
 
@@ -50,8 +50,8 @@
 - **企業 AI、責任鏈與技術陣營**：[代理行動六帳本](./新聞拆解/2026/2026-09-27/02-代理治理先建立行動帳本.md)｜[AI 代理的人機交接合約](./新聞拆解/2026/2026-09-24/03-AI代理的自主性可能由隱形人力補完.md)｜[數位員工的代理人六帳本](./新聞拆解/2026/2026-09-09/01-數位員工是權限成本與責任編排.md)
 - **AI 基建、電力、冷卻與資本紀律**：[算力中心成為可調度的電網協作者](./新聞拆解/2026/2026-09-14/01-AI算力中心要成為電網協作者.md)｜[冷卻設備重畫製造地理](./新聞拆解/2026/2026-08-27/02-冷卻設備重畫AI製造地理.md)｜[公共建設定義](./新聞拆解/2026/2026-08-21/02-公共建設定義引導AI資本.md)
 - **能源與物流路徑成本**：[能源安全的到岸韌性帳本](./新聞拆解/2026/2026-09-10/03-能源安全成本藏在路徑.md)｜[高科技物流的時間確定性](./新聞拆解/2026/2026-09-06/01-高科技物流從速度競賽變成韌性網路.md)
-- **Physical AI、主權能力與製造護城河**：[RoboFollow 的語言必要性診斷](./論文拆解/2026/2026-09-24/01-robofollow-instruction-following-mirage.md)｜[TriWorldBench 的跨視角事件一致性](./論文拆解/2026/2026-09-23/01-triworldbench-multiview-world-model-evaluation.md)｜[PatchWAM 的 Action-as-Patch](./論文拆解/2026/2026-09-23/02-patchwam-action-as-visual-token.md)｜[RoboDawn 的 VLM 控制介面](./論文拆解/2026/2026-09-22/01-robodawn-vlm-robot-control.md)
-- **LLM agent 的控制、記憶與成本**：[Growing Harness 的持久程式控制](./論文拆解/2026/2026-09-24/02-growing-harness-reusable-agent-control.md)｜[SafeHarness 的 coding agent 安全邊界](./論文拆解/2026/2026-09-20/01-safeharness-coding-agent-safe-manipulation.md)｜[Workspace Models 的 robot memory](./論文拆解/2026/2026-09-20/02-workspace-models-robot-memory.md)
+- **Physical AI、主權能力與製造護城河**：[Rolling-WAM 的跨週期未來想像](./論文拆解/2026/2026-09-27/02-rolling-wam-rolling-imagination.md)｜[RoboFollow 的語言必要性診斷](./論文拆解/2026/2026-09-24/01-robofollow-instruction-following-mirage.md)｜[TriWorldBench 的跨視角事件一致性](./論文拆解/2026/2026-09-23/01-triworldbench-multiview-world-model-evaluation.md)｜[PatchWAM 的 Action-as-Patch](./論文拆解/2026/2026-09-23/02-patchwam-action-as-visual-token.md)
+- **LLM agent 的控制、記憶與成本**：[RAPID 從示範建立驗證迴圈](./論文拆解/2026/2026-09-27/01-rapid-agentic-programming-from-demonstrations.md)｜[Growing Harness 的持久程式控制](./論文拆解/2026/2026-09-24/02-growing-harness-reusable-agent-control.md)｜[SafeHarness 的 coding agent 安全邊界](./論文拆解/2026/2026-09-20/01-safeharness-coding-agent-safe-manipulation.md)
 - **AI 紅利分配與能力擴散**：[生產要素排擠](./新聞拆解/2026/2026-09-27/01-AI紅利的排擠效應.md)｜[總量成長遮蔽產業雙速](./新聞拆解/2026/2026-09-11/02-總量成長會遮蔽產業雙速.md)
 - **前沿模型安全**：[代理治理的行動帳本](./新聞拆解/2026/2026-09-27/02-代理治理先建立行動帳本.md)｜[AI 安全門檻](./新聞拆解/2026/2026-08-20/03-AI安全門檻必須綁住能力進度.md)｜[Physical Prompt Injection](./論文拆解/2026/2026-08-09/02-physical-prompt-injection-robots.md)
 
