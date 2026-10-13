@@ -1,9 +1,10 @@
 # 2026 論文拆解索引
 
-每篇筆記預設只根據 arXiv Summary/Abstract 與 Introduction 撰寫；未讀全文其他章節。
+2026-10-13 起依新版編輯規範優先閱讀摘要、導論、方法、相關實驗與限制；每篇明列實際範圍。較早筆記多為摘要／導論速覽，仍維持原閱讀標記，不視為已補讀方法。
 
 ## 日期索引
 
+- [2026-10-13｜BT-Agent；RESCUE（方法、實驗與限制閱讀）](./2026-10-13/README.md)
 - [2026-09-27｜RAPID；Rolling-WAM](./2026-09-27/README.md)
 - [2026-09-24｜RoboFollow；Growing Harness](./2026-09-24/README.md)
 - [2026-09-23｜TriWorldBench；PatchWAM](./2026-09-23/README.md)
