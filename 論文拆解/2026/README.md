@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-10-14｜Chronos Policy（方法、實驗及附錄閱讀）](./2026-10-14/README.md)
 - [2026-10-13｜BT-Agent；RESCUE（方法、實驗與限制閱讀）](./2026-10-13/README.md)
 - [2026-09-27｜RAPID；Rolling-WAM](./2026-09-27/README.md)
 - [2026-09-24｜RoboFollow；Growing Harness](./2026-09-24/README.md)
