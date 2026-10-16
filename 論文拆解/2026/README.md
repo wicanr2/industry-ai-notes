@@ -4,6 +4,7 @@
 
 ## 日期索引
 
+- [2026-10-16｜FoveaVLA（方法、實驗與評估協定附錄閱讀）](./2026-10-16/README.md)
 - [2026-10-15｜ChunkAct（方法、實驗與 typed exits 附錄閱讀）](./2026-10-15/README.md)
 - [2026-10-14｜Chronos Policy（方法、實驗及附錄閱讀）](./2026-10-14/README.md)
 - [2026-10-13｜BT-Agent；RESCUE（方法、實驗與限制閱讀）](./2026-10-13/README.md)
