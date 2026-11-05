@@ -537,7 +537,7 @@
 <ol>
 <li><a href="01-vlalagbench-%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%A6%81%E5%88%86%E9%96%8B%E8%A7%80%E6%B8%AC%E5%B9%B4%E9%BD%A1%E5%81%9C%E9%A0%93%E8%88%87%E8%AB%8B%E6%B1%82%E9%A0%90%E7%AE%97/">VLALagBench：非同步要分開觀測年齡、停頓與請求預算</a></li>
 <li><a href="https://arxiv.org/abs/2611.03103v1">arXiv:2611.03103v1</a>，2026-11-02 提交。</li>
-<li><strong>實讀</strong>：31 頁 PDF 的摘要、§1–6；附錄 A／B 的任務與統計協定、D 的校準／外插／部署假設、E 的跨模擬器方法與失敗說明、F 的真機方法／結果、G 的階段分母；HTML 核對排程與模型公式，視覺核對 PDF 第 9、10、24 頁。未逐點讀附錄 C 全部曲線、未審碼／重跑、未全面看圖／影片或追參考文獻；不是無保留的全文複現。</li>
+<li><strong>實讀</strong>：31 頁 PDF 的摘要、§1–6；附錄 A／B 的任務與統計協定、D 的校準／外插／部署假設、E 的跨模擬器方法與失敗說明、F 的真機方法／結果、G 的階段分母；HTML 核對排程與模型公式，表格依 PDF 文字層及 HTML 核對，未做 PDF 頁面視覺校驗。未逐點讀附錄 C 全部曲線、未審碼／重跑、未全面看圖／影片或追參考文獻；不是無保留的全文複現。</li>
 <li><strong>入選</strong>：昨日僅列候選，今天真正補到方法；能將相同平均觀測年齡、不同停頓的比較，以及每台請求額度，接到任務評估與配置選擇。</li>
 <li><strong>重要界限</strong>：四系統案例的任務成功率來自注入延遲的評測，非四套端到端硬體實測；稀疏校準品質有差，模型存在排序反例；真機每設定僅 5 次，不推稱部署安全或穩定收益。</li>
 </ol>
@@ -553,7 +553,7 @@
 <h2 id="_3">庫務與發布<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>已驗證 git root、origin、main、乾淨工作樹與 gh 認證後才 pull --ff-only，結果已最新；未處置其他工作。</li>
-<li>PDF 以既有 curl／pdftotext／pdfinfo 輕量取得；有字型警告，另以官方 HTML 及 PDF 頁面視覺核對核心公式／表格，未裝重型依賴。</li>
+<li>PDF 以既有 curl／pdftotext／pdfinfo 輕量取得；有字型警告，另以官方 HTML 核對核心公式／表格，未裝重型依賴。</li>
 <li>更新日期／年度／論文總索引、根 README 短入口。研究導覽僅在「資訊有效期」路徑增加一段機制補註，加入觀測年齡與停頓分帳，不搬動既有結構或升格舊文閱讀邊界。</li>
 <li>提交前檢查相對連結、每日篇數、diff 與 git diff --check，只 stage 本次檔案。main push 後依 scripts/deploy_pages_local.sh 本機 strict build 與 gh-pages 發布，不使用 GitHub Actions；實際 SHA、Pages source／branch build 與正式站正文驗證以交付報告為準，不把本段流程說明當成發布完成證據。</li>
 </ul>
