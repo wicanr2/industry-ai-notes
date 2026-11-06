@@ -815,6 +815,9 @@
 <li>
 <p><strong>後續方法閱讀補註（2026-11-05）</strong>：<a href="../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/2026/2026-11-05/01-vlalagbench-%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%A6%81%E5%88%86%E9%96%8B%E8%A7%80%E6%B8%AC%E5%B9%B4%E9%BD%A1%E5%81%9C%E9%A0%93%E8%88%87%E8%AB%8B%E6%B1%82%E9%A0%90%E7%AE%97/">VLALagBench 的時序分帳</a>新增同步與 lazy async 的對照：平均觀測年齡相同，停頓不同，任務成功仍可能改變；continuous 則用更多請求換更新頻率。這把「資料新不新」收緊為年齡、運動連續性、chunk 後段品質與每台請求預算的聯合問題；本文也有高延遲下同步反勝、過早開夾爪等反例。與 Chronos／OpenFlyV2 僅作介面問題對讀，未驗證整合，下一證據是固定牆鐘期限與延遲抖動下的完整成功及切段失敗。</p>
 </li>
+<li>
+<p><strong>後續方法閱讀補註（2026-11-06）</strong>：<a href="../%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/2026/2026-11-06/01-arp-%E5%BF%AB%E8%BF%B4%E8%B7%AF%E8%A6%81%E5%AD%B8%E6%9C%83%E4%BD%BF%E7%94%A8%E9%81%8E%E6%9C%9F%E8%AA%9E%E6%84%8F%E8%80%8C%E9%9D%9E%E5%8F%AA%E5%BF%AB%E5%8F%96/">ARP 的過期語意訓練</a>將「非同步」再分成整模型／chunk 排程、慢語意與快視覺分流、prefix 交接三層。同架構 cache-age 消融支持訓練要涵蓋部署錯配；並不證明記憶有前瞻能力，也沒有驗證新指令撤銷。下一證據是固定算力與多視角的因子比較、延遲抖動與指令切換下的完整成功；真機進度分數、18 任務子集與完整 RoboLab 分開閱讀，不把局部效率推成全面超越。</p>
+</li>
 </ul>
 <h2 id="ai_1">AI 基建與產業經濟：承諾、瓶頸、地方成本<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
 <h3 id="4">4. 客戶承諾究竟替哪一種風險付了錢？<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
