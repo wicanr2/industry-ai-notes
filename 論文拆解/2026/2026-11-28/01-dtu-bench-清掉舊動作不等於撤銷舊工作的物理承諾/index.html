@@ -1,0 +1,818 @@
+
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="從產業新聞與論文方法累積可驗證的 AI 研究判斷">
+      
+      
+      
+        <link rel="canonical" href="https://wicanr2.github.io/industry-ai-notes/%E8%AB%96%E6%96%87%E6%8B%86%E8%A7%A3/2026/2026-11-28/01-dtu-bench-%E6%B8%85%E6%8E%89%E8%88%8A%E5%8B%95%E4%BD%9C%E4%B8%8D%E7%AD%89%E6%96%BC%E6%92%A4%E9%8A%B7%E8%88%8A%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%89%A9%E7%90%86%E6%89%BF%E8%AB%BE/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>DTU-Bench：清掉舊動作，不等於撤銷舊工作的物理承諾 - Industry AI Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dtu-bench" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="site-purpose">不只摘要：追蹤問題、證據、敘事與可重用的思考模型</span>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../../.." title="Industry AI Notes" class="md-header__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industry AI Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DTU-Bench：清掉舊動作，不等於撤銷舊工作的物理承諾
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="industry-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="industry-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Industry AI Notes" class="md-nav__button md-logo" aria-label="Industry AI Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>
+
+    </a>
+    Industry AI Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wicanr2/industry-ai-notes" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wicanr2/industry-ai-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首頁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%A0%94%E7%A9%B6%E5%B0%8E%E8%A6%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    研究導覽
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%B0%E8%81%9E%E6%8B%86%E8%A7%A3/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日新聞
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    論文拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87%E7%AB%A0%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文章拆解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B0%88%E9%A1%8C%E8%A8%8E%E8%AB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    專題討論
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%80%9D%E8%80%83%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    思考模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他筆記
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    整理方向
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原文資訊與實際閱讀範圍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、缺口不是「會不會做 B」，而是「做過 A 後怎麼轉去 B」
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、方法：先界定更新，再分開送達、能力和行為
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、方法：先界定更新，再分開送達、能力和行為">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 任務輸入、輸出與物理狀態
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 執行迴圈：清空佇列，但不清空世界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 三種對照，不要把任務難度當切換成本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 目標成立多久，和它為什麼成立是兩件事
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、訓練與基線：這是既有 checkpoint 的診斷，不是新政策學習
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、實驗給了哪些證據？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、實驗給了哪些證據？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 原任務成功，不代表新指令被有效切換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 新目標成功，有時不是新指令造成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 姿勢影響接觸選擇，不等於已定位模型的心理慣性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 鬆爪退臂的收益，要和副作用一起讀
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、第一性原理：改單需要處理已經存在的承諾
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、可複用研究模型與後續驗證
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dtu-bench">DTU-Bench：清掉舊動作，不等於撤銷舊工作的物理承諾<a class="headerlink" href="#dtu-bench" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>研究問題</strong>：機器人正在抓 A，使用者改要 B；重新輸入文字後完成 B，能否證明它及時放棄了 A？
+<strong>方法重點</strong>：清空舊動作、保留當前物理狀態，對照從頭執行與同狀態兩種指令，再分報暫時達標、終局達標和舊工作是否仍被完成。
+<strong>保守結論</strong>：本文把「更新送達、行為改變、目標維持、物理副作用」拆開。簡單鬆爪退臂能改善部分換物件任務，卻不是安全撤銷策略，更不是 VLA 自己學會恢復。</p>
+</blockquote>
+<h2 id="_1">原文資訊與實際閱讀範圍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>標題</strong>：Dynamic Task Update Benchmark (DTU-Bench): Evaluating Runtime Task Adaptation in Robotic Manipulation。</li>
+<li><strong>作者</strong>：Yanran Jiang、Cécile Paris、Dana Kulić、Leimin Tian。</li>
+<li><strong>版本／分類</strong>：arXiv:2611.34538v1；cs.RO。</li>
+<li><strong>提交時間</strong>：2026-11-25 15:20:36 UTC；本次官方摘要歷史僅見 v1，未見 withdrawn／retracted 標記。</li>
+<li><strong>原文</strong>：<a href="https://arxiv.org/abs/2611.34538v1">摘要與版本歷史</a>｜<a href="https://arxiv.org/html/2611.34538v1">HTML</a>｜<a href="https://arxiv.org/pdf/2611.34538v1">PDF</a>｜<a href="https://dtu-bench.github.io/">作者專案入口</a>。專案入口取自論文，本次未檢視其程式碼或補充材料。</li>
+<li><strong>擷取／閱讀</strong>：2026-11-28（Asia/Taipei）09:00 後。</li>
+<li><strong>實讀</strong>：官方 HTML 摘要、§1–6 正文；重點是 §3.1–3.6 任務／評估方法、§4.1–4.2 設定與介入、§5.1–5.6 結果及結論。另下載版本 PDF，以既有 <code>pdftotext -layout</code> 核對方法、主表及 §5.4–5.6。PDF 為 10 頁，末尾是參考文獻，沒有本文屢次提及的 supplementary material；因此<strong>未讀補充材料中的完整 coverage／排除清單、視覺介入、取消指令、checkpoint 設定或統計細節</strong>。未逐圖視覺核驗、審碼或重跑。</li>
+<li>昨日只把此文列候選，今天才新增方法筆記；不回寫昨日為已讀全文。</li>
+</ul>
+<h2 id="b-a-b">一、缺口不是「會不會做 B」，而是「做過 A 後怎麼轉去 B」<a class="headerlink" href="#b-a-b" title="Permanent link">&para;</a></h2>
+<p>固定指令基準往往從乾淨初態測試；但任務中途更新會留下抓握、物件位移、已完成子目標和承諾中的控制動作。即使 A、B 分開都會做，也不代表 A 的中間狀態適合直接做 B。</p>
+<p>本文不是新 VLA 架構，而是一套<strong>狀態不重置的指令更新評測</strong>。相對 baseline 真正改動是任務條件、介入時點與觀測口徑，不是新增訓練 loss。這能避免把單純操作不熟、沒有走到介入點、更新後不願換目標全部塞進同一個「失敗」。</p>
+<h2 id="_2">二、方法：先界定更新，再分開送達、能力和行為<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 任務輸入、輸出與物理狀態<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>以論文式 (1) 的簡寫表示：</p>
+<div class="arithmatex">\[
+a_t\sim\begin{cases}
+\pi(\cdot\mid o_t,I_0),&amp;t&lt;\tau,\\
+\pi(\cdot\mid o_t,I_1),&amp;t\geq\tau.
+\end{cases}
+\]</div>
+<p><span class="arithmatex">\(\pi\)</span> 是接受觀測和指令、輸出動作的 policy；<span class="arithmatex">\(a_t\)</span> 是時間步 <span class="arithmatex">\(t\)</span> 的動作，<span class="arithmatex">\(o_t\)</span> 是當前觀測；<span class="arithmatex">\(I_0\)</span> 與 <span class="arithmatex">\(I_1\)</span> 分別為舊、新指令，<span class="arithmatex">\(\tau\)</span> 是更新步。更新時沿用實際到達的狀態 <span class="arithmatex">\(s_\tau\)</span>，不回到起始狀態 <span class="arithmatex">\(s_0\)</span>。這是條件切換定義，<strong>不是保證模型遵從或物理安全的方程</strong>。</p>
+<p>資料是 LIBERO-Spatial、Object、GOAL、Long 的 40 組任務修訂，每組使用 50 個官方初始狀態。七種更新涵蓋空間指涉、物件身分、目的地、放置關係、終局狀態、子目標替換、複合目標。改文字和目標，不在更新瞬間換掉場景物件。停止／取消不屬於這七類主實驗；正文說另在補充材料測試，本次未讀，不能借主結果證明急停能力。</p>
+<h3 id="2">2. 執行迴圈：清空佇列，但不清空世界<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>早、中、晚介入由接近、穩定抓握／抬升、移向目的地等進度事件界定，不是固定步數；沒有抵達指定階段就記為更新未送達。新指令送入時，<strong>丟棄舊指令預測但尚未執行的動作</strong>，由新觀測重新推論。之後有 300 個執行步，與更新前花了多少步無關；部分診斷延長到 600 步。</p>
+<p>這排除了「只是舊 chunk 還在佇列」的一個解釋，卻沒有消除已抓起物件、手臂姿勢或視覺狀態的影響。正文也未給出真機控制器不可撤回前綴、通信延遲或實體煞停規格，不可外推成真機即時撤銷已驗證。</p>
+<h3 id="3">3. 三種對照，不要把任務難度當切換成本<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Original control</strong>：從 <span class="arithmatex">\(s_0\)</span> 執行 <span class="arithmatex">\(I_0\)</span>，測原任務能力。</li>
+<li><strong>Updated-from-start</strong>：同樣從 <span class="arithmatex">\(s_0\)</span> 執行 <span class="arithmatex">\(I_1\)</span>，測新任務本身是否會做。</li>
+<li><strong>Runtime update</strong>：先做 <span class="arithmatex">\(I_0\)</span> 到 <span class="arithmatex">\(s_\tau\)</span> 才改 <span class="arithmatex">\(I_1\)</span>，測帶著既成物理狀態轉換任務。</li>
+</ul>
+<p>另在選定狀態做配對 continuation：還原同一 <span class="arithmatex">\(s_\tau\)</span>，一支留 <span class="arithmatex">\(I_0\)</span>、一支換 <span class="arithmatex">\(I_1\)</span>，都清舊動作、用同預算、以同一新目標評分。這才檢查「達到新目標是否依賴收到新指令」。但此配對只覆蓋部分任務與兩種 policy，不代表全榜都有相同因果辨識。</p>
+<h3 id="4">4. 目標成立多久，和它為什麼成立是兩件事<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>Ever 是曾經符合新目標；Held-10 是連續十次執行後觀測都符合；Final 是更新後 300 步最後一個觀測符合。三者不是安全、反應時間或整條軌跡正確性的替代指標。Final 仍只檢查終點，不保證中途一直維持；Held-10 可能只是舊任務必經的暫態。</p>
+<p>圖 3 的成功率分母是<strong>有效排定試驗，包含更新未送達</strong>；模擬器錯誤則排除。完整逐 policy 有效樣本數與排除細項在未讀的補充材料，因此不能把各配置都說成完整跑滿，也不能把這個分母當成「已送達更新的條件成功率」。</p>
+<h2 id="checkpoint">三、訓練與基線：這是既有 checkpoint 的診斷，不是新政策學習<a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h2>
+<p>作者使用 13 個公開 LIBERO 配置，含 OpenVLA、OpenVLA-OFT、<span class="arithmatex">\(\pi_0\)</span>、<span class="arithmatex">\(\pi_{0.5}\)</span>、DM0.5、WorldVLA、RynnVLA-002、UniVLA、VLA-JEPA、InstructVLA、<span class="arithmatex">\(\tau_0\)</span>-VLA、MolmoAct2、FlashVLA-<span class="arithmatex">\(\pi_{0.5}\)</span>。下標是模型名稱，不是此文新引入的超參數；評估依 released interface，有些只測連續輸出、stage-1 或 low-level 配置，不能當成完整規劃系統。</p>
+<p><strong>本文不新增訓練資料、梯度更新或訓練目標</strong>。各配置保留原生觀測、動作表示與推論介面，所以榜單不是等模型規模／等運算成本實驗。真正可讀的是相同配置在不同更新條件下的差異，以及固定 checkpoint 的局部配對診斷。</p>
+<h2 id="_3">四、實驗給了哪些證據？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>以下數字均為作者報告，不是本筆記重現。</p>
+<h3 id="1_1">1. 原任務成功，不代表新指令被有效切換<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>Table 3 的 <span class="arithmatex">\(\pi_{0.5}\)</span> 在 Object 類為原任務 Final 98.0%、runtime Final 0.7%；Destination 類為 94.4% 與 68.8%。但<strong>前後是不同目標</strong>，差值不能全歸因於更新；跨類也混有場景與難度差異。</p>
+<p>較有辨識力的是 updated-from-start，以及同場景小樣本診斷：<span class="arithmatex">\(\pi_0\)</span>、<span class="arithmatex">\(\pi_{0.5}\)</span> 改目的地各 10 次都成功；穩定抓握後改物件，各 5 次都失敗，雖然從頭執行新任務的 controls 成功。這支持「現有進度對換目的地仍有用，對換物件卻可能成負擔」，不證明所有換物件失敗都出於同一內部機制。</p>
+<h3 id="2_1">2. 新目標成功，有時不是新指令造成<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>94 組同狀態配對的 Held-10 結果：37 組兩種指令都成功、3 組僅更新指令成功、54 組兩者都失敗。37 組雙成功全是終局狀態更新；到 Final，更新分支只剩 5 組成功，舊指令分支為 0。</p>
+<p>另一個 DM0.5 換物件診斷，把相同軌跡觀測期限由 300 延至 600 步，Held-10 從 4/15 變為 15/15；但全部先完成舊目標才完成新目標。延長預算改善了「最後做到了」，沒有證明「及時接受改單」。</p>
+<h3 id="3_1">3. 姿勢影響接觸選擇，不等於已定位模型的心理慣性<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>作者對兩個 Object 任務交叉改指令、姿勢與物件配置，共 160 段 continuation。保留原姿勢時，每種 policy 的 40 個條件都先碰較近候選物件，只有 20/40 符合指令；換中立姿勢後，DM0.5 的指令一致首碰為 40/40、<span class="arithmatex">\(\pi_{0.5}\)</span> 為 29/40。</p>
+<p>這支持行為受物理／視覺配置影響。姿勢改變也會改視覺輸入與可達性，<strong>不能單憑這個消融斷言模型「忘記文字」或存在某種特定隱藏意圖</strong>。視覺輸入介入的完整結果未讀。DM0.5 在 20 段相關中立姿勢續行雖都先碰新物件，Final 只成功 18/20，也說明選對目標不等於完成工作。</p>
+<h3 id="4_1">4. 鬆爪退臂的收益，要和副作用一起讀<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>固定狀態比較 Direct、只退到預設關節姿勢的 Retreat，以及閉爪時先開爪再退臂的 Release+Retreat。helper 只用關節／夾爪資訊，不用物件位置、接觸標籤或成功 predicate 控制；<strong>輔助動作也算入同一個 300 步預算</strong>。</p>
+<p>Object 穩定抓握階段，各 policy 有 50 次（10 任務、每任務 5 初態）：</p>
+<ul>
+<li><span class="arithmatex">\(\pi_{0.5}\)</span>：Direct Held-10 為 1/50；只退臂 0/50；鬆爪再退臂 19/50。</li>
+<li>DM0.5：依序 4/50、1/50、24/50。</li>
+<li>但兩種 policy 各有 49/50 出現沒有支撐的向下物件運動。這是原文描述，不能無量測地全改寫成損壞或碰撞，也不能當作可接受。</li>
+<li>對仍操作同一物件的 Destination，<span class="arithmatex">\(\pi_{0.5}\)</span> 穩定抓握時反由 Direct 19/25 降到 Release+Retreat 16/25：重置可能破壞有用進度。</li>
+</ul>
+<p>因此作者展示的是<strong>外部 scripted assistance 的局部改善</strong>，不是 VLA 學到恢復，更不是通用的「改指令就先放手」。正文報告以任務為群集的 bootstrap 改善區間，但完整統計細節未讀，不把小樣本消融升格成廣泛可靠性保證。</p>
+<h2 id="_4">五、第一性原理：改單需要處理已經存在的承諾<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><strong>最小必要狀態（本筆記整理，不是作者實作新架構）</strong>至少包括：目前有效指令、尚未執行動作、已完成且仍有用的子目標、當前抓握／支撐／物件配置、新目標及其驗收時間範圍。只改文字會漏掉物理負債；全面重置又會毀掉可保留進度。</p>
+<ul>
+<li><strong>計算／介面限制</strong>：清佇列必須在執行端真正生效；本文在模擬協定中直接做到，不代表遠端推論服務與真機控制器已具同等能力。</li>
+<li><strong>資料限制</strong>：40 組 LIBERO 修訂、原生 checkpoint 和選定診斷，不能涵蓋開放世界改單、人類歧義或所有具身差異；缺完整 coverage 與補充細節，配置間精細排名需保留。</li>
+<li><strong>物理限制</strong>：持物狀態不會因條件字串更新而消失；放手可以解除控制耦合，也可能造成墜落。真正的撤銷應區分取消未執行動作、保留支撐、安置舊物件、再接新任務。</li>
+<li><strong>有效條件</strong>：新任務須從當前狀態仍可達、更新確實送達，且評分能區別偶然途經與指令依賴的行為；參照控制器成功只能證明某狀態有一條可行路，失敗不能證明不可行。</li>
+</ul>
+<h2 id="_5">六、可複用研究模型與後續驗證<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>可把評估拆成五層：<strong>更新送達 → 舊命令撤回 → 有用進度保留／衝突承諾解除 → 新任務完成與維持 → 全程物理代價</strong>。本文主要補上中間三層的模擬證據，不是整條鏈的安全證明。</p>
+<p>與 <a href="../../2026-11-05/01-vlalagbench-%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%A6%81%E5%88%86%E9%96%8B%E8%A7%80%E6%B8%AC%E5%B9%B4%E9%BD%A1%E5%81%9C%E9%A0%93%E8%88%87%E8%AB%8B%E6%B1%82%E9%A0%90%E7%AE%97/">VLALagBench 的觀測年齡／停頓</a>、<a href="../../2026-11-25/01-acap-%E4%B8%A6%E8%A1%8C%E6%8E%A8%E7%90%86%E7%B8%AE%E7%9F%AD%E5%B7%A5%E6%9C%9F%E4%B8%8D%E7%AD%89%E6%96%BC%E6%8E%A7%E5%88%B6%E6%AC%8A%E4%BA%A4%E6%8E%A5%E5%B7%B2%E5%85%B7%E7%89%A9%E7%90%86%E5%AE%89%E5%85%A8/">ACAP 的命令權交接</a>僅作問題對讀：資訊新鮮、誰能發命令、改單後怎麼處理持物是不同接口，尚未驗證整合。</p>
+<ol>
+<li>固定同一介入狀態與服務預算，比較「清佇列」「安全安置後換單」「直接 Release+Retreat」，分報更新到首個正確動作的延遲、舊目標先完成率、完整成功與無支撐物件運動，能否保留收益而移除副作用？</li>
+<li>把任務要求拆成共享、已撤銷、新增三組 predicate，加入支撐／持物條件；選擇性保留進度能否優於一律中立姿勢重置？</li>
+<li>在真機引入通信延遲、已提交動作前綴與改單後再次取消，能否同時驗證命令真正撤回、物理停穩和持物安全，而非只看到最後新目標成立？</li>
+</ol>
+<p><strong>可放進資料庫的一句話</strong>：DTU-Bench 已先清空舊預測動作，換物件仍常失敗；持物與姿勢留下的物理承諾，需要與指令條件、暫時達標及安全安置分開驗收。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 CY Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wicanr2/industry-ai-notes" target="_blank" rel="noopener" title="GitHub repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
